@@ -28,3 +28,10 @@ https://github.com/user-attachments/assets/ffbe7d87-d1e9-45e2-91e5-0040cae557c9
 Next, I wrote code for the ESP32-C3 to update its time via NTP and drive the tubes accordingly (details are in the code). Additionally, I successfully integrated sound using codecs and a power amplifier.
 
 https://github.com/user-attachments/assets/b822d686-eec8-4e32-874c-11a30fe7fb55
+
+### LEDs
+
+Added code to have the ESP32-C3 drive some LEDs.  There are LEDs underneath each tube on the clock.
+
+https://github.com/user-attachments/assets/37ba964b-dcfa-438d-87e9-e53fea1e2fda
+
