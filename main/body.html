@@ -1,0 +1,532 @@
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form id="update-form">
+                <h1>Wi-Fi Nixie Clock</h1>
+                <p></p>
+                <h2>Network settings</h2>
+                <p>For WIFI settings to take effect you must save them and then reboot the clock. If your changes are
+                    invalid or the clock cannot connect to the AP, they will be disregarded.</p>
+                <p>Select your network settings here.</p>
+                <div class="row">
+                    <label for="ssid">WiFi SSID</label>
+                    <input type="text" id="ssid" name="ssid" value="">
+                </div>
+                <div class="row">
+                    <label for="pass">WiFi Password</label>
+                    <input type="password" id="pass" name="pass" value="">
+                </div>
+                <h2>Basic settings</h2>
+                <p>Time format and other useful settings and tweaks.</p>
+                <div class="row">
+                    <label for="time_fmt">Time format:</label>
+                    <select id="time_fmt" name="time_fmt">
+                        <option value="1">24-hour</option>
+                        <option value="0">12-hour</option>
+                    </select>
+                </div>
+                <!-- <div class="row"><label for="zero">Leading zero:</label><select id="zero" name="zero">
+                        <option value="1">Show</option>
+                        <option value="0">Hide</option>
+                    </select></div> -->
+                <!-- <div class="row"><label for="rst_cycle">Cycle through digits after every reset:</label><select
+                        id="rst_cycle" name="rst_cycle">
+                        <option value="0">No</option>
+                        <option value="1">Yes (good for testing all digits)</option>
+                    </select></div>
+                <div class="row"><label for="rst_ip">Show IP address after reset (last 3 digits):</label><select
+                        id="rst_ip" name="rst_ip">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select></div> -->
+                <div class="row">
+                    <label for="ntp">NTP server address or IP</label>
+                    <input type="text" id="ntp" name="ntp" placeholder="" value="pool.ntp.org">
+                </div>
+                <h2>Visual settings</h2>
+                <p>Brightness, animations and other fun stuff.</p>
+                <!-- <div class="row"><label for="bri">Brightness:</label><select id="bri" name="bri">
+                        <option value="2">High</option>
+                        <option value="1">Medium</option>
+                        <option value="0">Low</option>
+                    </select></div> -->
+                <!-- <div class="row"><label for="fade">Crossfade duration:</label><select id="fade" name="fade">
+                        <option value="600">Slow (600ms)</option>
+                        <option value="400">Medium (400ms)</option>
+                        <option value="200">Fast (200ms)</option>
+                        <option value="0">Disable</option>
+                    </select></div> -->
+                <!-- <div class="row"><label for="nmode">Night mode:</label><select id="nmode" name="nmode">
+                        <option value="0">None</option>
+                        <option value="1">Set low brightness between 22:00-06:00</option>
+                    </select></div> -->
+                <!-- <div class="row"><label for="cathode">Cathode poisoning prevention:</label><select id="cathode"
+                        name="cathode">
+                        <option value="0">None</option>
+                        <option value="1">10min cycle every hour between 2-6 AM</option>
+                        <option value="2">10min cycle every hour between 2-6 AM + 60s cycle every hour (recommended)
+                        </option>
+                    </select></div> -->
+                <div class="row">
+                    <label for="colon">Colon:</label>
+                    <select id="colon" name="colon">
+                        <option value="2">ON/OFF each second</option>
+                        <option value="1">Always ON</option>
+                        <option value="0">Off</option>
+                    </select>
+                </div>
+                <!-- <div class="row"><label for="rgb_en"><input type="checkbox" id="rgb_en" name="rgb_en"
+                            class="visibility-toggle" data-target="rgb_wrapper" value="1">&nbsp;Enable colon color
+                        settings</label></div> -->
+                <!-- <div id="rgb_wrapper"> -->
+                <!-- <p>This option is great for adjusting various WS2812 clones to match the VFDs. Brightness values are
+                        also used for all the status colors. <br>TIP: You can adjust the color live, no need to reboot
+                        :</p> -->
+                <!-- <div class="flexrow">
+                        <div class="col col-xs-full"
+                            style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;">
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+                <div id="rgb_wrapper">
+                    <div class="flexrow">
+                        <div class="col col-xs-full"
+                            style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;">
+                            <div id="picker"></div>
+                            <input type="hidden" id="rgb_r" name="rgb_r" value="">
+                            <input type="hidden" id="rgb_g" name="rgb_g" value="">
+                            <input type="hidden" id="rgb_b" name="rgb_b" value="">
+                        </div>
+                    </div>
+                    <h2>Timezone settings</h2>
+                    <p>Pick your timezone from Region/City.</p>
+                    <select id="timezone">
+                        <optgroup label="Africa">
+                            <option value="GMT0">Abidjan</option>
+                            <option value="GMT0">Accra</option>
+                            <option value="EAT-3">Addis Ababa</option>
+                            <option value="CET-1">Algiers</option>
+                            <option value="EAT-3">Asmara</option>
+                            <option value="GMT0">Bamako</option>
+                            <option value="WAT-1">Bangui</option>
+                            <option value="GMT0">Banjul</option>
+                            <option value="GMT0">Bissau</option>
+                            <option value="CAT-2">Blantyre</option>
+                            <option value="WAT-1">Brazzaville</option>
+                            <option value="CAT-2">Bujumbura</option>
+                            <option value="EET-2">Cairo</option>
+                            <option value="+01>-1">Casablanca</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Ceuta</option>
+                            <option value="GMT0">Conakry</option>
+                            <option value="GMT0">Dakar</option>
+                            <option value="EAT-3">Dar es Salaam</option>
+                            <option value="EAT-3">Djibouti</option>
+                            <option value="WAT-1">Douala</option>
+                            <option value="+01>-1">El Aaiun</option>
+                            <option value="GMT0">Freetown</option>
+                            <option value="CAT-2">Gaborone</option>
+                            <option value="CAT-2">Harare</option>
+                            <option value="SAST-2">Johannesburg</option>
+                            <option value="EAT-3">Juba</option>
+                            <option value="EAT-3">Kampala</option>
+                            <option value="CAT-2">Khartoum</option>
+                            <option value="CAT-2">Kigali</option>
+                            <option value="WAT-1">Kinshasa</option>
+                            <option value="WAT-1">Lagos</option>
+                            <option value="WAT-1">Libreville</option>
+                            <option value="GMT0">Lome</option>
+                            <option value="WAT-1">Luanda</option>
+                            <option value="CAT-2">Lubumbashi</option>
+                            <option value="CAT-2">Lusaka</option>
+                            <option value="WAT-1">Malabo</option>
+                            <option value="CAT-2">Maputo</option>
+                            <option value="SAST-2">Maseru</option>
+                            <option value="SAST-2">Mbabane</option>
+                            <option value="EAT-3">Mogadishu</option>
+                            <option value="GMT0">Monrovia</option>
+                            <option value="EAT-3">Nairobi</option>
+                            <option value="WAT-1">Ndjamena</option>
+                            <option value="WAT-1">Niamey</option>
+                            <option value="GMT0">Nouakchott</option>
+                            <option value="GMT0">Ouagadougou</option>
+                            <option value="WAT-1">Porto-Novo</option>
+                            <option value="GMT0">Sao Tome</option>
+                            <option value="EET-2">Tripoli</option>
+                            <option value="CET-1">Tunis</option>
+                            <option value="CAT-2">Windhoek</option>
+                        </optgroup>
+                        <optgroup label="America">
+                            <option value="HST10HDT,M3.2.0,M11.1.0">Adak</option>
+                            <option value="AKST9AKDT,M3.2.0,M11.1.0">Anchorage</option>
+                            <option value="AST4">Anguilla</option>
+                            <option value="AST4">Antigua</option>
+                            <option value="<-03>3">Araguaina</option>
+                            <option value="AST4">Aruba</option>
+                            <option value="<-04>4<-03>,M10.1.0/0,M3.4.0/0">Asuncion</option>
+                            <option value="EST5">Atikokan</option>
+                            <option value="<-03>3">Bahia</option>
+                            <option value="CST6CDT,M4.1.0,M10.5.0">Bahia Banderas</option>
+                            <option value="AST4">Barbados</option>
+                            <option value="<-03>3">Belem</option>
+                            <option value="CST6">Belize</option>
+                            <option value="AST4">Blanc-Sablon</option>
+                            <option value="<-04>4">Boa Vista</option>
+                            <option value="<-05>5">Bogota</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Boise</option>
+                            <option value="<-03>3">Buenos Aires</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Cambridge Bay</option>
+                            <option value="<-04>4">Campo Grande</option>
+                            <option value="EST5">Cancun</option>
+                            <option value="<-04>4">Caracas</option>
+                            <option value="<-03>3">Catamarca</option>
+                            <option value="<-03>3">Cayenne</option>
+                            <option value="EST5">Cayman</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Center</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Chicago</option>
+                            <option value="MST7MDT,M4.1.0,M10.5.0">Chihuahua</option>
+                            <option value="<-03>3">Cordoba</option>
+                            <option value="CST6">Costa Rica</option>
+                            <option value="MST7">Creston</option>
+                            <option value="<-04>4">Cuiaba</option>
+                            <option value="AST4">Curacao</option>
+                            <option value="GMT0">Danmarkshavn</option>
+                            <option value="MST7">Dawson</option>
+                            <option value="MST7">Dawson Creek</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Denver</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Detroit</option>
+                            <option value="AST4">Dominica</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Edmonton</option>
+                            <option value="<-05>5">Eirunepe</option>
+                            <option value="<-03>3">El Salvador</option>
+                            <option value="<-03>3">Fortaleza</option>
+                            <option value="MST7">Fort Nelson</option>
+                            <option value="<-03>3<-02>,M3.5.0/-2,M10.5.0/-1">Godthab</option>
+                            <option value="AST4ADT,M3.2.0,M11.1.0">Glace Bay</option>
+                            <option value="<-03>3">Goose Bay</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Grand Turk</option>
+                            <option value="AST4">Grenada</option>
+                            <option value="AST4">Guadeloupe</option>
+                            <option value="CST6">Guatemala</option>
+                            <option value="<-05>5">Guayaquil</option>
+                            <option value="<-04>4">Guyana</option>
+                            <option value="AST4ADT,M3.2.0,M11.1.0">Halifax</option>
+                            <option value="CST5CDT,M3.2.0/0,M11.1.0/1">Havana</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Indianapolis</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Inuvik</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Iqaluit</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Indianapolis</option>
+                            <option value="AST4">Jamaica</option>
+                            <option value="AKST9AKDT,M3.2.0,M11.1.0">Juneau</option>
+                            <option value="<-03>3">Jujuy</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Knox</option>
+                            <option value="BOT4">La Paz</option>
+                            <option value="<-03>3">La Rioja</option>
+                            <option value="PET-5">Lima</option>
+                            <option value="PST8PDT,M3.2.0,M11.1.0">Los Angeles</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Louisville</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Marengo</option>
+                            <option value="<-03>3">Mendoza</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Monticello</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">New Salem</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Ojinaga</option>
+                            <option value="EST5">Panama</option>
+                            <option value="AST4">Pangnirtung</option>
+                            <option value="<-03>3">Paramaribo</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Petersburg</option>
+                            <option value="MST7">Phoenix</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Port-au-Prince</option>
+                            <option value="AST4">Port of Spain</option>
+                            <option value="<-04>4">Porto Velho</option>
+                            <option value="AST4">Puerto Rico</option>
+                            <option value="<-03>3">Punta Arenas</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Rainy River</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Rankin Inlet</option>
+                            <option value="CST6">Regina</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Resolute</option>
+                            <option value="<-05>5">Rio Branco</option>
+                            <option value="<-03>3">Rio Gallegos</option>
+                            <option value="<-03>3">Salta</option>
+                            <option value="<-03>3">San Juan</option>
+                            <option value="<-03>3">San Luis</option>
+                            <option value="<-03>3">Santarem</option>
+                            <option value="<-04>4<-03>,M9.1.6/24,M4.1.6/24">Santiago</option>
+                            <option value="AST4">Santo Domingo</option>
+                            <option value="<-03>3">Sao Paulo</option>
+                            <option value="<-01>1<+00>,M3.5.0/0,M10.5.0/1">Scoresbysund</option>
+                            <option value="AKST9AKDT,M3.2.0,M11.1.0">Sitka</option>
+                            <option value="NST3:30NDT,M3.2.0,M11.1.0">St. Johns</option>
+                            <option value="AST4">St. Barthelemy</option>
+                            <option value="AST4">St. Kitts</option>
+                            <option value="AST4">St. Lucia</option>
+                            <option value="AST4">St. Thomas</option>
+                            <option value="AST4">St. Vincent</option>
+                            <option value="CST6">Swift Current</option>
+                            <option value="CST6">Tegucigalpa</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Tell City</option>
+                            <option value="AST4ADT,M3.2.0,M11.1.0">Thule</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Thunder Bay</option>
+                            <option value="PST8PDT,M3.2.0,M11.1.0">Tijuana</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Toronto</option>
+                            <option value="AST4">Tortola</option>
+                            <option value="<-03>3">Tucuman</option>
+                            <option value="<-03>3">Ushuaia</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Vevay</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Vincennes</option>
+                            <option value="PST8PDT,M3.2.0,M11.1.0">Vancouver</option>
+                            <option value="CST6CDT,M3.2.0,M11.1.0">Winnipeg</option>
+                            <option value="EST5EDT,M3.2.0,M11.1.0">Winamac</option>
+                            <option value="AKST9AKDT,M3.2.0,M11.1.0">Yakutat</option>
+                            <option value="MST7MDT,M3.2.0,M11.1.0">Yellowknife</option>
+                        </optgroup>
+                        <optgroup label="Antarctica">
+                            <option value="<+08>-8">Casey</option>
+                            <option value="<+07>-7">Davis</option>
+                            <option value="<+10>-10">Dumont d'Urville</option>
+                            <option value="<+11>-11">Macquarie</option>
+                            <option value="<+05>-5">Mawson</option>
+                            <option value="NZST-12NZDT,M9.5.0,M4.1.0/3">McMurdo</option>
+                            <option value="<-03>3">Palmer</option>
+                            <option value="<-03>3">Rothera</option>
+                            <option value="<+03>-3">Syowa</option>
+                            <option value="<+00>0<+02>-2,M3.5.0/1,M10.5.0/3">Troll</option>
+                            <option value="<+06>-6">Vostok</option>
+                        </optgroup>
+                        <optgroup label="Arctic">
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Longyearbyen</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                            <option value="<+03>-3">Aden</option>
+                            <option value="<+06>-6">Almaty</option>
+                            <option value="EET-2EEST,M3.5.4/24,M10.5.5/1">Amman</option>
+                            <option value="<+12>-12">Anadyr</option>
+                            <option value="<+05>-5">Aqtau</option>
+                            <option value="<+05>-5">Aqtobe</option>
+                            <option value="<+05>-5">Ashgabat</option>
+                            <option value="<+05>-5">Atyrau</option>
+                            <option value="<+03>-3">Baghdad</option>
+                            <option value="<+03>-3">Bahrain</option>
+                            <option value="<+04>-4">Baku</option>
+                            <option value="<+07>-7">Bangkok</option>
+                            <option value="<+07>-7">Barnaul</option>
+                            <option value="EET-2EEST,M3.5.0/0,M10.5.0/0">Beirut</option>
+                            <option value="<+06>-6">Bishkek</option>
+                            <option value="<+08>-8">Brunei</option>
+                            <option value="<+09>-9">Chita</option>
+                            <option value="<+08>-8">Choibalsan</option>
+                            <option value="<+0530>-5:30">Colombo</option>
+                            <option value="EET-2EEST,M3.5.5/0,M10.5.5/0">Damascus</option>
+                            <option value="<+06>-6">Dhaka</option>
+                            <option value="<+09>-9">Dili</option>
+                            <option value="<+04>-4">Dubai</option>
+                            <option value="<+05>-5">Dushanbe</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Famagusta</option>
+                            <option value="EET-2EEST,M3.5.5/0,M10.5.6/1">Gaza</option>
+                            <option value="EET-2EEST,M3.5.5/0,M10.5.6/1">Hebron</option>
+                            <option value="<+07>-7">Ho Chi Minh</option>
+                            <option value="HKT-8">Hong Kong</option>
+                            <option value="<+07>-7">Hovd</option>
+                            <option value="<+08>-8">Irkutsk</option>
+                            <option value="WIB-7">Jakarta</option>
+                            <option value="WIT-9">Jayapura</option>
+                            <option value="IST-2IDT,M3.4.4/26,M10.5.0">Jerusalem</option>
+                            <option value="<+0430>-4:30">Kabul</option>
+                            <option value="<+12>-12">Kamchatka</option>
+                            <option value="PKT-5">Karachi</option>
+                            <option value="<+0545>-5:45">Kathmandu</option>
+                            <option value="<+09>-9">Khandyga</option>
+                            <option value="IST-5:30">Kolkata</option>
+                            <option value="<+07>-7">Krasnoyarsk</option>
+                            <option value="<+08>-8">Kuala Lumpur</option>
+                            <option value="<+08>-8">Kuching</option>
+                            <option value="<+03>-3">Kuwait</option>
+                            <option value="CST-8">Macau</option>
+                            <option value="<+11>-11">Magadan</option>
+                            <option value="WITA-8">Makassar</option>
+                            <option value="PST-8">Manila</option>
+                            <option value="<+04>-4">Muscat</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Nicosia</option>
+                            <option value="<+07>-7">Novokuznetsk</option>
+                            <option value="<+07>-7">Novosibirsk</option>
+                            <option value="<+06>-6">Omsk</option>
+                            <option value="<+05>-5">Oral</option>
+                            <option value="<+07>-7">Phnom Penh</option>
+                            <option value="WIB-7">Pontianak</option>
+                            <option value="KST-9">Pyongyang</option>
+                            <option value="<+03>-3">Qatar</option>
+                            <option value="<+05>-5">Qyzylorda</option>
+                            <option value="<+03>-3">Riyadh</option>
+                            <option value="<+11>-11">Sakhalin</option>
+                            <option value="<+05>-5">Samarkand</option>
+                            <option value="KST-9">Seoul</option>
+                            <option value="CST-8">Shanghai</option>
+                            <option value="<+08>-8">Singapore</option>
+                            <option value="<+11>-11">Srednekolymsk</option>
+                            <option value="CST-8">Taipei</option>
+                            <option value="<+05>-5">Tashkent</option>
+                            <option value="<+04>-4">Tbilisi</option>
+                            <option value="IRDT-4:30">Tehran</option>
+                            <option value="<+06>-6">Thimphu</option>
+                            <option value="JST-9">Tokyo</option>
+                            <option value="<+08>-8">Tomsk</option>
+                            <option value="<+08>-8">Ulaanbaatar</option>
+                            <option value="<+06>-6">Urumqi</option>
+                            <option value="<+10>-10">Ust-Nera</option>
+                            <option value="<+07>-7">Vientiane</option>
+                            <option value="<+10>-10">Vladivostok</option>
+                            <option value="<+09>-9">Yakutsk</option>
+                            <option value="<+0630>-6:30">Yangon</option>
+                            <option value="<+05>-5">Yekaterinburg</option>
+                            <option value="<+04>-4">Yerevan</option>
+                        </optgroup>
+                        <optgroup label="Atlantic">
+                            <option value="<-01>1<+00>,M3.5.0/0,M10.5.0/1">Azores</option>
+                            <option value="AST4ADT,M3.2.0,M11.1.0">Bermuda</option>
+                            <option value="WET0WEST,M3.5.0/1,M10.5.0">Canary</option>
+                            <option value="<-01>1">Cape Verde</option>
+                            <option value="WET0WEST,M3.5.0/1,M10.5.0">Faroe</option>
+                            <option value="WET0WEST,M3.5.0/1,M10.5.0">Madeira</option>
+                            <option value="GMT0">Reykjavik</option>
+                            <option value="<-02>2">South Georgia</option>
+                            <option value="<-03>3">Stanley</option>
+                            <option value="GMT0">St. Helena</option>
+                        </optgroup>
+                        <optgroup label="Australia">
+                            <option value="ACST-9:30ACDT,M10.1.0,M4.1.0/3">Adelaide</option>
+                            <option value="AEST-10">Brisbane</option>
+                            <option value="ACST-9:30ACDT,M10.1.0,M4.1.0/3">Broken Hill</option>
+                            <option value="AEST-10AEDT,M10.1.0,M4.1.0/3">Currie</option>
+                            <option value="ACST-9:30">Darwin</option>
+                            <option value="<+0845>-8:45">Eucla</option>
+                            <option value="AEST-10AEDT,M10.1.0,M4.1.0/3">Hobart</option>
+                            <option value="<+1030>-10:30<+11>-11,M10.1.0,M4.1.0">Lord Howe</option>
+                            <option value="AEST-10AEDT,M10.1.0,M4.1.0/3">Melbourne</option>
+                            <option value="AWST-8">Perth</option>
+                            <option value="AEST-10AEDT,M10.1.0,M4.1.0/3">Sydney</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Amsterdam</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Andorra</option>
+                            <option value="<+04>-4">Astrakhan</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Athens</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Belgrade</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Berlin</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Bratislava</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Brussels</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Bucharest</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Budapest</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Busingen</option>
+                            <option value="EET-2EEST,M3.5.0,M10.5.0/3">Chisinau</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Copenhagen</option>
+                            <option value="IST-1GMT0,M10.5.0,M3.5.0/1">Dublin</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Gibraltar</option>
+                            <option value="GMT0BST,M3.5.0/1,M10.5.0">Guernsey</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Helsinki</option>
+                            <option value="GMT0BST,M3.5.0/1,M10.5.0">Isle of Man</option>
+                            <option value="<+03>-3">Istanbul</option>
+                            <option value="GMT0BST,M3.5.0/1,M10.5.0">Jersey</option>
+                            <option value="EET-2">Kaliningrad</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Kiev</option>
+                            <option value="<+03>-3">Kirov</option>
+                            <option value="WET0WEST,M3.5.0/1,M10.5.0">Lisbon</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Ljubljana</option>
+                            <option value="GMT0BST,M3.5.0/1,M10.5.0">London</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Luxembourg</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Madrid</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Malta</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Mariehamn</option>
+                            <option value="<+03>-3">Minsk</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Monaco</option>
+                            <option value="MSK-3">Moscow</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Oslo</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Paris</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Podgorica</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Prague</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Riga</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Rome</option>
+                            <option value="<+04>-4">Samara</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">San Marino</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Sarajevo</option>
+                            <option value="<+04>-4">Saratov</option>
+                            <option value="MSK-3">Simferopol</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Skopje</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Sofia</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Stockholm</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Tallinn</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Tirane</option>
+                            <option value="<+04>-4">Ulyanovsk</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Uzhgorod</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Vaduz</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Vatican</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Vienna</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Vilnius</option>
+                            <option value="<+04>-4">Volgograd</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Warsaw</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Zagreb</option>
+                            <option value="EET-2EEST,M3.5.0/3,M10.5.0/4">Zaporozhye</option>
+                            <option value="CET-1CEST,M3.5.0,M10.5.0/3">Zurich</option>
+                        </optgroup>
+                        <optgroup label="Indian Ocean">
+                            <option value="EAT-3">Antananarivo</option>
+                            <option value="<+06>-6">Chagos</option>
+                            <option value="<+07>-7">Christmas</option>
+                            <option value="<+0630>-6:30">Cocos</option>
+                            <option value="EAT-3">Comoro</option>
+                            <option value="<+05>-5">Kerguelen</option>
+                            <option value="<+04>-4">Mahe</option>
+                            <option value="<+05>-5">Maldives</option>
+                            <option value="<+04>-4">Mauritius</option>
+                            <option value="EAT-3">Mayotte</option>
+                            <option value="<+04>-4">Reunion</option>
+                        </optgroup>
+                        <optgroup label="Pacific">
+                            <option value="<+13>-13<+14>,M9.5.0/3,M4.1.0/4">Apia</option>
+                            <option value="NZST-12NZDT,M9.5.0,M4.1.0/3">Auckland</option>
+                            <option value="<+11>-11">Bougainville</option>
+                            <option value="<+1245>-12:45<+1345>,M9.5.0/2:45,M4.1.0/3:45">Chatham</option>
+                            <option value="<+10>-10">Chuuk</option>
+                            <option value="<-06>6<-05>,M9.1.6/22,M4.1.6/22">Easter</option>
+                            <option value="<+11>-11">Efate</option>
+                            <option value="<+13>-13">Enderbury</option>
+                            <option value="<+13>-13">Fakaofo</option>
+                            <option value="<+12>-12<+13>,M11.2.0,M1.2.3/99">Fiji</option>
+                            <option value="<+12>-12">Funafuti</option>
+                            <option value="<-06>6">Galapagos</option>
+                            <option value="<-09>9">Gambier</option>
+                            <option value="<+11>-11">Guadalcanal</option>
+                            <option value="ChST-10">Guam</option>
+                            <option value="HST10">Honolulu</option>
+                            <option value="<+14>-14">Kiritimati</option>
+                            <option value="<+11>-11">Kosrae</option>
+                            <option value="<+12>-12">Kwajalein</option>
+                            <option value="<+12>-12">Majuro</option>
+                            <option value="<-0930>9:30">Marquesas</option>
+                            <option value="SST11">Midway</option>
+                            <option value="<+12>-12">Nauru</option>
+                            <option value="<-11>11">Niue</option>
+                            <option value="<+11>-11<+12>,M10.1.0,M4.1.0/3">Norfolk</option>
+                            <option value="<+11>-11">Noumea</option>
+                            <option value="SST11">Pago Pago</option>
+                            <option value="<+09>-9">Palau</option>
+                            <option value="<-08>8">Pitcairn</option>
+                            <option value="<+11>-11">Pohnpei</option>
+                            <option value="<+10>-10">Port Moresby</option>
+                            <option value="<-10>10">Rarotonga</option>
+                            <option value="ChST-10">Saipan</option>
+                            <option value="<-10>10">Tahiti</option>
+                            <option value="<+12>-12">Tarawa</option>
+                            <option value="<+13>-13">Tongatapu</option>
+                            <option value="<+12>-12">Wake</option>
+                            <option value="<+12>-12">Wallis</option>
+                        </optgroup>
+                    </select>
+                    <button type="submit">Save Settings</button>
+            </form>
+            <button id="rebootButton" onclick="rebootClock()">Reboot Clock</button>
+        </div>
+    </div>
+    <div class="github">
+        <p>Check out <a href="https://github.com/newell" target="_blank"><strong>newell</strong> on
+                GitHub</a></p>
+    </div>
+    </div>
+</body>

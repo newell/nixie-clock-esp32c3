@@ -1,0 +1,10493 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "ea7e09ed-4723-4a82-8d58-bc5b3e11d84a")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "GND_1"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_1_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "GND_2"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_2_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_2_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Transistor_BJT:MMBTA42"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MMBTA42"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "0.5A Ic, 300V Vce, NPN High Voltage Transistor, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "NPN High Voltage Transistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MMBTA42_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MMBTA42_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 229.87 132.08) (xy 229.87 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "065fc476-0f68-4776-90f3-9b31125f9f17")
+	)
+	(wire
+		(pts
+			(xy 208.28 135.89) (xy 208.28 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "072bfe13-a886-4bad-a2ef-d2320bc8ba15")
+	)
+	(wire
+		(pts
+			(xy 64.77 44.45) (xy 86.36 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a2a663c-5dc0-426a-8966-2a3cf3157c54")
+	)
+	(wire
+		(pts
+			(xy 118.11 80.01) (xy 121.92 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f2f3f02-9c4b-4d07-a759-9f8b3efa49ce")
+	)
+	(wire
+		(pts
+			(xy 53.34 138.43) (xy 57.15 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f365abe-ea46-4d51-b01f-fe69cfceb179")
+	)
+	(wire
+		(pts
+			(xy 99.06 30.48) (xy 102.87 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "107d9fb7-e657-4d6a-9ebe-c6e842e735e0")
+	)
+	(wire
+		(pts
+			(xy 107.95 132.08) (xy 107.95 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1183d5a2-293f-40a3-aef0-fa753f63c57f")
+	)
+	(wire
+		(pts
+			(xy 118.11 128.27) (xy 121.92 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "123d478b-9e78-431c-9806-9ab6913018b0")
+	)
+	(wire
+		(pts
+			(xy 248.92 41.91) (xy 248.92 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13d92266-93a4-4fe5-85e7-19cfb0fd1fa9")
+	)
+	(wire
+		(pts
+			(xy 248.92 158.75) (xy 64.77 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1410545f-8916-4cac-a220-2ff1557f3c8c")
+	)
+	(wire
+		(pts
+			(xy 229.87 107.95) (xy 64.77 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18c906c6-0168-4fb2-a88d-3299fbb25f76")
+	)
+	(wire
+		(pts
+			(xy 240.03 80.01) (xy 243.84 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1963b338-f0fa-4b40-948c-e56472975c7f")
+	)
+	(wire
+		(pts
+			(xy 86.36 44.45) (xy 86.36 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d04394d-341c-4f50-a0bd-7f297c04488b")
+	)
+	(wire
+		(pts
+			(xy 229.87 156.21) (xy 64.77 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ec86240-c465-45f9-9a60-12cf7c222be8")
+	)
+	(wire
+		(pts
+			(xy 53.34 143.51) (xy 57.15 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "239e0e9a-6764-4953-b296-343694614ecb")
+	)
+	(wire
+		(pts
+			(xy 53.34 135.89) (xy 57.15 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "277e9250-d007-4182-9aa2-4e911605cd95")
+	)
+	(wire
+		(pts
+			(xy 53.34 140.97) (xy 57.15 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a88fdcb-8004-4080-b05a-9a76d4540893")
+	)
+	(wire
+		(pts
+			(xy 64.77 41.91) (xy 67.31 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a8e6fe5-a4ce-463d-bf31-a9693674538a")
+	)
+	(wire
+		(pts
+			(xy 53.34 90.17) (xy 57.15 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bb9f9c8-f885-4e42-8012-0a0e69aac6e1")
+	)
+	(wire
+		(pts
+			(xy 220.98 76.2) (xy 224.79 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2efe07ee-69a1-407e-995a-2f525b5abc19")
+	)
+	(wire
+		(pts
+			(xy 53.34 44.45) (xy 57.15 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f42aa33-4931-4383-9b47-b7f14e27cf28")
+	)
+	(wire
+		(pts
+			(xy 53.34 110.49) (xy 57.15 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34a83099-aca4-49b6-be40-32582fb15250")
+	)
+	(wire
+		(pts
+			(xy 167.64 54.61) (xy 64.77 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36e84c2f-90e8-4706-9f59-595d44b2a34e")
+	)
+	(wire
+		(pts
+			(xy 167.64 148.59) (xy 64.77 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a750229-015e-4c5f-9539-2978d81f8b57")
+	)
+	(wire
+		(pts
+			(xy 229.87 38.1) (xy 229.87 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3be763e4-c7a0-4c83-9edf-78994d4c4ec0")
+	)
+	(wire
+		(pts
+			(xy 53.34 92.71) (xy 57.15 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "427dd161-7fa4-44bf-b616-9b66a4bb73c0")
+	)
+	(wire
+		(pts
+			(xy 67.31 87.63) (xy 67.31 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "435f01bc-f540-4732-ad82-10aa656f2083")
+	)
+	(wire
+		(pts
+			(xy 208.28 105.41) (xy 64.77 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4435a601-8842-43d7-8cbd-6268ee4a4a39")
+	)
+	(wire
+		(pts
+			(xy 248.92 110.49) (xy 64.77 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "451f7f49-edea-4529-8186-cbc28dece217")
+	)
+	(wire
+		(pts
+			(xy 53.34 100.33) (xy 57.15 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bcc571b-93a5-4c63-90b6-07a86bc3d028")
+	)
+	(wire
+		(pts
+			(xy 53.34 57.15) (xy 57.15 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d7d3c7b-5746-4b3d-9816-ada88c43ee46")
+	)
+	(wire
+		(pts
+			(xy 107.95 140.97) (xy 64.77 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e5ed59f-a743-4092-8610-d6b43678599b")
+	)
+	(wire
+		(pts
+			(xy 248.92 64.77) (xy 64.77 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55a17fe7-2e95-43e0-a18c-06aa3cca3ccd")
+	)
+	(wire
+		(pts
+			(xy 107.95 83.82) (xy 107.95 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58ecd72c-c565-4b34-87c6-9328c2ec9829")
+	)
+	(wire
+		(pts
+			(xy 167.64 135.89) (xy 167.64 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d338d03-87f2-4d54-af7a-ab39154c1c67")
+	)
+	(wire
+		(pts
+			(xy 127 41.91) (xy 127 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5eb660bb-9a78-4025-b088-d7c3f723395e")
+	)
+	(wire
+		(pts
+			(xy 139.7 30.48) (xy 143.51 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "631f5aff-b114-46f3-8b96-7d2134d7d49d")
+	)
+	(wire
+		(pts
+			(xy 53.34 41.91) (xy 57.15 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66ba241c-43e2-4003-bad1-7946f457e1d7")
+	)
+	(wire
+		(pts
+			(xy 189.23 102.87) (xy 64.77 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67c420a4-d3c4-4ed3-af98-38333e4cf20a")
+	)
+	(wire
+		(pts
+			(xy 148.59 146.05) (xy 64.77 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68d17fd2-9b9c-42f0-8131-3e47de19eb2b")
+	)
+	(wire
+		(pts
+			(xy 53.34 59.69) (xy 57.15 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d608078-efde-4bca-9732-b0a21e6c8ee7")
+	)
+	(wire
+		(pts
+			(xy 189.23 57.15) (xy 64.77 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f92f7f4-6c17-47c2-87d8-ec56d3b1d901")
+	)
+	(wire
+		(pts
+			(xy 118.11 34.29) (xy 121.92 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71c2d53a-9278-4632-bea5-7b013735f2ea")
+	)
+	(wire
+		(pts
+			(xy 86.36 90.17) (xy 86.36 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72322706-427a-49ac-9247-eab8d721a265")
+	)
+	(wire
+		(pts
+			(xy 53.34 158.75) (xy 57.15 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73dcec1a-79e9-45a7-beb4-5a8f977d6412")
+	)
+	(wire
+		(pts
+			(xy 208.28 59.69) (xy 64.77 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "746ebb16-f67d-4685-b3d2-f090760b1a8d")
+	)
+	(wire
+		(pts
+			(xy 180.34 30.48) (xy 184.15 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74bc36c4-7302-41bd-a865-c64fe0eba4ae")
+	)
+	(wire
+		(pts
+			(xy 127 143.51) (xy 64.77 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76d80ed8-d0f4-496e-a399-8359d769337e")
+	)
+	(wire
+		(pts
+			(xy 158.75 34.29) (xy 162.56 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76f4f4d6-276a-4381-8da4-d7bee670b0c0")
+	)
+	(wire
+		(pts
+			(xy 148.59 132.08) (xy 148.59 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a0e44f1-cfb8-430a-a169-1658ca56dd5f")
+	)
+	(wire
+		(pts
+			(xy 208.28 87.63) (xy 208.28 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a4e889f-f322-4fea-8491-7f1e86f12efa")
+	)
+	(wire
+		(pts
+			(xy 107.95 38.1) (xy 107.95 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d216fda-2dd5-44a6-bf3b-e78329462aeb")
+	)
+	(wire
+		(pts
+			(xy 240.03 34.29) (xy 243.84 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "814483fd-ec44-441c-8c82-b10eb27bce31")
+	)
+	(wire
+		(pts
+			(xy 167.64 41.91) (xy 167.64 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84de2c54-7149-484d-8d7d-2c6a6ce8fd78")
+	)
+	(wire
+		(pts
+			(xy 53.34 64.77) (xy 57.15 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8519df0f-ec5a-4cac-a8cc-c54d58a46df6")
+	)
+	(wire
+		(pts
+			(xy 64.77 90.17) (xy 86.36 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85543834-e658-4d9f-b556-ee9fccbe5e7c")
+	)
+	(wire
+		(pts
+			(xy 58.42 30.48) (xy 62.23 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89fd542a-8f3d-4a62-af14-120092f41aa1")
+	)
+	(wire
+		(pts
+			(xy 199.39 128.27) (xy 203.2 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a6eca14-a2a6-4658-87a3-347bbee5f936")
+	)
+	(wire
+		(pts
+			(xy 208.28 41.91) (xy 208.28 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d54ba69-4765-402c-89f9-32a9fb9d7e15")
+	)
+	(wire
+		(pts
+			(xy 199.39 80.01) (xy 203.2 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93c53198-2eb9-406b-8c8f-e10b74146751")
+	)
+	(wire
+		(pts
+			(xy 58.42 124.46) (xy 62.23 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95f67599-7965-46f4-b8bd-f79918be5f6b")
+	)
+	(wire
+		(pts
+			(xy 158.75 128.27) (xy 162.56 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96b80500-5058-47cd-974e-e5248e7291e5")
+	)
+	(wire
+		(pts
+			(xy 148.59 83.82) (xy 148.59 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "972f9dcf-9d5c-4582-99dd-da87af15bfb7")
+	)
+	(wire
+		(pts
+			(xy 53.34 46.99) (xy 57.15 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "973378d2-5307-4568-b0fb-6d19eca5b369")
+	)
+	(wire
+		(pts
+			(xy 64.77 87.63) (xy 67.31 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "981d7299-067f-4002-83cf-641ae8ce7e8b")
+	)
+	(wire
+		(pts
+			(xy 58.42 76.2) (xy 62.23 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b4ceeba-ae55-44b9-9e3e-782dff245c81")
+	)
+	(wire
+		(pts
+			(xy 99.06 124.46) (xy 102.87 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bb1ee31-33b7-43cd-96a3-a31cd5ff9988")
+	)
+	(wire
+		(pts
+			(xy 229.87 83.82) (xy 229.87 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d5c11da-5e01-4c43-91e7-edf32c21307d")
+	)
+	(wire
+		(pts
+			(xy 53.34 156.21) (xy 57.15 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fe8b004-c7c9-494e-93d3-733feb436f36")
+	)
+	(wire
+		(pts
+			(xy 53.34 52.07) (xy 57.15 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0e37950-1642-476b-b891-a4b8ea416fd9")
+	)
+	(wire
+		(pts
+			(xy 99.06 76.2) (xy 102.87 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a26f8b32-318b-4a5d-bbc3-d0259f535812")
+	)
+	(wire
+		(pts
+			(xy 139.7 124.46) (xy 143.51 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2f56e91-8bcc-49e5-8507-fca9acf53fe5")
+	)
+	(wire
+		(pts
+			(xy 107.95 92.71) (xy 64.77 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2f94fb6-3816-415c-9d97-2228ae52924d")
+	)
+	(wire
+		(pts
+			(xy 148.59 52.07) (xy 64.77 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a41e3baf-faa9-4945-a810-e9d62cf51132")
+	)
+	(wire
+		(pts
+			(xy 53.34 148.59) (xy 57.15 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6bf7c0d-2c35-4f99-9015-393e18eab881")
+	)
+	(wire
+		(pts
+			(xy 220.98 30.48) (xy 224.79 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a734ad35-84ad-41dd-a630-1fcc51a06404")
+	)
+	(wire
+		(pts
+			(xy 248.92 87.63) (xy 248.92 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a738606c-15d8-465f-b566-0ff86ee5eb37")
+	)
+	(wire
+		(pts
+			(xy 77.47 128.27) (xy 81.28 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aac1d324-d52f-498e-b57b-93d7163f1614")
+	)
+	(wire
+		(pts
+			(xy 86.36 138.43) (xy 86.36 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab3333a7-dfab-4a8c-a224-1b666b08ca32")
+	)
+	(wire
+		(pts
+			(xy 148.59 97.79) (xy 64.77 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab396184-4a27-41c5-a2ef-159e4b555022")
+	)
+	(wire
+		(pts
+			(xy 53.34 153.67) (xy 57.15 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b384e057-82ed-4745-8249-ef84bc1e781a")
+	)
+	(wire
+		(pts
+			(xy 248.92 135.89) (xy 248.92 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b42616f8-92e9-483f-9e14-c8065785b17f")
+	)
+	(wire
+		(pts
+			(xy 208.28 153.67) (xy 64.77 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5b712c5-a554-4170-9c55-942fa4428ccf")
+	)
+	(wire
+		(pts
+			(xy 127 49.53) (xy 64.77 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b86d48e7-05cb-41f2-9deb-0643a681efcf")
+	)
+	(wire
+		(pts
+			(xy 189.23 83.82) (xy 189.23 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b96a038c-a6f0-4803-9218-cdd996659b26")
+	)
+	(wire
+		(pts
+			(xy 127 135.89) (xy 127 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b98f6fb6-3beb-499d-ae7a-3816331c06da")
+	)
+	(wire
+		(pts
+			(xy 148.59 38.1) (xy 148.59 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bac19a37-6fcc-4f4d-b8b7-89e3097006f8")
+	)
+	(wire
+		(pts
+			(xy 53.34 105.41) (xy 57.15 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcc5b73d-d30e-4974-9ca0-06d7d06a52c1")
+	)
+	(wire
+		(pts
+			(xy 139.7 76.2) (xy 143.51 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c22e9a44-9452-4f1b-9199-e2ec26e289c0")
+	)
+	(wire
+		(pts
+			(xy 53.34 151.13) (xy 57.15 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4a442f4-e59a-43fa-a707-50ca48dca2cd")
+	)
+	(wire
+		(pts
+			(xy 53.34 97.79) (xy 57.15 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5652f41-d95c-4fa7-8199-c08740e74e1a")
+	)
+	(wire
+		(pts
+			(xy 64.77 138.43) (xy 86.36 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7eff74f-7b3b-40c0-a13b-36205a81bde9")
+	)
+	(wire
+		(pts
+			(xy 127 95.25) (xy 64.77 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cadfc7ac-aa6f-47b6-8834-2abf0ce3d590")
+	)
+	(wire
+		(pts
+			(xy 158.75 80.01) (xy 162.56 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb40c3d1-7fbf-4561-92ef-e8230298cb74")
+	)
+	(wire
+		(pts
+			(xy 53.34 54.61) (xy 57.15 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce261596-8ed4-4e12-9ff6-3dfe84832608")
+	)
+	(wire
+		(pts
+			(xy 53.34 107.95) (xy 57.15 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0443e17-9c13-4637-ba09-d0246a2b5be7")
+	)
+	(wire
+		(pts
+			(xy 127 87.63) (xy 127 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0cbd5ab-7b0b-4f63-93cf-a670f106982c")
+	)
+	(wire
+		(pts
+			(xy 229.87 62.23) (xy 64.77 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daf30937-3bd8-4269-8040-8e25c70505b6")
+	)
+	(wire
+		(pts
+			(xy 53.34 49.53) (xy 57.15 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db6a373f-4746-4416-8b31-b08da119855a")
+	)
+	(wire
+		(pts
+			(xy 199.39 34.29) (xy 203.2 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbc089f6-b29a-460a-9920-ae85f7e7c513")
+	)
+	(wire
+		(pts
+			(xy 189.23 38.1) (xy 189.23 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc691c79-98d0-4777-916c-46c0aea937f2")
+	)
+	(wire
+		(pts
+			(xy 189.23 132.08) (xy 189.23 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc6f4e94-1812-451b-aca2-4407985c7eba")
+	)
+	(wire
+		(pts
+			(xy 220.98 124.46) (xy 224.79 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd1fc2f1-ddfa-4f5c-ac8d-fc7d9bc7797c")
+	)
+	(wire
+		(pts
+			(xy 167.64 87.63) (xy 167.64 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd42466e-dd9c-4f2f-bf6d-4973a1be52d5")
+	)
+	(wire
+		(pts
+			(xy 189.23 151.13) (xy 64.77 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd8790a8-5b54-42c6-85c9-d31325b43005")
+	)
+	(wire
+		(pts
+			(xy 67.31 135.89) (xy 67.31 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddf3af23-db28-493e-b800-8c297bb97c4b")
+	)
+	(wire
+		(pts
+			(xy 53.34 62.23) (xy 57.15 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e28b4800-e0ca-4803-93e1-39d05da38266")
+	)
+	(wire
+		(pts
+			(xy 67.31 41.91) (xy 67.31 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e32cc5ea-e4f0-4fc1-b979-d0336efdcb63")
+	)
+	(wire
+		(pts
+			(xy 53.34 146.05) (xy 57.15 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3f34097-5930-41eb-8997-247843d3df7a")
+	)
+	(wire
+		(pts
+			(xy 180.34 124.46) (xy 184.15 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e59e006f-1db2-4036-b827-53f2ac7186a3")
+	)
+	(wire
+		(pts
+			(xy 53.34 95.25) (xy 57.15 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9b63b56-23ab-45b0-a1db-ecc57de1ea6f")
+	)
+	(wire
+		(pts
+			(xy 53.34 87.63) (xy 57.15 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb207a4d-0f7a-4339-8fe5-6da5095dfa7a")
+	)
+	(wire
+		(pts
+			(xy 180.34 76.2) (xy 184.15 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed5aaf74-4b27-46ab-9015-68613cc4d566")
+	)
+	(wire
+		(pts
+			(xy 107.95 46.99) (xy 64.77 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee9f7fc7-715e-421f-bf5b-20028b876485")
+	)
+	(wire
+		(pts
+			(xy 167.64 100.33) (xy 64.77 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efbc395b-25a2-4509-be92-e3a909759190")
+	)
+	(wire
+		(pts
+			(xy 240.03 128.27) (xy 243.84 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4ec71b2-8435-4ba6-8b04-d661469eb2db")
+	)
+	(wire
+		(pts
+			(xy 64.77 135.89) (xy 67.31 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7983ee3-0e39-4087-ba46-ea7491fd5492")
+	)
+	(wire
+		(pts
+			(xy 53.34 102.87) (xy 57.15 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8b6c37e-dc01-4fc7-8342-a543bdccf2d0")
+	)
+	(wire
+		(pts
+			(xy 77.47 34.29) (xy 81.28 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8bd3f66-c67f-43d1-bc80-6cebe1936dc4")
+	)
+	(wire
+		(pts
+			(xy 77.47 80.01) (xy 81.28 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faddf3d4-e7d7-46bd-9dfa-14a5ee27586a")
+	)
+	(text "Hours (tens)"
+		(exclude_from_sim no)
+		(at 41.91 129.794 0)
+		(effects
+			(font
+				(face "DejaVu Sans")
+				(size 2.54 2.54)
+				(bold yes)
+				(color 0 0 0 1)
+			)
+		)
+		(uuid "18a50e18-79b1-42a7-93bb-26bfd820d4fd")
+	)
+	(text "Hours (ones)"
+		(exclude_from_sim no)
+		(at 41.91 82.042 0)
+		(effects
+			(font
+				(face "DejaVu Sans")
+				(size 2.54 2.54)
+				(bold yes)
+				(color 0 0 0 1)
+			)
+		)
+		(uuid "beea26e3-8c5e-4c44-b2fe-e1f61cfc2729")
+	)
+	(text "Minutes (tens)"
+		(exclude_from_sim no)
+		(at 42.418 36.322 0)
+		(effects
+			(font
+				(face "DejaVu Sans")
+				(size 2.54 2.54)
+				(bold yes)
+				(color 0 0 0 1)
+			)
+		)
+		(uuid "ea3938f4-0b60-48f1-aace-4c69cc161f4e")
+	)
+	(global_label "BH9"
+		(shape bidirectional)
+		(at 53.34 110.49 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0327b91a-10d4-4ac2-92b9-7ac750b233e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH3"
+		(shape bidirectional)
+		(at 53.34 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0c284cd5-8214-4862-b9b2-28c997f4dec6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H0"
+		(shape bidirectional)
+		(at 58.42 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0d7d51f2-57fe-49b3-9bdf-92c23b24b1e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 51.7835 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH0"
+		(shape bidirectional)
+		(at 53.34 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10180ecc-c3ea-4456-b127-7b809010aa2e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM6"
+		(shape bidirectional)
+		(at 180.34 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "119e078e-56c0-4750-8017-4029302b58f4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.1312 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH4"
+		(shape bidirectional)
+		(at 53.34 146.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "15213d80-df51-4d5d-9f07-b40fdaff446e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM2"
+		(shape bidirectional)
+		(at 53.34 46.99 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25c3534a-2c0b-49eb-aa9e-2ffe5ea89575")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM5"
+		(shape bidirectional)
+		(at 53.34 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "265423d8-c0ae-41b4-9c75-fae12dd05d98")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM0"
+		(shape bidirectional)
+		(at 53.34 41.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "293c34ed-77af-47fe-bafc-1342180e5de3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H3"
+		(shape bidirectional)
+		(at 118.11 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2b9eb7d9-ee37-4f94-a4e3-d03dbc752fda")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.4735 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM7"
+		(shape bidirectional)
+		(at 53.34 59.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2ce263c7-7302-416b-9955-a49a59087375")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH8"
+		(shape bidirectional)
+		(at 53.34 156.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2ef2204e-cec6-4181-8f58-7f08bda1be3f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM0"
+		(shape bidirectional)
+		(at 58.42 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3b1f5445-59fb-4d8d-9772-82ae959c713c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.2112 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH1"
+		(shape bidirectional)
+		(at 53.34 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4399a6a0-abff-49a2-aa82-9c4ebb049b41")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH5"
+		(shape bidirectional)
+		(at 158.75 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "45048e4f-3919-4ae5-99f3-d7998aa37a67")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 150.783 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H5"
+		(shape bidirectional)
+		(at 158.75 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "49e811b9-3ad3-4bef-b9f1-6476b051108b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.1135 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM1"
+		(shape bidirectional)
+		(at 77.47 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ef5bf97-7e18-4284-af89-b6811633d8ca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.2612 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H2"
+		(shape bidirectional)
+		(at 99.06 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "51961626-20b4-435b-8182-5a473dffbe87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.4235 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH9"
+		(shape bidirectional)
+		(at 240.03 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "54f9fc68-4873-4682-a942-5e9dcb5ba08e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 232.063 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM9"
+		(shape bidirectional)
+		(at 53.34 64.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "563f88e9-a560-4b38-98a1-f57b6a1e23c1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH3"
+		(shape bidirectional)
+		(at 118.11 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5a8c56fb-484a-4705-ba55-e5dad2f4e459")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.143 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM8"
+		(shape bidirectional)
+		(at 220.98 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "671e2eb8-35d8-4e0a-a2e4-feaa3c2220bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 212.7712 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH5"
+		(shape bidirectional)
+		(at 53.34 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6b4812ad-f2fa-4bf1-9bea-8e8e0719bc5e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH6"
+		(shape bidirectional)
+		(at 53.34 102.87 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6df6fbd2-3c17-4f8f-a86d-d37e96354c54")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM1"
+		(shape bidirectional)
+		(at 53.34 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6fd9edf6-3c34-4a78-b70d-5761c7d0514c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM7"
+		(shape bidirectional)
+		(at 199.39 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7279d7f7-6b3d-4117-a606-c4f7ab4ca3f0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.1812 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH2"
+		(shape bidirectional)
+		(at 99.06 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "767c1cb2-306e-43d1-89f3-e30fcb2f258e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 91.093 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH6"
+		(shape bidirectional)
+		(at 53.34 151.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "76d69fdd-7994-4cff-9aa8-54882a79072f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH7"
+		(shape bidirectional)
+		(at 53.34 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "782f2b81-654f-4c75-b22d-2d1d6a20eefa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH7"
+		(shape bidirectional)
+		(at 199.39 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7869d97c-8db4-4f16-92dc-523af431f96e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.423 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM8"
+		(shape bidirectional)
+		(at 53.34 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7b35b7d4-14c8-4097-830f-d681eae86bf1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH2"
+		(shape bidirectional)
+		(at 53.34 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c045a98-a878-4f95-909c-91f0834dcf99")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H1"
+		(shape bidirectional)
+		(at 77.47 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c6e44cf-9d74-49e6-bf0f-c662b2b152a2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 70.8335 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH9"
+		(shape bidirectional)
+		(at 53.34 158.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7da43db8-467e-4463-a387-c843832340f5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H7"
+		(shape bidirectional)
+		(at 199.39 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "81a2cab2-f148-46b1-8fd9-cf46b19ff74f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 192.7535 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM4"
+		(shape bidirectional)
+		(at 53.34 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "824048aa-4832-4e03-9278-61d9d15923d1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH5"
+		(shape bidirectional)
+		(at 53.34 148.59 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "84c07277-f888-4397-9b8f-9e4fc4176ac2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM3"
+		(shape bidirectional)
+		(at 118.11 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8b4da931-039b-455b-b2f9-ab8a72a62632")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.9012 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH8"
+		(shape bidirectional)
+		(at 53.34 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8c5bdde4-e8c3-49b7-9791-d10c404ddea3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH8"
+		(shape bidirectional)
+		(at 220.98 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "92528442-dcf6-406f-b52d-48b85c72eb93")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.013 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH3"
+		(shape bidirectional)
+		(at 53.34 143.51 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9a0748d1-7bbb-4d02-adb9-2953fd8341a6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM3"
+		(shape bidirectional)
+		(at 53.34 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a3ad6689-5c14-4ec8-aef0-fd90b3c65d8d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H9"
+		(shape bidirectional)
+		(at 240.03 80.01 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a41df2e5-82cd-4c33-bb14-e242cefc7a72")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.3935 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BMM6"
+		(shape bidirectional)
+		(at 53.34 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "aaba1826-c986-4f2b-b3a0-957a67a82015")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.8612 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH4"
+		(shape bidirectional)
+		(at 139.7 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b638e3b9-ead2-4974-87fd-ac003bc181de")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 131.733 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH6"
+		(shape bidirectional)
+		(at 180.34 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bb40f09f-7299-4721-b360-442531bf56bb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.373 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H8"
+		(shape bidirectional)
+		(at 220.98 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ca6e4dc2-b4c5-44ab-84b5-342e7627a7bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.3435 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH0"
+		(shape bidirectional)
+		(at 58.42 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cd15dd76-5add-4ecb-938d-af005df81a72")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.453 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM9"
+		(shape bidirectional)
+		(at 240.03 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d39ec36a-0329-47f9-9c6d-33829e0a5aa8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 231.8212 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM2"
+		(shape bidirectional)
+		(at 99.06 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d9dd1716-460e-4f0a-953f-1b9ddb56a7e8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.8512 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH0"
+		(shape bidirectional)
+		(at 53.34 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e2f9c7bf-8bad-4846-95b3-ae62d5a4a4c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH2"
+		(shape bidirectional)
+		(at 53.34 140.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ea44b415-aeca-4fe0-8d33-91e4718bc613")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BHH1"
+		(shape bidirectional)
+		(at 53.34 138.43 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ed0662a4-a61b-4616-95e4-9a8c85420b26")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.103 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H6"
+		(shape bidirectional)
+		(at 180.34 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eec5eec9-ba10-4977-89ee-75cd3623f9ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.7035 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH7"
+		(shape bidirectional)
+		(at 53.34 105.41 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f029a131-e9e3-4ebb-b234-4245544a7741")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM5"
+		(shape bidirectional)
+		(at 158.75 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f55fdf5a-cc88-4ce4-a4f1-bc77d00923ae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 150.5412 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MM4"
+		(shape bidirectional)
+		(at 139.7 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f5cfd34a-7972-4cde-9923-55c588bdf779")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 131.4912 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BH4"
+		(shape bidirectional)
+		(at 53.34 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f93caae0-093e-4bbc-9932-3c004043f8a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.4335 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HH1"
+		(shape bidirectional)
+		(at 77.47 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fb59836c-88a6-4190-8aff-a04d66f478ce")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 69.503 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H4"
+		(shape bidirectional)
+		(at 139.7 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fc5d53e9-af5d-4ee6-8f09-2d29b622feb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.0635 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 67.31 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02fc3b71-8fe9-4406-a8f0-8a7346249f1c")
+		(property "Reference" "Q?"
+			(at 66.421 70.485 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 71.247 72.771 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 69.215 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 67.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2bb24d0f-e7f8-4cf3-abcc-d001a0e4edbb")
+		)
+		(pin "2"
+			(uuid "c2511c39-037a-4477-9c43-df3cae02f94b")
+		)
+		(pin "3"
+			(uuid "aea8b4ed-2151-4e91-a180-51ac62a9f889")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 91.44 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "086a792a-d69a-4cf1-8aa6-80b740c5b13c")
+		(property "Reference" "#PWR037"
+			(at 97.79 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.25 34.2899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 91.44 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee6b107b-e40d-4270-9bc8-3e3ab7e2b54c")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 90.17 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "08aaa30c-6362-44c3-af4f-dcb7d2097989")
+		(property "Reference" "R?"
+			(at 61.849 84.709 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 87.503 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 91.948 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "639b3976-4e24-42dc-8d2f-b17195107e50")
+		)
+		(pin "2"
+			(uuid "b113a02e-592b-4550-83e3-8ec8834ed3ff")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 194.31 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d8092a8-c4dd-47c1-9901-b9f9923d4855")
+		(property "Reference" "#PWR054"
+			(at 200.66 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 198.12 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 194.31 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a74a59aa-0c2f-4c8f-90ef-d2b2c1eb69e2")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR054")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 64.77 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0da8d1eb-c490-46ef-baf4-36b22cb3c600")
+		(property "Reference" "R?"
+			(at 61.849 59.309 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 62.103 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 66.548 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "307289e6-a5f4-4ede-8310-1556d58d317d")
+		)
+		(pin "2"
+			(uuid "f2029e3a-9832-434b-aa9a-4255c76d0e47")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 132.08 128.27 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f109077-e40a-4820-8869-c3a4b4db330d")
+		(property "Reference" "#PWR045"
+			(at 138.43 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 132.08 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e9710143-11a6-4f2e-8dac-048e3568fe08")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 127 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "108bc031-445f-4368-80da-e93a2d875bac")
+		(property "Reference" "Q?"
+			(at 126.111 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 130.937 76.581 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 128.905 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 127 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa8fa6a0-bb82-4045-8571-b2763796a2f5")
+		)
+		(pin "2"
+			(uuid "5de33b1d-dda7-4c55-9372-3336c959c847")
+		)
+		(pin "3"
+			(uuid "263afd10-9d7e-4074-bccb-d7d5611214ad")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 91.44 128.27 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "10c0bd07-0e93-45c2-b313-f09c7bfcce72")
+		(property "Reference" "#PWR039"
+			(at 97.79 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.25 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 91.44 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce8b779f-d143-4332-8672-bb24464c0f9f")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 57.15 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "182154dc-c84e-48b2-9630-24b179f3e021")
+		(property "Reference" "R?"
+			(at 61.849 51.689 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 54.483 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 58.928 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ba282409-6e67-4679-af3f-c2cf41e10ebb")
+		)
+		(pin "2"
+			(uuid "6c1cbece-8ab8-4275-9daa-5e673ccc966e")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 95.25 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2218ba6d-83fa-4aff-bc3e-b6610e5e53f5")
+		(property "Reference" "R?"
+			(at 61.849 89.789 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 92.583 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 97.028 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6aab20a4-d4c6-4179-9492-4409286a45d9")
+		)
+		(pin "2"
+			(uuid "e9795464-0010-4c72-be7a-00ccc195e5e8")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 194.31 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27f48cc0-6ee4-446e-b7f7-57d48c381a0f")
+		(property "Reference" "#PWR052"
+			(at 200.66 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 198.12 30.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 194.31 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "288d23cd-5f6b-4549-be27-78a561959375")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 132.08 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "372b1bf6-7cef-43b5-ac32-5798a16c6aff")
+		(property "Reference" "#PWR044"
+			(at 138.43 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 80.0099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 132.08 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c061623d-c7b8-45de-9526-65344d5097ac")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 86.36 36.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b189d72-49df-471e-8031-f61261efeac9")
+		(property "Reference" "Q?"
+			(at 85.471 28.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 90.297 30.861 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 88.265 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 86.36 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5837f4d6-09b1-4d4f-8d3b-99b7d23807df")
+		)
+		(pin "2"
+			(uuid "b05df36f-bedb-4666-8a1b-1c67d833c5d5")
+		)
+		(pin "3"
+			(uuid "c300df4f-e9cb-4c9f-b97d-f9067f946bbb")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 156.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d952515-aa90-4c17-b412-a050e338eb8b")
+		(property "Reference" "R?"
+			(at 61.849 150.749 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 153.543 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 157.988 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8a2b53d0-6958-4c8f-b646-1365ac98e9e5")
+		)
+		(pin "2"
+			(uuid "4dcf0024-a109-4b02-8e83-3aa6d7a300ec")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 52.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3e42408c-5bd8-4236-acb7-aa09338e7e88")
+		(property "Reference" "R?"
+			(at 61.849 46.609 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 49.403 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 53.848 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f2d0eb4c-c491-46c8-b924-572c3ddb502e")
+		)
+		(pin "2"
+			(uuid "b9c26e89-cadf-48de-bee8-a4a85a35d9c8")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 189.23 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "41fc6728-3388-4b25-bcf1-a1fb2947585d")
+		(property "Reference" "Q?"
+			(at 188.341 118.745 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 193.167 121.031 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 191.135 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 189.23 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5703df5-ab11-419c-866f-6d0dd690da6c")
+		)
+		(pin "2"
+			(uuid "0fc55e7e-6ee8-4555-8694-2c6fdc60578a")
+		)
+		(pin "3"
+			(uuid "962eb482-a72a-4631-9e55-cc5e0e666f5d")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 189.23 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43da52fc-33ed-4658-b09b-1d7b1ed9db77")
+		(property "Reference" "Q?"
+			(at 188.341 70.485 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 193.167 72.771 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 191.135 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 189.23 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5a2602f2-eea5-4999-9214-f58ebc36a99f")
+		)
+		(pin "2"
+			(uuid "57507a63-ffb5-4676-a894-9a5cad114246")
+		)
+		(pin "3"
+			(uuid "11a1a1d0-01d4-47e1-a184-534f988e403f")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 254 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "486fcb68-d8da-436a-b81d-7d2cb16de687")
+		(property "Reference" "#PWR062"
+			(at 260.35 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 257.81 80.0099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 254 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c78abcfc-16db-49af-ad1e-f3769c55803a")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR062")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "494032fe-bee7-4b66-b16c-bef049bae2d7")
+		(property "Reference" "R?"
+			(at 61.849 82.169 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 84.963 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 89.408 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a54b4657-a17c-42a0-99d3-dfe0bf64f8e0")
+		)
+		(pin "2"
+			(uuid "a7a7ec54-008d-4563-9ac1-b892a9837dd5")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 72.39 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b16dcf5-9dbd-41e1-8176-d8252a98eb82")
+		(property "Reference" "#PWR035"
+			(at 78.74 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 76.1999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 72.39 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e88c17b0-54a0-4c1d-814e-4bf60f91f223")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 172.72 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5046ac6b-a702-4ca7-8b55-9cabbd058f3f")
+		(property "Reference" "#PWR049"
+			(at 179.07 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 176.53 34.2899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 172.72 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e24a63c0-045f-479b-8592-7c2e3fb638b0")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 132.08 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5263fc3c-df7c-4ece-a940-a039255d4a11")
+		(property "Reference" "#PWR043"
+			(at 138.43 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 135.89 34.2899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 132.08 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c7d01085-830d-483d-9374-efe56b11c490")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 229.87 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52ab9a80-ad5e-4a3a-a695-10924ffa8cd4")
+		(property "Reference" "Q?"
+			(at 228.981 118.745 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 233.807 121.031 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 231.775 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 229.87 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 229.87 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "396b7cf8-3699-4087-85d7-4b989937942b")
+		)
+		(pin "2"
+			(uuid "44fb4b42-b422-43ea-bdf7-97a5c074bbec")
+		)
+		(pin "3"
+			(uuid "c560740f-bfc8-49c7-ada5-0bcd85d92665")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 248.92 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "53658d4d-9d7a-4807-ac37-3938043cb696")
+		(property "Reference" "Q?"
+			(at 248.031 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 252.857 76.581 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 250.825 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 248.92 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "da97a5d6-56cb-4ced-9a94-d3cc75885d82")
+		)
+		(pin "2"
+			(uuid "75f991b0-0bb6-4024-a047-6f807d794d2a")
+		)
+		(pin "3"
+			(uuid "92dde336-bbce-4964-8ecd-596870a02e14")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 234.95 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54071782-0e00-42be-8b3d-8ac75591ea65")
+		(property "Reference" "#PWR060"
+			(at 241.3 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 238.76 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 234.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f377e456-b46d-4073-978c-8fc1f5c4f0b4")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_1")
+		(lib_id "power:GND")
+		(at 72.39 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "55cb4e18-d379-4463-afd0-35f5b0c8605d")
+		(property "Reference" "#PWR034"
+			(at 78.74 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 30.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 72.39 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2e65953b-a62c-40dd-8e86-79ca8d2755dd")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 167.64 36.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b0a05de-ee90-4613-9139-49ff27aff511")
+		(property "Reference" "Q?"
+			(at 166.751 28.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 171.577 30.861 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 169.545 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 167.64 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0f70709-9082-4c91-bf7e-d65f0e6e9296")
+		)
+		(pin "2"
+			(uuid "69dd098d-b5b3-4867-bcb6-7181340590d0")
+		)
+		(pin "3"
+			(uuid "f5154e89-9e27-4aa4-a509-7ac0813d0fa5")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 67.31 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5cedb452-fcbe-4da9-93fd-c507325fc303")
+		(property "Reference" "Q?"
+			(at 66.421 24.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 71.247 27.051 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 69.215 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 67.31 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b04fb3ba-7cfe-4fd2-ac77-50a2fecd693a")
+		)
+		(pin "2"
+			(uuid "cf6a4308-82da-4246-b7a2-1f5de263dc4d")
+		)
+		(pin "3"
+			(uuid "12c4e7b7-8be0-4dd6-91ac-bf49b76b5b6e")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 113.03 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5dd5594a-376f-40d8-9689-2cf22a0fd359")
+		(property "Reference" "#PWR042"
+			(at 119.38 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 113.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37d18ee1-498d-43ae-a625-31f289047b21")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 44.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6040207d-6e2d-4348-b45f-db2c5f945f65")
+		(property "Reference" "R?"
+			(at 61.849 38.989 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 41.783 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 46.228 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b359ec32-1773-4bd4-8908-1c1e8bd400a7")
+		)
+		(pin "2"
+			(uuid "26c343c0-3223-4281-8a4b-34ce0e552a6b")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 59.69 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60612527-ff27-46a3-a8ce-c477f56eec7a")
+		(property "Reference" "R?"
+			(at 61.849 54.229 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 57.023 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 61.468 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "55941cff-3b16-49eb-ba45-a27663e7252a")
+		)
+		(pin "2"
+			(uuid "25c3c766-5c03-45fa-a5a7-8313c7bcdfdd")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 49.53 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60697693-8ae3-404f-a86a-2d5928777ca5")
+		(property "Reference" "R?"
+			(at 61.849 44.069 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 46.863 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 51.308 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a479037a-f77b-4aba-9556-eaf66a35918e")
+		)
+		(pin "2"
+			(uuid "92920c0f-d5b0-4355-9be8-8f9d9bda0c6b")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 62.23 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60d13dcb-f9d8-4d6a-b7b2-da5af783c9eb")
+		(property "Reference" "R?"
+			(at 61.849 56.769 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 59.563 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 64.008 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "07ad43b9-ee1d-4f81-9eeb-4b6bb00d98a8")
+		)
+		(pin "2"
+			(uuid "c83aeae4-4e92-40e8-a93e-e7996ee36030")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 248.92 36.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6333980d-f7c5-42cf-828c-d187e6af218a")
+		(property "Reference" "Q?"
+			(at 248.031 28.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 252.857 30.861 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 250.825 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 248.92 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c15516f-1277-4404-9a99-61f024b935f4")
+		)
+		(pin "2"
+			(uuid "182b1fde-bfa5-46ee-8156-efc5e37e6a9b")
+		)
+		(pin "3"
+			(uuid "62335494-caeb-4470-91f2-ac3993af6bad")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 113.03 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6caa131d-3584-4564-9d06-f7746bd85054")
+		(property "Reference" "#PWR041"
+			(at 119.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 76.1999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 113.03 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2a285f70-cac7-437b-9136-f71b8fe85187")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 146.05 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6dc0bea4-c550-40ba-9a21-35adc4c6d64c")
+		(property "Reference" "R?"
+			(at 61.849 140.589 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 143.383 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 147.828 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26ec2e6b-12dc-4a70-9e66-f08f3a912d05")
+		)
+		(pin "2"
+			(uuid "3074415b-2a07-4cef-a042-14e395acb12d")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 234.95 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70469b25-0815-42c7-8c40-d7a0c489aff9")
+		(property "Reference" "#PWR058"
+			(at 241.3 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 238.76 30.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 234.95 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e75b1194-8291-4ce3-926b-74cbcec81a69")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR058")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 153.67 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70ee8144-d4aa-42d6-bf9c-c84b0810f56b")
+		(property "Reference" "#PWR047"
+			(at 160.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 76.1999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d422d695-0f17-4687-8aef-f166cec3cb6e")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 172.72 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "72290bd9-5d7f-4b8c-a4fc-0d0711c5f60c")
+		(property "Reference" "#PWR050"
+			(at 179.07 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 176.53 80.0099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 172.72 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "06b4b263-3232-46da-9ec5-a57d54399178")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 208.28 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7359cf85-2a68-44c7-82b9-62fef80cb0ab")
+		(property "Reference" "Q?"
+			(at 207.391 122.555 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 212.217 124.841 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 210.185 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 208.28 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "48e939a5-0d49-4759-9622-9529327b5807")
+		)
+		(pin "2"
+			(uuid "e918b36f-f2d2-47b4-8fc4-900f2251d851")
+		)
+		(pin "3"
+			(uuid "7ed7366d-9e50-4de0-a0df-5adbeed50bef")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 86.36 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "742cbbe4-d4b7-48c3-8450-62c6bb80d10b")
+		(property "Reference" "Q?"
+			(at 85.471 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 90.297 76.581 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 88.265 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 86.36 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c6f18e3-9b6d-49d7-b820-325cb235e1dc")
+		)
+		(pin "2"
+			(uuid "795fa0d1-9129-4ec1-bd62-b1f100f252d1")
+		)
+		(pin "3"
+			(uuid "515f575e-cd83-4a85-bc9f-2234b4dd5447")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 148.59 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "74abe408-a54f-4858-a598-079b0a18c077")
+		(property "Reference" "Q?"
+			(at 147.701 24.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 152.527 27.051 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 150.495 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 148.59 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "96995383-91f8-4ead-8f1f-4b00b24c28f6")
+		)
+		(pin "2"
+			(uuid "965456fa-5c34-4404-989e-978382e4e2d8")
+		)
+		(pin "3"
+			(uuid "c5ea0849-edaa-4462-8e45-de796933fcc8")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 213.36 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75fd29f9-56f3-4882-9610-9f83b71f5966")
+		(property "Reference" "#PWR056"
+			(at 219.71 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.17 80.0099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a09f5643-b1e7-443d-ac8b-7033f5b223a1")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 140.97 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7696e058-c4e8-4c95-89ef-bc7de9e5aded")
+		(property "Reference" "R?"
+			(at 61.849 135.509 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 138.303 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 142.748 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed162e6f-8602-46c4-9ec8-97b9184ca8d2")
+		)
+		(pin "2"
+			(uuid "92f22c3b-d463-43cd-9f10-465bbac163de")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 148.59 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a87c8ee-f046-44f2-b0ac-7951e32e6241")
+		(property "Reference" "Q?"
+			(at 147.701 118.745 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 152.527 121.031 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 150.495 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 148.59 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "43998c69-f361-4dd1-a153-534e36f5f710")
+		)
+		(pin "2"
+			(uuid "f60be79a-3490-4097-b3a0-8632e980a90c")
+		)
+		(pin "3"
+			(uuid "c1f5d95c-8ff6-4b0f-b609-31c937fa8ec2")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 91.44 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7bf0fbb0-3fea-46af-a66e-d6fdf4782969")
+		(property "Reference" "#PWR038"
+			(at 97.79 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 95.25 80.0099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 91.44 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8ceeb275-61e4-4f63-bd86-3f06f5e5f943")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 213.36 128.27 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "814378a4-0698-4c51-82f7-9196493723a6")
+		(property "Reference" "#PWR057"
+			(at 219.71 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.17 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "575a8598-61be-4455-bd54-f2cdfec69da6")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 100.33 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "83739f4d-9689-4200-aa2e-7ac3aa33b05f")
+		(property "Reference" "R?"
+			(at 61.849 94.869 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 97.663 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 102.108 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0a693d9-7dcc-4910-972b-704bd1beb267")
+		)
+		(pin "2"
+			(uuid "ed2fc2c5-0571-4aca-932e-e9389aa7f654")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 208.28 36.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "84fde8df-157f-4e05-a2b2-d68ea88c7d41")
+		(property "Reference" "Q?"
+			(at 207.391 28.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 212.217 30.861 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 210.185 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 208.28 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "520b4f3f-051c-43b8-a8c1-e908abf6bce5")
+		)
+		(pin "2"
+			(uuid "8375bf76-9574-476f-afbc-2e04e7000e4f")
+		)
+		(pin "3"
+			(uuid "4b086a59-2758-4178-81f2-8a7973bb996c")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 208.28 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "876886a8-6927-47a1-8ac0-f08498a7fd56")
+		(property "Reference" "Q?"
+			(at 207.391 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 212.217 76.581 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 210.185 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 208.28 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 208.28 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be168aa7-1d65-43e8-a667-88519e41d0ef")
+		)
+		(pin "2"
+			(uuid "f003a51b-4c99-4659-aae3-edba12a83588")
+		)
+		(pin "3"
+			(uuid "2e6c79d4-1451-4b66-b9aa-43414cf89ddf")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 167.64 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "89948080-2ad3-452f-a337-761230264e7e")
+		(property "Reference" "Q?"
+			(at 166.751 74.295 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 171.577 76.581 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 169.545 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 167.64 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e58e1252-7fb2-493b-a8cb-7f9abf40f549")
+		)
+		(pin "2"
+			(uuid "c649506f-ebb0-4b25-abe0-1a67084e9819")
+		)
+		(pin "3"
+			(uuid "1e7a8045-a2bc-47a6-8808-0b9538824279")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 113.03 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90599526-1299-4861-b2d8-68608aec46bf")
+		(property "Reference" "#PWR040"
+			(at 119.38 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 30.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 113.03 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9235c888-dff6-4600-89d1-32d75af4d9c8")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 234.95 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94f4ef20-d85c-4739-8f61-57b624dec930")
+		(property "Reference" "#PWR059"
+			(at 241.3 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 238.76 76.1999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 234.95 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 234.95 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95d08cf2-07da-4660-a083-37bdadf1619b")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR059")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 143.51 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9511852e-af3d-4c66-ab24-ee00df37eb8b")
+		(property "Reference" "R?"
+			(at 61.849 138.049 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 140.843 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 145.288 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3896301-7dd4-4ab4-adae-847c2312b67d")
+		)
+		(pin "2"
+			(uuid "044814cd-c6de-4692-a4cc-e469d9346303")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 92.71 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9bd67bd4-c4ac-477b-8e15-dd26465bd954")
+		(property "Reference" "R?"
+			(at 61.849 87.249 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 90.043 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 94.488 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "74ae838c-0126-4fa2-a138-9e9e4da04a42")
+		)
+		(pin "2"
+			(uuid "bc75dece-96c7-4e03-bb27-69dabfdedc6b")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 148.59 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9de50bad-a974-422a-85a2-ad522296026f")
+		(property "Reference" "Q?"
+			(at 147.701 70.485 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 152.527 72.771 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 150.495 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 148.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 148.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d08dc0ea-3439-4953-abc6-70147a924bd1")
+		)
+		(pin "2"
+			(uuid "9c6a8c1d-fea3-4cce-8e6a-af83675094b9")
+		)
+		(pin "3"
+			(uuid "7c1fb704-1ad1-44ca-82db-dec89d1c880e")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 138.43 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a627e0f7-d8d6-43f7-a09a-ca49126175b9")
+		(property "Reference" "R?"
+			(at 61.849 132.969 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 135.763 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 140.208 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "428adef4-a936-421f-b8a4-ad76b006cc9f")
+		)
+		(pin "2"
+			(uuid "fe60a3fc-9255-419f-9d80-ed99f313eb42")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 248.92 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad863678-9862-4216-9056-26efb227229b")
+		(property "Reference" "Q?"
+			(at 248.031 122.555 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 252.857 124.841 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 250.825 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 248.92 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 248.92 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d59a30ad-8cb7-4826-8663-9c7c762cd4c2")
+		)
+		(pin "2"
+			(uuid "553414e9-a72e-48e6-8d0b-015ff6a00401")
+		)
+		(pin "3"
+			(uuid "24a38bb1-e9c9-48d4-afb2-e7b88c7b6b40")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 67.31 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad9f01fe-56d1-45db-878e-80b57e6ed3d3")
+		(property "Reference" "Q?"
+			(at 66.421 118.745 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 71.247 121.031 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 69.215 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 67.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b2ef59b-cbd9-4b50-937f-d365f49d0fee")
+		)
+		(pin "2"
+			(uuid "9624c22a-846e-4124-8afa-ccdd7d9b8b04")
+		)
+		(pin "3"
+			(uuid "75d70f92-598d-4b22-9e08-494a5c5f3099")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 127 36.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae08211c-ca19-4077-a0bc-022adfe9f53b")
+		(property "Reference" "Q?"
+			(at 126.111 28.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 130.937 30.861 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 128.905 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 127 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb72485d-516b-43e9-bfe6-c14555410d34")
+		)
+		(pin "2"
+			(uuid "585715d7-4768-4e54-b876-94373bbf6fd3")
+		)
+		(pin "3"
+			(uuid "59a3b1b3-7d47-4121-9cc9-1bfda0d8e62a")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 110.49 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4ef2085-7e0d-4848-ae77-2a1297475167")
+		(property "Reference" "R?"
+			(at 61.849 105.029 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 107.823 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 112.268 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5aa5199-5a27-4a84-9cd8-fbeae4af8a56")
+		)
+		(pin "2"
+			(uuid "dd12e145-35db-4b56-8771-280e4596e973")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 172.72 128.27 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b563188b-52a6-4fe3-b201-db1a21de023f")
+		(property "Reference" "#PWR051"
+			(at 179.07 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 176.53 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 172.72 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dcf52d83-d093-41a7-baca-8fbd0e391cab")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 107.95 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b5ed066a-9d62-45c2-b6ad-929315e6d2d6")
+		(property "Reference" "R?"
+			(at 61.849 102.489 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 105.283 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 109.728 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a44820c7-7f1f-42da-81fb-c9bbc58c5004")
+		)
+		(pin "2"
+			(uuid "81d03047-7132-43cc-bd34-aaa64b308661")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 107.95 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b745461c-a193-4d9e-bb54-c796b273fa8c")
+		(property "Reference" "Q?"
+			(at 107.061 70.485 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 111.887 72.771 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 109.855 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 107.95 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "016a9733-94ad-458e-8db8-361d6a87150f")
+		)
+		(pin "2"
+			(uuid "65f84c39-cb0c-43b2-82e1-d4479e8326d0")
+		)
+		(pin "3"
+			(uuid "5255a58c-1300-464f-8b36-c40f0e684e95")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 107.95 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b7770fdb-cd40-4894-8d20-a21ed1596868")
+		(property "Reference" "Q?"
+			(at 107.061 24.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 111.887 27.051 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 109.855 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 107.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cdec2379-6ec3-4a83-ad3b-c47050a22e8f")
+		)
+		(pin "2"
+			(uuid "75f43795-6043-4860-81fb-42765506e2cc")
+		)
+		(pin "3"
+			(uuid "55d22454-eb47-49de-b71f-5893760f03bc")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 107.95 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b8a1c5b0-6802-464d-9257-ec5f1defd6e1")
+		(property "Reference" "Q?"
+			(at 107.061 118.745 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 111.887 121.031 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 109.855 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 107.95 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7ba80e97-f90c-41fa-96fa-358d91cd90f1")
+		)
+		(pin "2"
+			(uuid "54a3945f-b2cc-49d4-a435-2da7a89614b3")
+		)
+		(pin "3"
+			(uuid "30ceee3e-5ac9-4ea0-aa14-48b9617e5c46")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 153.67 30.48 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf12914b-dfde-4e42-a36f-47e7a01e7385")
+		(property "Reference" "#PWR046"
+			(at 160.02 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 30.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "10e07493-56f3-44af-bb06-542187217979")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 254 128.27 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf170c3a-8387-490a-9c56-85b1cf4b0c0a")
+		(property "Reference" "#PWR063"
+			(at 260.35 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 257.81 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 254 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6966f03-05a6-42a9-a5f6-9e1e822903c9")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR063")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 229.87 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c19b877d-f849-4570-ad9a-2473f869b2a0")
+		(property "Reference" "Q?"
+			(at 228.981 70.485 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 233.807 72.771 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 231.775 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 229.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 229.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9799f610-2530-4247-9e79-03a2ee4bf5d8")
+		)
+		(pin "2"
+			(uuid "5a2f99fa-f3c2-4c19-a4eb-307b28674e0b")
+		)
+		(pin "3"
+			(uuid "bfdb9d30-db15-46de-bb6c-aff2463f8412")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 153.67 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c1bfc081-97ee-42ae-ada3-70f4db1f74b7")
+		(property "Reference" "R?"
+			(at 61.849 148.209 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 151.003 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 155.448 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "081e7d43-224e-4ef2-bed4-a127083510fe")
+		)
+		(pin "2"
+			(uuid "58cfc6ca-5932-414f-9717-7e8f1f7d3f74")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 153.67 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c34287c9-5960-4cea-8e03-28af5cbcf2b6")
+		(property "Reference" "#PWR048"
+			(at 160.02 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f99866b-b8c3-470f-af44-d1f70a0810ab")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 46.99 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c998c4f5-bf50-413b-8aee-80adf1f7146a")
+		(property "Reference" "R?"
+			(at 61.849 41.529 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 44.323 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 48.768 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "24ffc2e2-7f77-4416-b6f0-54f8c6171ff1")
+		)
+		(pin "2"
+			(uuid "50118671-fb70-44a6-9437-5c82707b672b")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 102.87 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cc895b66-4f79-4bd9-99c5-3750a4bde506")
+		(property "Reference" "R?"
+			(at 61.849 97.409 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 100.203 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 104.648 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3cf76e08-2a2a-4e0c-98e8-b88db05a193a")
+		)
+		(pin "2"
+			(uuid "8112f665-58c3-43b6-8f9b-faaaf1eef7aa")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 254 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ccccb040-a0ae-4720-8d59-493a22df2c59")
+		(property "Reference" "#PWR061"
+			(at 260.35 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 257.81 34.2899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 254 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 254 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ac51e0bb-d23b-44ac-ad63-f474b973f1d1")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR061")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 151.13 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ccf832a4-af7e-45d2-8b1f-63d34a152a6a")
+		(property "Reference" "R?"
+			(at 61.849 145.669 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 148.463 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 152.908 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "00df9c8d-a483-4cb0-9f17-fc2825bd0552")
+		)
+		(pin "2"
+			(uuid "b2bbe0bf-ee13-4872-a288-7720711b9f06")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 54.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "da4297ea-d02b-4530-a91b-e88ad8c68f76")
+		(property "Reference" "R?"
+			(at 61.849 49.149 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 51.943 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 56.388 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4b8ee2c3-5224-4a1d-95d1-cf8a6ebca55c")
+		)
+		(pin "2"
+			(uuid "45c78df5-643b-4ef5-92ef-5c1d16eefb99")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 41.91 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcc615ef-a507-4211-995f-bfc829b92657")
+		(property "Reference" "R?"
+			(at 61.849 36.449 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 39.243 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 43.688 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "401cea20-5e1f-40b6-aa9e-f9899a1b32c2")
+		)
+		(pin "2"
+			(uuid "7b41badf-8b73-464c-ba11-334e7310265b")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 158.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e568bd0f-f2b2-41c3-89f1-0913797ac628")
+		(property "Reference" "R?"
+			(at 61.849 153.289 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 156.083 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 160.528 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be7a0214-81de-40df-861e-aa35d3d88102")
+		)
+		(pin "2"
+			(uuid "f76342d9-a1b3-415a-a506-de4fda004641")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 135.89 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e717d45f-da5a-44e0-8a16-e4b52d069550")
+		(property "Reference" "R?"
+			(at 61.849 130.429 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 133.223 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 137.668 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f7295ab-6474-4765-a5d1-10eb97ea6825")
+		)
+		(pin "2"
+			(uuid "598c1cbe-1855-4cc3-8499-b477787989c4")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 86.36 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e7cada77-843f-49c0-80a6-2359129aa816")
+		(property "Reference" "Q?"
+			(at 85.471 122.555 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 90.297 124.841 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 88.265 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 86.36 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3dabcc10-6484-4f77-abca-f528f07eb70b")
+		)
+		(pin "2"
+			(uuid "447c2146-b1d0-4a2b-8094-6da0dd06fcac")
+		)
+		(pin "3"
+			(uuid "4f22aa6f-03b4-4fc4-a22c-b4065faab8a2")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 167.64 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e83f8b0b-3ebd-484c-a36c-b57408588ac2")
+		(property "Reference" "Q?"
+			(at 166.751 122.555 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 171.577 124.841 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 169.545 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 167.64 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0be3e4c1-42a0-4dca-b8f3-ee0be3880fb6")
+		)
+		(pin "2"
+			(uuid "b02f2bf3-b934-4768-ad10-72f07ea60d93")
+		)
+		(pin "3"
+			(uuid "6fafb12b-2ec7-4d72-b037-d36490216981")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 213.36 34.29 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e8abc6ce-72e9-4fbf-a430-482e7f384e45")
+		(property "Reference" "#PWR055"
+			(at 219.71 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.17 34.2899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 213.36 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "449c96a3-dd37-4cf8-a3ed-22f2bc3a1360")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 229.87 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9140aed-ca35-4ea7-a1d3-95e8c05a410f")
+		(property "Reference" "Q?"
+			(at 228.981 24.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 233.807 27.051 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 231.775 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 229.87 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 229.87 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21871725-96c4-4b8d-b7a6-04930129ab44")
+		)
+		(pin "2"
+			(uuid "7b96c8a8-a067-44e0-9288-a180bd1700f7")
+		)
+		(pin "3"
+			(uuid "32ff0d58-0aed-4864-b2ea-bcda87d3912a")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 105.41 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9f3b3dc-dbe6-4356-b8d4-4d2434212b10")
+		(property "Reference" "R?"
+			(at 61.849 99.949 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 102.743 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 107.188 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b5c1bd91-275b-499e-9e41-73a884aa68e4")
+		)
+		(pin "2"
+			(uuid "8bbc76b5-de04-4c81-85bd-8930e6e18839")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 189.23 33.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eadf44b6-aeaf-48b7-aea5-d7d76b61fafd")
+		(property "Reference" "Q?"
+			(at 188.341 24.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 193.167 27.051 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 191.135 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 189.23 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d6636a1-9961-47a9-8ba8-57c8ee78bb95")
+		)
+		(pin "2"
+			(uuid "55093d3f-7ed9-4c2f-9efd-f5b8115e420b")
+		)
+		(pin "3"
+			(uuid "3ec874bb-19ac-4078-9db3-39c6d2914fcc")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 97.79 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f119b40c-58db-401e-b5fe-e3825794a887")
+		(property "Reference" "R?"
+			(at 61.849 92.329 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 95.123 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 99.568 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dd8ba059-07e8-4b89-8a35-d60721ba18c8")
+		)
+		(pin "2"
+			(uuid "7b9dd15b-94ce-4310-a51e-913321af38e4")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_BJT:MMBTA42")
+		(at 127 130.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f11bc802-64f7-455f-b9fd-2216ee780f59")
+		(property "Reference" "Q?"
+			(at 126.111 122.555 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMBTA42"
+			(at 130.937 124.841 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 128.905 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/MMBTA42LT1-D.PDF"
+			(at 127 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea6a2519-cf9d-4540-9c90-8607689da11c")
+		)
+		(pin "2"
+			(uuid "74099533-9b8e-44c5-b1bf-e510b18f7400")
+		)
+		(pin "3"
+			(uuid "180cdcf6-d4cf-4a90-ab09-aa82d2a8a2d7")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "Q12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f2b0d44d-94aa-4507-8add-466bf1217ee6")
+		(property "Reference" "R?"
+			(at 61.849 143.129 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "10k"
+			(at 59.309 145.923 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 60.96 150.368 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0805FR-0710KL"
+			(at 60.96 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b2e2ba5d-5d6a-4e87-a638-f082d13883bf")
+		)
+		(pin "2"
+			(uuid "4b126d68-3336-43ef-a95d-221346adda50")
+		)
+		(instances
+			(project "nixie-clock-esp32"
+				(path "/85e88fd4-852e-468a-8c7b-9ce9656fdab0/8bc684a1-ac76-49c4-a095-b601c9401637"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "display"
+				(path "/9306d642-a2d3-4968-9786-453ac52ab7e1/7874904f-a1dd-4e2b-9b85-fbbd4ada27bb"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 194.31 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa9a51cc-5c19-4465-8923-469e51c81ca9")
+		(property "Reference" "#PWR053"
+			(at 200.66 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 198.12 76.1999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 194.31 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f54198c0-760c-4eba-a9f2-3bd51d885ebf")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "GND_2")
+		(lib_id "power:GND")
+		(at 72.39 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc818939-e781-49a5-aa2e-cedea2d0305d")
+		(property "Reference" "#PWR036"
+			(at 78.74 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 124.4599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 72.39 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e2dbe74e-9113-469f-b2f2-d5c130351499")
+		)
+		(instances
+			(project "clock"
+				(path "/a218d264-8715-4bab-8547-5e4510f1d544/43f354d5-de47-4380-b495-b635fffbbb45"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

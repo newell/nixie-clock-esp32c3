@@ -1,0 +1,196 @@
+menu "Example Configuration"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+    config MDNS_HOST_NAME
+        string "mDNS Host Name"
+        default "esp-home"
+        help
+            Specify the domain name used in the mDNS service.
+            Note that webpage also take it as a part of URL where it will send GET/POST requests to.
+
+    config SPIFFS_MOUNT_POINT
+        string "SPIFFS mount point in VFS"
+        default "/spiffs"
+        help
+            Specify the mount point in VFS.
+
+    config ESP_MAXIMUM_RETRY
+        int "Maximum retry"
+        default 5
+        help
+            Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
+
+    choice BLINK_LED
+        prompt "Blink LED type"
+        default BLINK_LED_GPIO if IDF_TARGET_ESP32 || IDF_TARGET_ESP32C2
+        default BLINK_LED_STRIP
+        help
+            Select the LED type. A normal level controlled LED or an addressable LED strip.
+            The default selection is based on the Espressif DevKit boards.
+            You can change the default selection according to your board.
+
+        config BLINK_LED_GPIO
+            bool "GPIO"
+        config BLINK_LED_STRIP
+            bool "LED strip"
+    endchoice
+
+    choice BLINK_LED_STRIP_BACKEND
+        depends on BLINK_LED_STRIP
+        prompt "LED strip backend peripheral"
+        default BLINK_LED_STRIP_BACKEND_RMT if SOC_RMT_SUPPORTED
+        default BLINK_LED_STRIP_BACKEND_SPI
+        help
+            Select the backend peripheral to drive the LED strip.
+
+        config BLINK_LED_STRIP_BACKEND_RMT
+            depends on SOC_RMT_SUPPORTED
+            bool "RMT"
+        config BLINK_LED_STRIP_BACKEND_SPI
+            bool "SPI"
+    endchoice
+
+    config BLINK_GPIO
+        int "Blink GPIO number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 5 if IDF_TARGET_ESP32
+        default 18 if IDF_TARGET_ESP32S2
+        default 48 if IDF_TARGET_ESP32S3
+        default 8
+        help
+            GPIO number (IOxx) to blink on and off the LED.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+    config BLINK_PERIOD
+        int "Blink period in ms"
+        range 10 3600000
+        default 1000
+        help
+            Define the blinking period in milliseconds.
+
+    config SNTP_TIME_SERVER
+        string "SNTP server name"
+        default "pool.ntp.org"
+        help
+            Hostname of the main SNTP server.
+
+    choice SNTP_TIME_SYNC_METHOD
+        prompt "Time synchronization method"
+        default SNTP_TIME_SYNC_METHOD_IMMED
+        help
+            Time synchronization method.
+
+        config SNTP_TIME_SYNC_METHOD_IMMED
+            bool "update time immediately when received"
+        config SNTP_TIME_SYNC_METHOD_SMOOTH
+            bool "update time with smooth method (adjtime)"
+        config SNTP_TIME_SYNC_METHOD_CUSTOM
+            bool "custom implementation"
+    endchoice
+
+    choice PROV_TRANSPORT
+        bool "Provisioning Transport"
+        default PROV_TRANSPORT_SOFTAP if IDF_TARGET_ESP32S2
+        default PROV_TRANSPORT_BLE
+        help
+            Wi-Fi provisioning component offers both, SoftAP and BLE transports. Choose any one.
+
+        config PROV_TRANSPORT_BLE
+            bool "BLE"
+            select BT_ENABLED
+            depends on !IDF_TARGET_ESP32S2
+        config PROV_TRANSPORT_SOFTAP
+            bool "Soft AP"
+            select LWIP_IPV4
+    endchoice
+
+    choice PROV_SECURITY_VERSION
+        bool "Protocomm security version"
+        default PROV_SECURITY_VERSION_2
+        help
+            Wi-Fi provisioning component offers 3 security versions.
+            The example offers a choice between security version 1 and 2.
+
+        config PROV_SECURITY_VERSION_1
+            bool "Security version 1"
+            select ESP_PROTOCOMM_SUPPORT_SECURITY_VERSION_1
+
+        config PROV_SECURITY_VERSION_2
+            bool "Security version 2"
+            select ESP_PROTOCOMM_SUPPORT_SECURITY_VERSION_2
+    endchoice
+
+    choice PROV_MODE
+        bool "Security version 2 mode"
+        depends on PROV_SECURITY_VERSION_2
+        default PROV_SEC2_DEV_MODE
+
+        config PROV_SEC2_DEV_MODE
+            bool "Security version 2 development mode"
+            depends on PROV_SECURITY_VERSION_2
+            help
+                This enables the development mode for
+                security version 2.
+                Please note that this mode is NOT recommended for production purpose.
+
+        config PROV_SEC2_PROD_MODE
+            bool "Security version 2 production mode"
+            depends on PROV_SECURITY_VERSION_2
+            help
+                This enables the production mode for
+                security version 2.
+    endchoice
+
+    config PROV_TRANSPORT
+        int
+        default 1 if PROV_TRANSPORT_BLE
+        default 2 if PROV_TRANSPORT_SOFTAP
+
+    config RESET_PROVISIONED
+        bool
+        default n
+        prompt "Reset provisioned status of the device"
+        help
+            This erases the NVS to reset provisioned status of the device on every reboot.
+            Provisioned status is determined by the Wi-Fi STA configuration, saved on the NVS.
+
+    config RESET_PROV_MGR_ON_FAILURE
+        bool
+        default y
+        prompt "Reset provisioned credentials and state machine after session failure"
+        help
+            Enable reseting provisioned credentials and state machine after session failure.
+            This will restart the provisioning service after retries are exhausted.
+
+    config PROV_MGR_MAX_RETRY_CNT
+        int
+        default 5
+        prompt "Max retries before reseting provisioning state machine"
+        depends on RESET_PROV_MGR_ON_FAILURE
+        help
+            Set the Maximum retry to avoid reconnecting to an inexistent AP or if credentials
+            are misconfigured. Provisioned credentials are erased and internal state machine
+            is reset after this threshold is reached.
+
+    config PROV_SHOW_QR
+        bool "Show provisioning QR code"
+        default y
+        help
+            Show the QR code for provisioning.
+
+    config PROV_USING_BLUEDROID
+        bool
+        depends on (BT_BLUEDROID_ENABLED && (IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32S3))
+        select BT_BLE_42_FEATURES_SUPPORTED
+        default y
+        help
+            This enables BLE 4.2 features for Bluedroid.
+
+    config REPROVISIONING
+        bool "Re-provisioning"
+        help
+            Enable re-provisioning - allow the device to provision for new credentials
+            after previous successful provisioning.
+
+endmenu

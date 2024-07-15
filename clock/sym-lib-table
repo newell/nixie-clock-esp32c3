@@ -1,0 +1,9 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "C4532X7R2E474K230KA")(type "KiCad")(uri "${KIPRJMOD}/libraries/C4532X7R2E474K230KA/C4532X7R2E474K230KA.kicad_sym")(options "")(descr ""))
+  (lib (name "spade_tab")(type "KiCad")(uri "${KIPRJMOD}/libraries/SPADE-TAB/spade_tab.kicad_sym")(options "")(descr ""))
+  (lib (name "mynixies")(type "Legacy")(uri "${KIPRJMOD}/libraries/Nixie-Libs/mynixies.lib")(options "")(descr ""))
+  (lib (name "nixiemisc")(type "Legacy")(uri "${KIPRJMOD}/libraries/Nixie-Libs/nixiemisc.lib")(options "")(descr ""))
+  (lib (name "nixies-us")(type "Legacy")(uri "${KIPRJMOD}/libraries/Nixie-Libs/nixies-us.lib")(options "")(descr ""))
+  (lib (name "1287")(type "KiCad")(uri "${KIPRJMOD}/libraries/1287/1287.kicad_sym")(options "")(descr ""))
+)

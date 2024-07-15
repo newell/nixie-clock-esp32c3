@@ -1,0 +1,8 @@
+dependencies:
+  espressif/led_strip: "^2.4.1"
+  protocol_examples_common:
+    path: ${IDF_PATH}/examples/common_components/protocol_examples_common
+  espressif/mdns: "^1.0.3"
+  espressif/esp_codec_dev: "^1.1.0"
+  chmorgan/esp-audio-player: "1.0.6"
+
