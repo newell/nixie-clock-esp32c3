@@ -1,7 +1,7 @@
 # Nixie Clock ESP32-C3
 
-This project showcases a Nixie Tube Clock built with the ESP32-C3, which I have been developing over the past few months. Below is a photo of the completed clock in its case.
-The clock is powered via USB-C and includes several advanced features: WiFi provisioning through Bluetooth, a web server for adjusting settings (such as time zone, 12-hour or 24-hour format, etc.), automatic sleep mode when no motion is detected, and sound capabilities.
+This project showcases a Nixie Tube Clock built with the ESP32-C3, which I have been developing over the past few months.  The clock is powered via USB-C and is controlled from an ESP32-C3 using the ESP-IDF development framework.  It includes several advanced features: WiFi provisioning through Bluetooth, a web server and client application for adjusting settings (such as time zone, 12-hour or 24-hour format, etc.), automatic sleep mode when no motion is detected, and sound capabilities. 
+
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
 ![clock](https://github.com/user-attachments/assets/ce624f02-e655-42a6-9b03-0ae97f553ffc)
