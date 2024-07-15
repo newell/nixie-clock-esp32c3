@@ -1,3 +1,15 @@
+# ESP-IDF default build directory name
+build
+
+# lock files for examples and components
+dependencies.lock
+
+# managed_components for examples
+managed_components
+
+# sdkconfig.old
+*.old
+
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
 
