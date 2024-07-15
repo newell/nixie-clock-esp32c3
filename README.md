@@ -36,3 +36,10 @@ Added code to have the ESP32-C3 drive some LEDs.  There are LEDs underneath each
 
 https://github.com/user-attachments/assets/37ba964b-dcfa-438d-87e9-e53fea1e2fda
 
+## License
+
+This project is dual-licensed to address both software and hardware components:
+
+- **Software**: The software in this project is licensed under the MIT License. You can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that the original copyright notice and this permission notice are included in all copies or substantial portions of the software. For more details, see the [LICENSE](./LICENSE) file.
+
+- **Hardware**: The hardware schematics and designs in this project are licensed under the CERN Open Hardware License (CERN OHL). You are free to use, modify, and distribute the hardware designs, provided that any modifications are also shared under the same license. For more details, see the [CERN OHL License](./CERN_OHL_LICENSE) file.
