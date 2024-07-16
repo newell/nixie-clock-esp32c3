@@ -4,6 +4,14 @@ This project showcases a Nixie Tube Clock built with the ESP32-C3, which I have 
 
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
+### PCBs
+
+PCBs arrived from JLCPCB:
+
+![clock-pcbs](https://github.com/user-attachments/assets/8e31dfbc-8cd0-4aaf-a7f6-d063d01f86a6)
+
+### Kicad 3D Model
+
 ![clock](https://github.com/user-attachments/assets/ce624f02-e655-42a6-9b03-0ae97f553ffc)
 
 ![clock-back](https://github.com/user-attachments/assets/b2c6a7f0-005e-44f2-92e9-5081ccc9c044)
