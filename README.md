@@ -6,7 +6,7 @@ TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
 ### PCBs
 
-PCBs arrived from JLCPCB:
+Black PCBs arrived from JLCPCB:
 
 ![clock-pcbs](https://github.com/user-attachments/assets/8e31dfbc-8cd0-4aaf-a7f6-d063d01f86a6)
 
