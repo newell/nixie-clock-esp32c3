@@ -1,12 +1,37 @@
-# Nixie Clock ESP32-C3
+# Nixie Clock ESP32-C3 
 
-This project showcases a Nixie Tube Clock built with the ESP32-C3, which I have been developing over the past few months.  The clock is powered via USB-C and is controlled from an ESP32-C3 using the ESP-IDF development framework.  It includes several advanced features: WiFi provisioning through Bluetooth, a web server and client application for adjusting settings (such as time zone, 12-hour or 24-hour format, etc.), automatic sleep mode when no motion is detected, and sound capabilities. 
+This project features a Nixie Tube Clock powered by an ESP32-C3, which I've been developing over the past few months. The clock operates via USB-C and is managed using the ESP-IDF development framework. It boasts several advanced features, including WiFi provisioning through Bluetooth, a web server and client application for adjusting settings (such as time zone and 12-hour or 24-hour format), automatic sleep mode triggered by motion detection, and integrated sound capabilities.
 
 To power the Nixie Tubes I designed a [high voltage flyback converter](https://github.com/newell/hv-flyback-converter). 
 
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
+
+https://github.com/user-attachments/assets/193565ac-7a47-4152-9201-13ead6ab8a85
+
+
+
+## Clock Control Interface
+
+This project contains a web-based interface to control settings for the clock. The interface is served by the ESP32-C3 and can be accessed at [esp-home.local](http://esp-home.local).
+
+### Features
+
+- **Real-Time Control**: Adjust clock settings in real-time using WebSockets.
+- **User-Friendly Interface**: A clean and responsive web interface built with HTML, CSS, and JavaScript.
+- **Customizable Settings**: Change various clock settings like time, timezone, 24 or 12 hour format, display color and brightness, and more.
+  
+[ClockControlInterface.webm](https://github.com/user-attachments/assets/71b5c2da-ff7b-42fa-be0a-e68aa2519f6b)
+
+## Design
+
+This section contains some behind the scenes of the various stages of designing the clock, including prototyping, debugging, and iterative improvements. 
+
 ### Handsoldered PCB Testing and Debugging
+
+- [x] Display current time synced with NTP
+- [x] LEDs
+- [x] Sound
 
 ![DSC00820](https://github.com/user-attachments/assets/b7c6caf7-d2b7-44de-bebc-66ae702bd61a)
 
@@ -25,10 +50,6 @@ Black PCBs arrived from JLCPCB:
 ![clock](https://github.com/user-attachments/assets/ce624f02-e655-42a6-9b03-0ae97f553ffc)
 
 ![clock-back](https://github.com/user-attachments/assets/b2c6a7f0-005e-44f2-92e9-5081ccc9c044)
-
-## Prototype
-
-The videos below demonstrate the prototyping setup I created using available materials in my lab. These are quick recordings from my cellphone, initially not intended for sharing, but they effectively illustrate the steps taken to get the various components of the clock working.
 
 ### Single Tube
 
