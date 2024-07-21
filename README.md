@@ -7,7 +7,8 @@ To power the Nixie Tubes I designed a [high voltage flyback converter](https://g
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
 
-https://github.com/user-attachments/assets/193565ac-7a47-4152-9201-13ead6ab8a85
+
+https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
 
 
 
