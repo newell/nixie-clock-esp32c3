@@ -64,6 +64,6 @@ void app_main(void)
     // }
 
     /* Initialize Sound */
-    motion_init();
+    // motion_init();
 
 }

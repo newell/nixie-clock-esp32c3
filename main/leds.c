@@ -11,7 +11,10 @@ void configure_leds(void)
     /* LED strip initialization with the GPIO and pixels number*/
     led_strip_config_t strip_config = {
         .strip_gpio_num = BLINK_GPIO,
-        .max_leds = 1, // at least one LED on board
+        .max_leds = 6, // six LEDs on board
+        .led_pixel_format = LED_PIXEL_FORMAT_GRB, // Pixel format of your LED strip
+        .led_model = LED_MODEL_WS2812, // LED strip model
+        .flags.invert_out = false, // whether to invert the output signal (useful when your hardware has a level
     };
     led_strip_rmt_config_t rmt_config = {
         .resolution_hz = 10 * 1000 * 1000, // 10MHz
@@ -26,18 +29,15 @@ void configure_leds(void)
 
     read_config_value("r", r_value, sizeof(r_value));
     read_config_value("g", g_value, sizeof(g_value));
-    read_config_value("g", b_value, sizeof(b_value));
+    read_config_value("b", b_value, sizeof(b_value));
 
     // Convert the obtained strings to integers
-    int r = atoi(r_value);
-    int g = atoi(g_value);
-    int b = atoi(b_value);
+    int red = atoi(r_value);
+    int green = atoi(g_value);
+    int blue = atoi(b_value);
 
-
-    /* Set the color (for some reason this needs to be done at
-       least twice to get the true color on the LEDs) */
-    for (int i=0; i < 10; i++) {
-        led_strip_set_pixel(led_strip, 0, r, g, b);
+    for (int i=0; i < 6; i++) {
+        led_strip_set_pixel(led_strip, i, red, green, blue);
         led_strip_refresh(led_strip); // refresh to send the data
     }
 }

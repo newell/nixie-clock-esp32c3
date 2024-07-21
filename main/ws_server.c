@@ -105,9 +105,10 @@ static esp_err_t color_picker_handler(httpd_req_t *req)
         sscanf(green_pos + 6, "%d", &green);
         sscanf(blue_pos + 5, "%d", &blue);
 
-        led_strip_set_pixel(led_strip, 0, red, green, blue);
-        led_strip_refresh(led_strip); // refresh to send the data
-
+        for (int i=0; i < 6; i++) {
+            led_strip_set_pixel(led_strip, i, red, green, blue);
+            led_strip_refresh(led_strip); // refresh to send the data
+        }
     } else {
         ESP_LOGI(TAG, "Invalid URL format");
         /* Set all LEDs off to clear all pixels */
