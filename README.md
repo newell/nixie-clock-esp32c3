@@ -4,6 +4,14 @@ This project showcases a Nixie Tube Clock built with the ESP32-C3, which I have 
 
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
+### Handsoldered PCB Testing and Debugging
+
+![DSC00820](https://github.com/user-attachments/assets/b7c6caf7-d2b7-44de-bebc-66ae702bd61a)
+
+![DSC00824](https://github.com/user-attachments/assets/1beff864-1065-4d9b-b666-368eb919fa4f)
+
+![DSC00825](https://github.com/user-attachments/assets/e6425b82-5ede-4e77-bb7d-64c5438d0f17)
+
 ### PCBs
 
 Black PCBs arrived from JLCPCB:
