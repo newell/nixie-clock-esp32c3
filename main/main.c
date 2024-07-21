@@ -56,14 +56,14 @@ void app_main(void)
     /* Initialize Sound */
     ESP_ERROR_CHECK(audio_play_start());
 
-    audio_handle_info(SOUND_TYPE_GOOD_FOOT);
+    // audio_handle_info(SOUND_TYPE_GOOD_FOOT);
 
-    // for (int i=0; i < 10; i++) {
-    //     audio_handle_info(SOUND_TYPE_GOOD_FOOT);
-    //     vTaskDelay(pdMS_TO_TICKS(10000));
-    // }
+    for (int i=0; i < 10; i++) {
+        audio_handle_info(SOUND_TYPE_GOOD_FOOT);
+        vTaskDelay(pdMS_TO_TICKS(10000));
+    }
 
-    /* Initialize Sound */
+    /* Initialize Motion */
     // motion_init();
 
 }

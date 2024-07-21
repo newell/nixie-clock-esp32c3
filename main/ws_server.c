@@ -79,12 +79,6 @@ static esp_err_t root_get_handler(httpd_req_t *req)
 
     httpd_resp_sendstr_chunk(req, "</html>");
 
-    // /* Get embedded html file */
-    // extern const unsigned char config_start[] asm("_binary_config_html_start");
-    // extern const unsigned char config_end[]   asm("_binary_config_html_end");
-    // const size_t config_size = (config_end - config_start);
-    // httpd_resp_send_chunk(req, (const char *)config_start, config_size);
-
     /* Send empty chunk to signal HTTP response completion */
     httpd_resp_sendstr_chunk(req, NULL);
 

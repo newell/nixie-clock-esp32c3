@@ -52,6 +52,7 @@ static esp_err_t audio_init(const i2s_std_config_t *i2s_config, i2s_chan_handle_
     }
 
     if (tx_channel != NULL) {
+        ESP_LOGI(TAG, "In like Flynn!");
         ESP_ERROR_CHECK(i2s_channel_init_std_mode(*tx_channel, p_i2s_cfg));
         ESP_ERROR_CHECK(i2s_channel_enable(*tx_channel));
     }
