@@ -48,9 +48,9 @@ Black PCBs arrived from JLCPCB:
 
 ### Kicad 3D Model
 
-![clock](https://github.com/user-attachments/assets/ce624f02-e655-42a6-9b03-0ae97f553ffc)
+![clock](https://github.com/user-attachments/assets/745a5776-db51-4f5b-979e-c3a7e6d8c8c4)
 
-![clock-back](https://github.com/user-attachments/assets/b2c6a7f0-005e-44f2-92e9-5081ccc9c044)
+![clock-back](https://github.com/user-attachments/assets/593558b8-ba2a-457c-b399-670f584f445b)
 
 ### Single Tube
 
