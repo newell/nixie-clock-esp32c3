@@ -206,23 +206,31 @@ indicators = [indicator.rotate(Axis.X, 90) for indicator in indicators]
 board = Pos(0, -15, 0) * Compound(children=[*sockets, clock, *tubes, *indicators])
 
 # High Voltage FLyback Converter model
-converter = Pos(0, 14.5, -25) * import_step("converter.step").rotate(Axis.Z, 90)
+converter = Pos(-60, 14.5, -25) * import_step("converter.step").rotate(Axis.Z, 90)
 
-# Risers
-riser_pts = [
+## Risers
+clock_riser_pts = [
+    # Clock
     (inner_width / 2 - 20, -16, -inner_height / 2 + (5 / 16 * IN) / 2),
     (-inner_width / 2 + 20, -16, -inner_height / 2 + (5 / 16 * IN) / 2),
-    (37.34 / 2, 14.5 + 16, -inner_height / 2 + (5 / 16 * IN) / 2),
-    (-37.34 / 2, 14.5 + 16, -inner_height / 2 + (5 / 16 * IN) / 2),
-    (-37.34 / 2, 14.5 - 16, -inner_height / 2 + (5 / 16 * IN) / 2),
-    (37.34 / 2, 14.5 - 16, -inner_height / 2 + (5 / 16 * IN) / 2),
+]
+converter_riser_pts = [
+    # High Voltage Flyback Converter
+    (37.34 / 2 - 60, 14.5 + 16, -inner_height / 2 + (5 / 16 * IN) / 2),
+    (-37.34 / 2 - 60, 14.5 + 16, -inner_height / 2 + (5 / 16 * IN) / 2),
+    (-37.34 / 2 - 60, 14.5 - 16, -inner_height / 2 + (5 / 16 * IN) / 2),
+    (37.34 / 2 - 60, 14.5 - 16, -inner_height / 2 + (5 / 16 * IN) / 2),
 ]
 riser = Box(10, 10, 5 / 16 * IN)
-risers = [Pos(pos) * riser for pos in riser_pts]
-risers = [fillet(riser.edges().filter_by(Axis.Z), radius=2) for riser in risers]
+fillet(riser.edges().filter_by(Axis.Z), radius=2)
+clock_risers = [Pos(pos) * riser for pos in clock_riser_pts]
+clock_risers = [
+    fillet(riser.edges().filter_by(Axis.Z), radius=2) for riser in clock_risers
+]
+# Need M3 holes below for converter risers -- see below
 
 # Front panel
-front_panel = Rectangle(inner_width + -1 / 8 * IN, inner_height - 1 / 8 * IN)
+front_panel = Rectangle(inner_width + -1 / 16 * IN, inner_height - 1 / 16 * IN)
 front_panel = fillet(front_panel.vertices(), radius=inner_radius)
 indicator_circle = Circle(7.5 / 2)
 front_panel -= [
@@ -250,17 +258,82 @@ front_panel -= [
     ]
 ]
 m3_hole = Circle(3.25 / 2)
+m3_clock_width = 182.88
+m3_clock_height = 42.901
 front_panel -= [
     Pos(pos) * m3_hole
     for pos in [
-        (inner_width / 2 - 1 / 4 * IN, inner_height / 2 - 1 / 4 * IN),
-        (-inner_width / 2 + 1 / 4 * IN, inner_height / 2 - 1 / 4 * IN),
-        (-inner_width / 2 + 1 / 4 * IN, -inner_height / 2 + 1 / 4 * IN),
-        (inner_width / 2 - 1 / 4 * IN, -inner_height / 2 + 1 / 4 * IN),
+        # Anchors
+        (inner_width / 2 - 3 / 16 * IN, inner_height / 2 - 3 / 16 * IN),
+        (-inner_width / 2 + 3 / 16 * IN, inner_height / 2 - 3 / 16 * IN),
+        (-inner_width / 2 + 3 / 16 * IN, -inner_height / 2 + 3 / 16 * IN),
+        (inner_width / 2 - 3 / 16 * IN, -inner_height / 2 + 3 / 16 * IN),
+        # Clock
+        (-m3_clock_width / 2, m3_clock_height / 2),
+        (-m3_clock_width / 2, -m3_clock_height / 2),
+        (m3_clock_width / 2, m3_clock_height / 2),
+        (m3_clock_width / 2, -m3_clock_height / 2),
     ]
 ]
 front_panel = Pos(0, -length / 2 + 5, 0) * front_panel.rotate(Axis.X, 90)
 front_panel = extrude(front_panel, 3, dir=(0, 1, 0))
+# front_panel.export_stl("front_panel.stl") # Uncomment to export the front panel
+
+# Rear panel
+rear_panel = Rectangle(inner_width + -1 / 32 * IN, inner_height - 1 / 32 * IN)
+rear_panel = fillet(rear_panel.vertices(), radius=inner_radius)
+rear_panel -= [
+    Pos(pos) * m3_hole
+    for pos in [
+        (inner_width / 2 - 3 / 16 * IN, inner_height / 2 - 3 / 16 * IN),
+        (-inner_width / 2 + 3 / 16 * IN, inner_height / 2 - 3 / 16 * IN),
+        (-inner_width / 2 + 3 / 16 * IN, -inner_height / 2 + 3 / 16 * IN),
+        (inner_width / 2 - 3 / 16 * IN, -inner_height / 2 + 3 / 16 * IN),
+    ]
+]
+rear_panel -= Pos(0, -inner_height / 2 + 10) * Rectangle(14, 6)
+rear_panel = Pos(0, length / 2 - 6, 0) * rear_panel.rotate(Axis.X, 90)
+rear_panel = extrude(rear_panel, 3, dir=(0, 1, 0))
+# rear_panel.export_stl("rear_panel.stl") # Uncomment to export the rear panel
+
+# M3 heat set inserts
+m3_short = import_step("M3_Short.step")  # 3 mm
+m3_standard = import_step("M3_Standard.step")  # 5 mm
+m3_insert_circle = Circle(2.1)
+riser -= extrude((Pos(0, 0, (5 / 16 * IN) / 2) * m3_insert_circle), 6, dir=(0, 0, -1))
+converter_risers = [Pos(pos) * riser for pos in converter_riser_pts]
+converter_risers = [
+    fillet(riser.edges().filter_by(Axis.Z), radius=2) for riser in converter_risers
+]
+m3_insert_circle = m3_insert_circle.rotate(Axis.X, 90)
+rear_panel_insert_pts = [
+    (inner_width / 2 - 3 / 16 * IN, length / 2 - 6, inner_height / 2 - 3 / 16 * IN),
+    (-inner_width / 2 + 3 / 16 * IN, length / 2 - 6, inner_height / 2 - 3 / 16 * IN),
+    (-inner_width / 2 + 3 / 16 * IN, length / 2 - 6, -inner_height / 2 + 3 / 16 * IN),
+    (inner_width / 2 - 3 / 16 * IN, length / 2 - 6, -inner_height / 2 + 3 / 16 * IN),
+]
+enclosure -= [
+    extrude(Pos(pos) * m3_insert_circle, 6, dir=(0, -1, 0))
+    for pos in rear_panel_insert_pts
+]
+front_panel_insert_pts = [
+    (inner_width / 2 - 3 / 16 * IN, -length / 2 + 5, inner_height / 2 - 3 / 16 * IN),
+    (-inner_width / 2 + 3 / 16 * IN, -length / 2 + 5, inner_height / 2 - 3 / 16 * IN),
+    (-inner_width / 2 + 3 / 16 * IN, -length / 2 + 5, -inner_height / 2 + 3 / 16 * IN),
+    (inner_width / 2 - 3 / 16 * IN, -length / 2 + 5, -inner_height / 2 + 3 / 16 * IN),
+]
+enclosure -= [
+    extrude(Pos(pos) * m3_insert_circle, 3, dir=(0, -1, 0))
+    for pos in front_panel_insert_pts
+]
+
+# Power switch cuttout
+kcd11_switch = Pos(
+    inner_width / 2 + wall_thickness + 1.5, inner_length / 2 - 10, -12.5
+) * import_step("KCD11.step").rotate(Axis.Z, 90).rotate(Axis.Y, 90)
+enclosure -= Pos(
+    inner_width / 2 + wall_thickness / 2, inner_length / 2 - 10, -12.5
+) * Box(wall_thickness, 8.5, 14)
 
 # Motion Sensor cuttouts
 motion_pts = [
@@ -271,14 +344,39 @@ motion_sensor = Cylinder(radius=11 / 2, height=wall_thickness).rotate(Axis.Y, 90
 motion_sensor = [Pos(pos) * motion_sensor for pos in motion_pts]
 enclosure -= motion_sensor
 
-# M3 heat set inserts
-# m3_short = import_step("M3_Short.step")
-# m3_standard = import_step("M3_Standard.step")
-
 # Speaker model
-speaker = Pos(-14, -15, inner_height / 2) * import_step("Speaker.STEP").rotate(
+speaker = Pos(-14, -10, inner_height / 2 - 1.5) * import_step("Speaker.STEP").rotate(
     Axis.X, 90
 )
+# Speaker cuttouts
+enclosure -= Pos(0, 5.5, inner_height / 2 + wall_thickness / 2) * Box(
+    28, 31, wall_thickness
+)
+enclosure -= [
+    Pos(pos) * Cylinder(radius=1, height=3)
+    for pos in [
+        (28 / 2 + 4.6, 5.5, inner_height / 2 + 1.5),
+        (-28 / 2 - 4.6, 5.5, inner_height / 2 + 1.5),
+    ]
+]
+enclosure -= Pos(0, 31 / 2 + 5.5, inner_height / 2 + wall_thickness / 2) * Cylinder(
+    radius=3, height=wall_thickness
+)
 
-# show(board, risers, enclosure, converter, front_panel, speaker)
-show(board, risers, enclosure, front_panel, converter)
+
+# Export STL for 3D prints
+enclosure.export_stl("enclosure.stl")
+enclosure.export_stl("front_panel.stl")
+enclosure.export_stl("rear_panel.stl")
+
+show(
+    enclosure,
+    board,
+    converter,
+    clock_risers,
+    converter_risers,
+    rear_panel,
+    front_panel,
+    speaker,
+    kcd11_switch,
+)
