@@ -6,11 +6,17 @@ To power the Nixie Tubes I designed a [high voltage flyback converter](https://g
 
 TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
 
-
-
 https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
 
+## CAD Model of Clock Case
 
+To design the clock case I used [build123d](https://github.com/gumyr/build123d) (you can [read the docs here](https://build123d.readthedocs.io/en/latest/)).  
+
+![build123d1](https://github.com/user-attachments/assets/34beb862-cac3-4001-b182-0c05eaf4e648)
+
+![build123d2](https://github.com/user-attachments/assets/6d905a4e-8f06-46c9-aa65-b445b4101efb)
+
+![build123d3](https://github.com/user-attachments/assets/4a8ca054-bb4b-4820-a1e7-e0d810ef57d7)
 
 ## Clock Control Interface
 
