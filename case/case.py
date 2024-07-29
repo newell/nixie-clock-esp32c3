@@ -275,6 +275,11 @@ front_panel -= [
         (m3_clock_width / 2, -m3_clock_height / 2),
     ]
 ]
+# Export DXF file for front panel
+exporter = ExportDXF(unit=Unit.MM, line_weight=0.5)
+exporter.add_layer("Layer 1")
+exporter.add_shape(front_panel, layer="Layer 1")
+exporter.write("front_panel.dxf")
 front_panel = Pos(0, -length / 2 + 5, 0) * front_panel.rotate(Axis.X, 90)
 front_panel = extrude(front_panel, 3, dir=(0, 1, 0))
 # front_panel.export_stl("front_panel.stl") # Uncomment to export the front panel
@@ -297,8 +302,6 @@ rear_panel = extrude(rear_panel, 3, dir=(0, 1, 0))
 # rear_panel.export_stl("rear_panel.stl") # Uncomment to export the rear panel
 
 # M3 heat set inserts
-m3_short = import_step("M3_Short.step")  # 3 mm
-m3_standard = import_step("M3_Standard.step")  # 5 mm
 m3_insert_circle = Circle(2.1)
 riser -= extrude((Pos(0, 0, (5 / 16 * IN) / 2) * m3_insert_circle), 6, dir=(0, 0, -1))
 converter_risers = [Pos(pos) * riser for pos in converter_riser_pts]
@@ -325,6 +328,18 @@ front_panel_insert_pts = [
 enclosure -= [
     extrude(Pos(pos) * m3_insert_circle, 3, dir=(0, -1, 0))
     for pos in front_panel_insert_pts
+]
+m3_short = import_step("M3_Short.step").rotate(Axis.X, -90)  # 3 mm
+m3_standard = import_step("M3_Standard.step")  # 5 mm
+short_inserts = [
+    (Pos(pos) * m3_short).translate((0, -3, 0)) for pos in front_panel_insert_pts
+]
+standard_inserts = [
+    (Pos(pos) * m3_standard).translate((0, 0, -2)) for pos in converter_riser_pts
+]
+m3_standard = m3_standard.rotate(Axis.X, -90)
+standard_inserts += [
+    (Pos(pos) * m3_standard).translate((0, -5.5, 0)) for pos in rear_panel_insert_pts
 ]
 
 # Power switch cuttout
@@ -363,18 +378,20 @@ enclosure -= Pos(0, 31 / 2 + 5.5, inner_height / 2 + wall_thickness / 2) * Cylin
     radius=3, height=wall_thickness
 )
 
+# Add risers to enclosure
+enclosure = enclosure + clock_risers + converter_risers
 
 # Export STL for 3D prints
 enclosure.export_stl("enclosure.stl")
-enclosure.export_stl("front_panel.stl")
-enclosure.export_stl("rear_panel.stl")
+front_panel.export_stl("front_panel.stl")
+rear_panel.export_stl("rear_panel.stl")
 
 show(
     enclosure,
+    short_inserts,
+    standard_inserts,
     board,
     converter,
-    clock_risers,
-    converter_risers,
     rear_panel,
     front_panel,
     speaker,
