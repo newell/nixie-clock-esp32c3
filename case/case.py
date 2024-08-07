@@ -275,14 +275,13 @@ front_panel -= [
         (m3_clock_width / 2, -m3_clock_height / 2),
     ]
 ]
-# Export DXF file for front panel
-exporter = ExportDXF(unit=Unit.MM, line_weight=0.5)
-exporter.add_layer("Layer 1")
-exporter.add_shape(front_panel, layer="Layer 1")
-exporter.write("front_panel.dxf")
+# Export DXF file for front panel -- uncomment below to export DXF
+# exporter = ExportDXF(unit=Unit.MM, line_weight=0.5)
+# exporter.add_layer("Layer 1")
+# exporter.add_shape(front_panel, layer="Layer 1")
+# exporter.write("front_panel.dxf")
 front_panel = Pos(0, -length / 2 + 5, 0) * front_panel.rotate(Axis.X, 90)
 front_panel = extrude(front_panel, 3, dir=(0, 1, 0))
-# front_panel.export_stl("front_panel.stl") # Uncomment to export the front panel
 
 # Rear panel
 rear_panel = Rectangle(inner_width + -1 / 32 * IN, inner_height - 1 / 32 * IN)
@@ -299,10 +298,9 @@ rear_panel -= [
 rear_panel -= Pos(0, -inner_height / 2 + 10) * Rectangle(14, 6)
 rear_panel = Pos(0, length / 2 - 6, 0) * rear_panel.rotate(Axis.X, 90)
 rear_panel = extrude(rear_panel, 3, dir=(0, 1, 0))
-# rear_panel.export_stl("rear_panel.stl") # Uncomment to export the rear panel
 
 # M3 heat set inserts
-m3_insert_circle = Circle(2.1)
+m3_insert_circle = Circle(2)
 riser -= extrude((Pos(0, 0, (5 / 16 * IN) / 2) * m3_insert_circle), 6, dir=(0, 0, -1))
 converter_risers = [Pos(pos) * riser for pos in converter_riser_pts]
 converter_risers = [
@@ -355,17 +353,17 @@ motion_pts = [
     (-inner_width / 2 - wall_thickness / 2, 0, 0),
     (inner_width / 2 + wall_thickness / 2, 0, 0),
 ]
-motion_sensor = Cylinder(radius=11 / 2, height=wall_thickness).rotate(Axis.Y, 90)
+motion_sensor = Cylinder(radius=5, height=wall_thickness).rotate(Axis.Y, 90)
 motion_sensor = [Pos(pos) * motion_sensor for pos in motion_pts]
 enclosure -= motion_sensor
 
 # Speaker model
-speaker = Pos(-14, -10, inner_height / 2 - 1.5) * import_step("Speaker.STEP").rotate(
-    Axis.X, 90
-)
+speaker = Pos(14, 31 / 2 + 5.5, inner_height / 2 - 1.5) * import_step(
+    "Speaker.STEP"
+).rotate(Axis.X, 90).rotate(Axis.Z, 180)
 # Speaker cuttouts
 enclosure -= Pos(0, 5.5, inner_height / 2 + wall_thickness / 2) * Box(
-    28, 31, wall_thickness
+    28.5, 31.5, wall_thickness
 )
 enclosure -= [
     Pos(pos) * Cylinder(radius=1, height=3)
