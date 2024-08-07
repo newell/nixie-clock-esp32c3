@@ -1,12 +1,40 @@
 # Nixie Clock ESP32-C3 
 
-This project features a Nixie Tube Clock powered by an ESP32-C3, which I've been developing over the past few months. The clock operates via USB-C and is managed using the ESP-IDF development framework. It boasts several advanced features, including WiFi provisioning through Bluetooth, a web server and client application for adjusting settings (such as time zone and 12-hour or 24-hour format), automatic sleep mode triggered by motion detection, and integrated sound capabilities.
+This Open Source project features a Nixie Tube Clock which contains:
 
-To power the Nixie Tubes I designed a [high voltage flyback converter](https://github.com/newell/hv-flyback-converter). 
+- **CAD 3D Model of Case and Components**
+- **Six IN-12A Nixie Tubes and Four Colon Indicators**
+- **ESP32-C3 microcontroller**
+- **Powered via USB-C**
+- **[High Voltage Flyback Converter](https://github.com/newell/hv-flyback-converter)**
+- **WiFi Provisioning via Bluetooth**
+- **Sound**
+- **Motion Sensing for Sleep Mode**
+- **Webserver and Client to Control Settings**:
+  - WiFi Credentials
+  - 12-hour or 24-hour format
+  - NTP server
+  - Colon Indicators (Blinking, Always On, Off)
+  - Color of LEDs
+  - Timezone
 
-TODO -- ADD PHOTO OF COMPLETED CLOCK IN ITS CASE
+![DSC03044](https://github.com/user-attachments/assets/07f993d6-80e4-4be8-91cf-ca07ee2fea44)
+
+![DSC03037](https://github.com/user-attachments/assets/44a4a0a0-5de9-4502-906c-f3cac13a6c4e)
+
+![DSC03038](https://github.com/user-attachments/assets/37b1b0a1-37b4-4d95-b2a9-a45ee8a8bafb)
+
+![DSC03041](https://github.com/user-attachments/assets/7cb6dc60-0e32-4339-a29e-1f2e0bf4dc62)
+
+![DSC03039](https://github.com/user-attachments/assets/f31533b9-1901-465e-a1a9-93a7f5385e33)
+
+![DSC03040](https://github.com/user-attachments/assets/585f6704-fa03-43b6-aafe-2fae70a9242d)
 
 https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
+
+ ### TODO
+- [ ] Motion Sleep Mode
+- [ ] Hourly Slot Machine and LED cycling
 
 ## CAD Model of Clock Case
 
@@ -27,7 +55,7 @@ This project contains a web-based interface to control settings for the clock. T
 - **Real-Time Control**: Adjust clock settings in real-time using WebSockets.
 - **User-Friendly Interface**: A clean and responsive web interface built with HTML, CSS, and JavaScript.
 - **Customizable Settings**: Change various clock settings like time, timezone, 24 or 12 hour format, display color and brightness, and more.
-  
+
 [ClockControlInterface.webm](https://github.com/user-attachments/assets/71b5c2da-ff7b-42fa-be0a-e68aa2519f6b)
 
 ## Design
