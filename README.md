@@ -2,7 +2,7 @@
 
 This Open Source project features a Nixie Tube Clock which contains:
 
-- **CAD 3D Model of Case and Components**
+- **CAD 3D Model of Case and Components using [build123d](https://github.com/gumyr/build123d)**
 - **Six IN-12A Nixie Tubes and Four Colon Indicators**
 - **ESP32-C3 microcontroller**
 - **Powered via USB-C**
