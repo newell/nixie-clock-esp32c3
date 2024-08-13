@@ -40,11 +40,14 @@ void app_main(void)
     /* Sync SNTP */
     sync_sntp();
 
-    /* Intialize Clock */
-    clock_init();
+    /* Power Up Light Sequence */
+    power_up_light_sequence();
 
     /* Configure the LEDs */
     configure_leds();
+
+    /* Intialize Clock */
+    clock_init();
 
     /* Start the server for the first time */
     ESP_ERROR_CHECK(start_webserver());

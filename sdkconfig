@@ -1974,14 +1974,6 @@ CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 # end of Wi-Fi Provisioning Manager
 
 #
-# Audio playback
-#
-CONFIG_AUDIO_PLAYER_ENABLE_MP3=y
-CONFIG_AUDIO_PLAYER_ENABLE_WAV=y
-CONFIG_AUDIO_PLAYER_LOG_LEVEL=0
-# end of Audio playback
-
-#
 # mDNS
 #
 CONFIG_MDNS_MAX_INTERFACES=3
@@ -2009,6 +2001,14 @@ CONFIG_MDNS_PREDEF_NETIF_AP=y
 CONFIG_MDNS_PREDEF_NETIF_ETH=y
 # end of MDNS Predefined interfaces
 # end of mDNS
+
+#
+# Audio playback
+#
+CONFIG_AUDIO_PLAYER_ENABLE_MP3=y
+CONFIG_AUDIO_PLAYER_ENABLE_WAV=y
+CONFIG_AUDIO_PLAYER_LOG_LEVEL=0
+# end of Audio playback
 
 #
 # Audio Codec Device Configuration
