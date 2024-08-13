@@ -11,7 +11,6 @@
 #include "config.h"
 #include "clock.h"
 
-
 static const char *TAG = "clock";
 
 // Global variables for clock time
@@ -23,21 +22,23 @@ uint32_t seconds = 0;
 // Declare a 64-bit unsigned integer and initialize it to 0
 uint64_t num = 0;
 
-// Function to print binary representation of a 64-bit integer
-void print_binary(uint64_t num) {
-    // Iterate from the MSB to the LSB
-    for (int i = 63; i >= 0; i--) {
-        // Extract the bit at position i
-        int bit = (num >> i) & 1;
-        // Print the bit
-        printf("%d", bit);
-        // Print a space every 8 bits for readability
-        if (i % 8 == 0) {
-            printf(" ");
-        }
-    }
-    printf("\n");
-}
+/* Uncomment below to see binary representation of the
+data sent to the shift registers. */
+// // Function to print binary representation of a 64-bit integer
+// void print_binary(uint64_t num) {
+//     // Iterate from the MSB to the LSB
+//     for (int i = 63; i >= 0; i--) {
+//         // Extract the bit at position i
+//         int bit = (num >> i) & 1;
+//         // Print the bit
+//         printf("%d", bit);
+//         // Print a space every 8 bits for readability
+//         if (i % 8 == 0) {
+//             printf(" ");
+//         }
+//     }
+//     printf("\n");
+// }
 
 void shift_out_data(uint64_t data) {
     for (int i = 63; i >= 0; i--) {  // LSB first
@@ -244,8 +245,8 @@ void update_shift_registers(void) {
         }
     }
 
-    // Print updated time
-    ESP_LOGI(TAG, "Time: %02u:%02u:%02u", (unsigned int) hours, (unsigned int) minutes, (unsigned int) seconds);
+    // Uncomment below to print out the time
+    // ESP_LOGI(TAG, "Time: %02u:%02u:%02u", (unsigned int) hours, (unsigned int) minutes, (unsigned int) seconds);
 
     // Reset all the bits to zero
     num = 0;
@@ -272,7 +273,7 @@ void update_shift_registers(void) {
     }
 
     // Print binary
-    print_binary(num);
+    // print_binary(num);
     // Shift out all the data
     shift_out_data(num);
 

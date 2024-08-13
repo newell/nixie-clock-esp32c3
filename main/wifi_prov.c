@@ -10,6 +10,7 @@
 #include <wifi_provisioning/scheme_ble.h>
 #include <protocol_examples_common.h>
 
+#include "config.h"
 #include "wifi_prov.h"
 
 
@@ -68,6 +69,104 @@ static esp_err_t get_sec2_verifier(const char **verifier, uint16_t *verifier_len
     return ESP_OK;
 }
 
+static void get_device_service_name(char *service_name, size_t max)
+{
+    uint8_t eth_mac[6];
+    const char *ssid_prefix = "PROV_";
+    esp_wifi_get_mac(WIFI_IF_STA, eth_mac);
+    snprintf(service_name, max, "%s%02X%02X%02X",
+             ssid_prefix, eth_mac[3], eth_mac[4], eth_mac[5]);
+}
+
+/* Handler for the optional provisioning endpoint registered by the application.
+ * The data format can be chosen by applications. Here, we are using plain ascii text.
+ * Applications can choose to use other formats like protobuf, JSON, XML, etc.
+ */
+esp_err_t custom_prov_data_handler(uint32_t session_id, const uint8_t *inbuf, ssize_t inlen,
+                                          uint8_t **outbuf, ssize_t *outlen, void *priv_data)
+{
+    if (inbuf) {
+        ESP_LOGI(TAG, "Received data: %.*s", inlen, (char *)inbuf);
+    }
+    char response[] = "SUCCESS";
+    *outbuf = (uint8_t *)strdup(response);
+    if (*outbuf == NULL) {
+        ESP_LOGE(TAG, "System out of memory");
+        return ESP_ERR_NO_MEM;
+    }
+    *outlen = strlen(response) + 1; /* +1 for NULL terminating byte */
+
+    return ESP_OK;
+}
+
+static void prov(void) {
+    ESP_LOGI(TAG, "Starting provisioning");
+    /* What is the Device Service Name that we want
+     * This translates to :
+     *     - Wi-Fi SSID when scheme is wifi_prov_scheme_softap
+     *     - device name when scheme is wifi_prov_scheme_ble
+     */
+    char service_name[12];
+    get_device_service_name(service_name, sizeof(service_name));
+    wifi_prov_security_t security = WIFI_PROV_SECURITY_2;
+    /* The username must be the same one, which has been used in the generation of salt and verifier */
+    /* This is the structure for passing security parameters
+     * for the protocomm security 2.
+     * If dynamically allocated, sec2_params pointer and its content
+     * must be valid till WIFI_PROV_END event is triggered.
+     */
+    wifi_prov_security2_params_t sec2_params = {};
+    ESP_ERROR_CHECK(get_sec2_salt(&sec2_params.salt, &sec2_params.salt_len));
+    ESP_ERROR_CHECK(get_sec2_verifier(&sec2_params.verifier, &sec2_params.verifier_len));
+    wifi_prov_security2_params_t *sec_params = &sec2_params;
+    /* What is the service key (could be NULL)
+     * This translates to :
+     *     - Wi-Fi password when scheme is wifi_prov_scheme_softap
+     *          (Minimum expected length: 8, maximum 64 for WPA2-PSK)
+     *     - simply ignored when scheme is wifi_prov_scheme_ble
+     */
+    const char *service_key = NULL;
+    /* This step is only useful when scheme is wifi_prov_scheme_ble. This will
+     * set a custom 128 bit UUID which will be included in the BLE advertisement
+     * and will correspond to the primary GATT service that provides provisioning
+     * endpoints as GATT characteristics. Each GATT characteristic will be
+     * formed using the primary service UUID as base, with different auto assigned
+     * 12th and 13th bytes (assume counting starts from 0th byte). The client side
+     * applications must identify the endpoints by reading the User Characteristic
+     * Description descriptor (0x2901) for each characteristic, which contains the
+     * endpoint name of the characteristic */
+    uint8_t custom_service_uuid[] = {
+        /* LSB <---------------------------------------
+         * ---------------------------------------> MSB */
+        0xb4, 0xdf, 0x5a, 0x1c, 0x3f, 0x6b, 0xf4, 0xbf,
+        0xea, 0x4a, 0x82, 0x03, 0x04, 0x90, 0x1a, 0x02,
+    };
+    /* If your build fails with linker errors at this point, then you may have
+     * forgotten to enable the BT stack or BTDM BLE settings in the SDK (e.g. see
+     * the sdkconfig.defaults in the example project) */
+    wifi_prov_scheme_ble_set_service_uuid(custom_service_uuid);
+    /* An optional endpoint that applications can create if they expect to
+     * get some additional custom data during provisioning workflow.
+     * The endpoint name can be anything of your choice.
+     * This call must be made before starting the provisioning.
+     */
+    wifi_prov_mgr_endpoint_create("custom-data");
+    /* Do not stop and de-init provisioning even after success,
+     * so that we can restart it later. */
+    /* Start provisioning service */
+    ESP_ERROR_CHECK(wifi_prov_mgr_start_provisioning(security, (const void *) sec_params, service_name, service_key));
+    /* The handler for the optional endpoint created above.
+     * This call must be made after starting the provisioning, and only if the endpoint
+     * has already been created above.
+     */
+    wifi_prov_mgr_endpoint_register("custom-data", custom_prov_data_handler, NULL);
+    /* Uncomment the following to wait for the provisioning to finish and then release
+     * the resources of the manager. Since in this case de-initialization is triggered
+     * by the default event loop handler, we don't need to call the following */
+    // wifi_prov_mgr_wait();
+    // wifi_prov_mgr_deinit();
+}
+
 static void wifi_event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
 {
@@ -79,7 +178,10 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
             wifi_retry_num++;
             ESP_LOGI(TAG, "retry to connect to the AP");
         } else {
-            xEventGroupSetBits(wifi_event_group, WIFI_FAIL_BIT);
+            // Fallback to provisioning...
+            prov();
+            // TODO Might want to update the configuration file after getting
+            // new credentials....
         }
         ESP_LOGI(TAG,"connect to the AP fail");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
@@ -176,41 +278,11 @@ static void wifi_init_sta(void)
     ESP_ERROR_CHECK(esp_wifi_start());
 }
 
-static void get_device_service_name(char *service_name, size_t max)
-{
-    uint8_t eth_mac[6];
-    const char *ssid_prefix = "PROV_";
-    esp_wifi_get_mac(WIFI_IF_STA, eth_mac);
-    snprintf(service_name, max, "%s%02X%02X%02X",
-             ssid_prefix, eth_mac[3], eth_mac[4], eth_mac[5]);
-}
-
-/* Handler for the optional provisioning endpoint registered by the application.
- * The data format can be chosen by applications. Here, we are using plain ascii text.
- * Applications can choose to use other formats like protobuf, JSON, XML, etc.
- */
-esp_err_t custom_prov_data_handler(uint32_t session_id, const uint8_t *inbuf, ssize_t inlen,
-                                          uint8_t **outbuf, ssize_t *outlen, void *priv_data)
-{
-    if (inbuf) {
-        ESP_LOGI(TAG, "Received data: %.*s", inlen, (char *)inbuf);
-    }
-    char response[] = "SUCCESS";
-    *outbuf = (uint8_t *)strdup(response);
-    if (*outbuf == NULL) {
-        ESP_LOGE(TAG, "System out of memory");
-        return ESP_ERR_NO_MEM;
-    }
-    *outlen = strlen(response) + 1; /* +1 for NULL terminating byte */
-
-    return ESP_OK;
-}
-
 static void initialise_mdns(void)
 {
     mdns_init();
     mdns_hostname_set(CONFIG_MDNS_HOST_NAME);
-    mdns_instance_name_set("James Brown Nixie Tube Clock Web Server");
+    mdns_instance_name_set("Nixie Tube Clock Web Server");
 
     mdns_txt_item_t serviceTxtData[] = {
         {"board", "esp32c3"},
@@ -255,90 +327,16 @@ void wifi_prov_init(void) {
 
     /* If device is not yet provisioned start provisioning service */
     if (!provisioned) {
-        ESP_LOGI(TAG, "Starting provisioning");
-
-        /* What is the Device Service Name that we want
-         * This translates to :
-         *     - Wi-Fi SSID when scheme is wifi_prov_scheme_softap
-         *     - device name when scheme is wifi_prov_scheme_ble
-         */
-        char service_name[12];
-        get_device_service_name(service_name, sizeof(service_name));
-
-        wifi_prov_security_t security = WIFI_PROV_SECURITY_2;
-        /* The username must be the same one, which has been used in the generation of salt and verifier */
-
-        /* This is the structure for passing security parameters
-         * for the protocomm security 2.
-         * If dynamically allocated, sec2_params pointer and its content
-         * must be valid till WIFI_PROV_END event is triggered.
-         */
-        wifi_prov_security2_params_t sec2_params = {};
-
-        ESP_ERROR_CHECK(get_sec2_salt(&sec2_params.salt, &sec2_params.salt_len));
-        ESP_ERROR_CHECK(get_sec2_verifier(&sec2_params.verifier, &sec2_params.verifier_len));
-
-        wifi_prov_security2_params_t *sec_params = &sec2_params;
-
-        /* What is the service key (could be NULL)
-         * This translates to :
-         *     - Wi-Fi password when scheme is wifi_prov_scheme_softap
-         *          (Minimum expected length: 8, maximum 64 for WPA2-PSK)
-         *     - simply ignored when scheme is wifi_prov_scheme_ble
-         */
-        const char *service_key = NULL;
-
-        /* This step is only useful when scheme is wifi_prov_scheme_ble. This will
-         * set a custom 128 bit UUID which will be included in the BLE advertisement
-         * and will correspond to the primary GATT service that provides provisioning
-         * endpoints as GATT characteristics. Each GATT characteristic will be
-         * formed using the primary service UUID as base, with different auto assigned
-         * 12th and 13th bytes (assume counting starts from 0th byte). The client side
-         * applications must identify the endpoints by reading the User Characteristic
-         * Description descriptor (0x2901) for each characteristic, which contains the
-         * endpoint name of the characteristic */
-        uint8_t custom_service_uuid[] = {
-            /* LSB <---------------------------------------
-             * ---------------------------------------> MSB */
-            0xb4, 0xdf, 0x5a, 0x1c, 0x3f, 0x6b, 0xf4, 0xbf,
-            0xea, 0x4a, 0x82, 0x03, 0x04, 0x90, 0x1a, 0x02,
-        };
-
-        /* If your build fails with linker errors at this point, then you may have
-         * forgotten to enable the BT stack or BTDM BLE settings in the SDK (e.g. see
-         * the sdkconfig.defaults in the example project) */
-        wifi_prov_scheme_ble_set_service_uuid(custom_service_uuid);
-
-        /* An optional endpoint that applications can create if they expect to
-         * get some additional custom data during provisioning workflow.
-         * The endpoint name can be anything of your choice.
-         * This call must be made before starting the provisioning.
-         */
-        wifi_prov_mgr_endpoint_create("custom-data");
-
-        /* Do not stop and de-init provisioning even after success,
-         * so that we can restart it later. */
-
-        /* Start provisioning service */
-        ESP_ERROR_CHECK(wifi_prov_mgr_start_provisioning(security, (const void *) sec_params, service_name, service_key));
-
-        /* The handler for the optional endpoint created above.
-         * This call must be made after starting the provisioning, and only if the endpoint
-         * has already been created above.
-         */
-        wifi_prov_mgr_endpoint_register("custom-data", custom_prov_data_handler, NULL);
-
-        /* Uncomment the following to wait for the provisioning to finish and then release
-         * the resources of the manager. Since in this case de-initialization is triggered
-         * by the default event loop handler, we don't need to call the following */
-        // wifi_prov_mgr_wait();
-        // wifi_prov_mgr_deinit();
+        prov();
     } else {
         ESP_LOGI(TAG, "Already provisioned, starting Wi-Fi STA");
 
         /* We don't need the manager as device is already provisioned,
          * so let's release it's resources */
-        wifi_prov_mgr_deinit();
+        // wifi_prov_mgr_deinit();
+
+        /* Config file */
+        config_init();
 
         /* Start Wi-Fi station */
         wifi_init_sta();

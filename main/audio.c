@@ -52,7 +52,6 @@ static esp_err_t audio_init(const i2s_std_config_t *i2s_config, i2s_chan_handle_
     }
 
     if (tx_channel != NULL) {
-        ESP_LOGI(TAG, "In like Flynn!");
         ESP_ERROR_CHECK(i2s_channel_init_std_mode(*tx_channel, p_i2s_cfg));
         ESP_ERROR_CHECK(i2s_channel_enable(*tx_channel));
     }
@@ -65,75 +64,11 @@ static esp_err_t audio_init(const i2s_std_config_t *i2s_config, i2s_chan_handle_
     i2s_data_if = audio_codec_new_i2s_data(&i2s_cfg);
     NULL_CHECK(i2s_data_if, NULL);
 
-    // if (rx_channel != NULL) {
-    //     ESP_ERROR_CHECK(i2s_channel_init_std_mode(*rx_channel, p_i2s_cfg));
-    //     ESP_ERROR_CHECK(i2s_channel_enable(*rx_channel));
-    // }
-
-    // /* Setup power amplifier pin */
-    // const gpio_config_t io_conf = {
-    //     .intr_type = GPIO_INTR_DISABLE,
-    //     .mode = GPIO_MODE_OUTPUT,
-    //     .pin_bit_mask = BIT64(BSP_POWER_AMP_IO),
-    //     .pull_down_en = GPIO_PULLDOWN_DISABLE,
-    //     .pull_up_en = GPIO_PULLDOWN_DISABLE,
-    // };
-    // ESP_ERROR_CHECK(gpio_config(&io_conf));
-
     return ESP_OK;
 }
 
-// esp_err_t audio_init(const i2s_pdm_tx_config_t *i2s_config, i2s_chan_handle_t *tx_channel)
-// {
-//     if (i2s_tx_chan && i2s_data_if) {
-//         if (tx_channel) {
-//             *tx_channel = i2s_tx_chan;
-//         }
-
-//         /* Audio was initialized before */
-//         return ESP_OK;
-//     }
-
-//     /* Setup I2S peripheral */
-//     i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
-//     chan_cfg.auto_clear = true; // Auto clear the legacy data in the DMA buffer
-//     ERROR_CHECK_RETURN_ERR(i2s_new_channel(&chan_cfg, tx_channel, NULL));
-
-//     /* Setup I2S channels */
-//     const i2s_pdm_tx_config_t pdm_cfg_default = I2S_DUPLEX_MONO_CFG(44100);
-//     const i2s_pdm_tx_config_t *p_i2s_cfg = &pdm_cfg_default;
-//     if (i2s_config != NULL) {
-//         p_i2s_cfg = i2s_config;
-//     }
-
-//     if (tx_channel != NULL) {
-//         ERROR_CHECK_RETURN_ERR(i2s_channel_init_pdm_tx_mode(*tx_channel, p_i2s_cfg));
-//         ERROR_CHECK_RETURN_ERR(i2s_channel_enable(*tx_channel));
-//     }
-
-//     audio_codec_i2s_cfg_t i2s_cfg = {
-//         .port = I2S_NUM_0,
-//         .rx_handle = NULL,
-//         .tx_handle = i2s_tx_chan,
-//     };
-//     i2s_data_if = audio_codec_new_i2s_data(&i2s_cfg);
-//     NULL_CHECK(i2s_data_if, NULL);
-
-//     return ESP_OK;
-// }
-
 esp_codec_dev_handle_t audio_codec_speaker_init(void)
 {
-
-    // ADDED
-    // /* Configure I2S peripheral and Power Amplifier */
-    // i2s_std_config_t std_cfg = {
-    //     .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(44100),
-    //     .slot_cfg = I2S_STD_PHILIP_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO),
-    //     .gpio_cfg = I2S_GPIO_CFG,
-    // };
-
-    //  esp_err_t ret = bsp_audio_init(&std_cfg, &i2s_tx_chan, &i2s_rx_chan);
 
     if (i2s_tx_chan == NULL || i2s_data_if == NULL) {
         /* Configure I2S peripheral and Power Amplifier */
@@ -148,39 +83,6 @@ esp_codec_dev_handle_t audio_codec_speaker_init(void)
     };
     return esp_codec_dev_new(&codec_dev_cfg);
 }
-
-// esp_err_t spiffs_mount(void)
-// {
-//     esp_vfs_spiffs_conf_t conf = {
-//         .base_path = CONFIG_SPIFFS_MOUNT_POINT,
-//         .partition_label = CONFIG_SPIFFS_PARTITION_LABEL,
-//         .max_files = CONFIG_SPIFFS_MAX_FILES,
-// #ifdef CONFIG_SPIFFS_FORMAT_ON_MOUNT_FAIL
-//         .format_if_mount_failed = true,
-// #else
-//         .format_if_mount_failed = false,
-// #endif
-//     };
-
-//     esp_err_t ret_val = esp_vfs_spiffs_register(&conf);
-
-//     ERROR_CHECK_RETURN_ERR(ret_val);
-
-//     size_t total = 0, used = 0;
-//     ret_val = esp_spiffs_info(conf.partition_label, &total, &used);
-//     if (ret_val != ESP_OK) {
-//         ESP_LOGE(TAG, "Failed to get SPIFFS partition information (%s)", esp_err_to_name(ret_val));
-//     } else {
-//         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
-//     }
-
-//     return ret_val;
-// }
-
-// esp_err_t spiffs_unmount(void)
-// {
-//     return esp_vfs_spiffs_unregister(CONFIG_SPIFFS_PARTITION_LABEL);
-// }
 
 esp_err_t app_audio_write(void *audio_buffer, size_t len, size_t *bytes_written, uint32_t timeout_ms)
 {

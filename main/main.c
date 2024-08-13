@@ -4,7 +4,6 @@
 
 #include "wifi_prov.h"
 #include "vfs.h"
-#include "config.h"
 #include "sntp.h"
 #include "clock.h"
 #include "leds.h"
@@ -26,20 +25,17 @@ void app_main(void)
         ESP_ERROR_CHECK(nvs_flash_init());
     }
 
-    /* Initialize TCP/IP */
-    ESP_ERROR_CHECK(esp_netif_init());
-
     /* Initialize the event loop */
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-    /* Initialize Wi-Fi */
-    wifi_prov_init();
-
-    /* Initialize VFF */
+    /* Initialize VFS */
     ESP_ERROR_CHECK(vfs_init());
 
-    /* Config file */
-    config_init();
+    /* Initialize TCP/IP */
+    ESP_ERROR_CHECK(esp_netif_init());
+
+    /* Initialize Wi-Fi */
+    wifi_prov_init();
 
     /* Sync SNTP */
     sync_sntp();
