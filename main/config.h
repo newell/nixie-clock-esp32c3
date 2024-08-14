@@ -6,7 +6,7 @@
 #define CONFIG_FILENAME "/spiffs/config.json"
 
 void config_init(void);
-void write_default_config(const char *ssid, const char *password);
+void write_default_config();
 char* read_json_data();
 void read_config_value(const char *key, char *value, size_t value_size);
 void write_config_value(const char *key, const char *value);

@@ -323,7 +323,6 @@ void clock_init(void) {
     esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
     gpio_set_level(LATCH_PIN, 0);
 
-
     // Create task to update clock time
     xTaskCreate(update_clock_task, "update_clock_task", 4096, NULL, 5, NULL);
 }

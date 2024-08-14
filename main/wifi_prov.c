@@ -179,9 +179,8 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
             ESP_LOGI(TAG, "retry to connect to the AP");
         } else {
             // Fallback to provisioning...
+            ESP_LOGI(TAG, "failing back to provisioning...");
             prov();
-            // TODO Might want to update the configuration file after getting
-            // new credentials....
         }
         ESP_LOGI(TAG,"connect to the AP fail");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
@@ -210,6 +209,9 @@ static void prov_event_handler(void* arg, esp_event_base_t event_base,
                          "\n\tSSID     : %s\n\tPassword : %s",
                          (const char *) wifi_sta_cfg->ssid,
                          (const char *) wifi_sta_cfg->password);
+                // Write new WIFI credentials to the config
+                write_config_value("ssid", (const char *) wifi_sta_cfg->ssid);
+                write_config_value("pass", (const char *) wifi_sta_cfg->password);
                 break;
             }
             case WIFI_PROV_CRED_FAIL: {
@@ -293,6 +295,44 @@ static void initialise_mdns(void)
                                      sizeof(serviceTxtData) / sizeof(serviceTxtData[0])));
 }
 
+/* Check current WIFI configuration with current WIFI config */
+void check_and_update_wifi_config(wifi_config_t *current_config) {
+
+    char ssid[32];
+    char password[64];
+    char prev_ssid[32];
+    char prev_password[64];
+
+    /* Read WIFI configuration */
+    read_config_value("ssid", ssid, sizeof(ssid));
+    read_config_value("pass", password, sizeof(password));
+
+    /* Copy current SSID and password to previous config variables */
+    strncpy(prev_ssid, (char *)current_config->sta.ssid, sizeof(prev_ssid));
+    strncpy(prev_password, (char *)current_config->sta.password, sizeof(prev_password));
+
+    ESP_LOGI(TAG, "Previous SSID: %s", prev_ssid);
+    ESP_LOGI(TAG, "Previous password: %s", prev_password);
+
+    char* data = read_json_data();
+    if (data == NULL) {
+        printf("Error: Failed to read JSON data.\n");
+    } else {
+        printf("JSON data: %s\n", data);
+        free(data);
+    }
+
+    /* Update WIFI configuration */
+    if ((strncmp(ssid, prev_ssid, 32) != 0 || strncmp(password, prev_password, 64) != 0) &&
+        (ssid[0] != '\0' && password[0] != '\0')) {
+        ESP_LOGI(TAG, "SSID or password has changed");
+        strncpy((char *)current_config->sta.ssid, ssid, sizeof(current_config->sta.ssid));
+        strncpy((char *)current_config->sta.password, password, sizeof(current_config->sta.password));
+        /* Set new WIFI config and start WIFI */
+        ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, current_config));
+    }
+}
+
 void wifi_prov_init(void) {
 
     wifi_event_group = xEventGroupCreate();
@@ -335,8 +375,11 @@ void wifi_prov_init(void) {
          * so let's release it's resources */
         // wifi_prov_mgr_deinit();
 
-        /* Config file */
-        config_init();
+        // Check to make sure the current_config has the values from the config file.
+        /* Get current WiFi config */
+        wifi_config_t current_config;
+        esp_wifi_get_config(ESP_IF_WIFI_STA, &current_config);
+        check_and_update_wifi_config(&current_config);
 
         /* Start Wi-Fi station */
         wifi_init_sta();
