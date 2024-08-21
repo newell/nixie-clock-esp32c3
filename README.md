@@ -1,4 +1,4 @@
-# Nixie Clock ESP32-C3 
+# Nixie Clock ESP32-C3 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: CERN-OHL-W](https://img.shields.io/badge/License-CERN_OHL_W-blue.svg)](https://cern-ohl.web.cern.ch/)
 
 This Open Source project features a Nixie Tube Clock which contains:
 
