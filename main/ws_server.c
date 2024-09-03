@@ -119,12 +119,13 @@ static esp_err_t jSON_post_handler(httpd_req_t *req) {
     if (!heap_caps_check_integrity_all(true)) {
         ESP_LOGI(TAG, "INTEGRITY ISSUES!");
     }
+
     /* Receive JSON data from the client and update configuration file. */
-    char buf[1024]; // Adjust the buffer size according to your JSON data size
+    char buf[256]; // Adjust the buffer size according to your JSON data size
     int total_len = req->content_len;
     int remaining_len = total_len;
 
-    char *data = (char *)malloc(total_len);
+    char *data = (char *)malloc(total_len + 1);
     if (!data) {
         httpd_resp_send_500(req);
         return ESP_FAIL;
@@ -141,6 +142,9 @@ static esp_err_t jSON_post_handler(httpd_req_t *req) {
             httpd_resp_send_500(req);
             return ESP_FAIL;
         }
+
+        ESP_LOGI(TAG, "Received chunk of size: %d", ret);
+
         memcpy(data + received, buf, ret);
         remaining_len -= ret;
         received += ret;
@@ -148,9 +152,19 @@ static esp_err_t jSON_post_handler(httpd_req_t *req) {
 
     data[received] = '\0';
 
-    cJSON* json = cJSON_Parse(data);
-    free(data);  // Free data after parsing JSON
+    const char *parse_end = NULL;
+    cJSON* json = cJSON_ParseWithOpts(data, &parse_end, 1);
     if (json == NULL) {
+        ESP_LOGE(TAG, "JSON parsing failed. Error before: [%s]", parse_end);
+        free(data);
+        httpd_resp_send_500(req);
+        return ESP_FAIL;
+    }
+
+    if (parse_end != NULL && *parse_end != '\0') {
+        ESP_LOGE(TAG, "Error: JSON string contains extra data after the valid JSON: [%s]", parse_end);
+        cJSON_Delete(json);
+        free(data);
         httpd_resp_send_500(req);
         return ESP_FAIL;
     }
@@ -158,27 +172,31 @@ static esp_err_t jSON_post_handler(httpd_req_t *req) {
     FILE* f = fopen(CONFIG_FILENAME, "w");
     if (f == NULL) {
         cJSON_Delete(json);
+        free(data);
         httpd_resp_send_500(req);
         return ESP_FAIL;
     }
 
     char* jsonString = cJSON_Print(json);
+    cJSON_Delete(json);
     if (jsonString == NULL) {
-        cJSON_Delete(json);
         fclose(f);
+        free(data);
         httpd_resp_send_500(req);
         return ESP_FAIL;
     }
+
     fwrite(jsonString, 1, strlen(jsonString), f);
     fclose(f);
-    free(jsonString);
 
-    cJSON_Delete(json);
+    free(jsonString);
+    free(data);
 
     httpd_resp_send(req, NULL, 0);
 
     return ESP_OK;
 }
+
 
 static esp_err_t jSON_get_handler(httpd_req_t *req) {
     /* Get JSON config file data. */

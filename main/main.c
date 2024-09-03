@@ -24,8 +24,8 @@ void toggle_led_task(void *pvParameters)
         // Wait for the signal to perform LED operations
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
-        // Perform LED operations
-        power_up_light_sequence();
+        // Party it up!
+        party_lights();
     }
 }
 
@@ -107,9 +107,6 @@ void app_main(void)
     /* Sync SNTP */
     sync_sntp();
 
-    /* Power Up Light Sequence */
-    power_up_light_sequence();
-
     /* Configure the LEDs */
     configure_leds();
 
@@ -121,8 +118,6 @@ void app_main(void)
 
     /* Initialize Sound */
     ESP_ERROR_CHECK(audio_play_start());
-
-    audio_handle_info(SOUND_TYPE_GOOD_FOOT);
 
     /* Initialize Motion */
     // motion_init();
