@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
 
  ### TODO
 - [ ] Motion Sleep Mode
-- [ ] Hourly Slot Machine and LED cycling
+- [x] Hourly Slot Machine and LED cycling
 
 ## CAD Model of Clock Case
 
