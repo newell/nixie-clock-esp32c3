@@ -5,6 +5,7 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <esp_log.h>
+#include <esp_random.h>
 #include <driver/gpio.h>
 
 #include "audio.h"
@@ -13,7 +14,7 @@
 
 static const char *TAG = "clock";
 
-// Global variables for clock time
+SemaphoreHandle_t xMutex;
 bool indicator = false;
 uint32_t hours = 0;
 uint32_t minutes = 0;
@@ -221,6 +222,43 @@ uint64_t set_S(uint64_t num, uint32_t S) {
     }
 }
 
+void update_tubes(uint32_t HH, uint32_t H, uint32_t MM, uint32_t M, uint32_t SS, uint32_t S) {
+
+    uint64_t num = 0;
+
+    // Set tubes
+    num = set_HH(num, HH);
+    num = set_H(num, H);
+    num = set_MM(num, MM);
+    num = set_M(num, M);
+    num = set_SS(num, SS);
+    num = set_S(num, S);
+    // Set indicators
+    if (indicator) {
+        num = toggle_bit(num, 18);
+        num = toggle_bit(num, 19);
+        num = toggle_bit(num, 44);
+        num = toggle_bit(num, 45);
+        indicator = false;
+    } else {
+        num = clear_bit(num, 18);
+        num = clear_bit(num, 19);
+        num = clear_bit(num, 44);
+        num = clear_bit(num, 45);
+        indicator = true;
+    }
+
+    // Print binary -- used for debugging
+    // print_binary(num);
+    // Shift out all the data
+    shift_out_data(num);
+
+    // Latch data to outputs
+    gpio_set_level(LATCH_PIN, 1);
+    esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
+    gpio_set_level(LATCH_PIN, 0);
+}
+
 // Function to update shift registers based on current time
 void update_shift_registers(void) {
     time_t now;
@@ -248,49 +286,35 @@ void update_shift_registers(void) {
     // Uncomment below to print out the time
     // ESP_LOGI(TAG, "Time: %02u:%02u:%02u", (unsigned int) hours, (unsigned int) minutes, (unsigned int) seconds);
 
-    // Reset all the bits to zero
-    num = 0;
-    // Set time
-    num = set_HH(num, (hours / 10));
-    num = set_H(num, (hours % 10));
-    num = set_MM(num, (minutes / 10));
-    num = set_M(num, (minutes % 10));
-    num = set_SS(num, (seconds / 10));
-    num = set_S(num, (seconds % 10));
-    // Set indicators
-    if (indicator) {
-        num = toggle_bit(num, 18);
-        num = toggle_bit(num, 19);
-        num = toggle_bit(num, 44);
-        num = toggle_bit(num, 45);
-        indicator = false;
-    } else {
-        num = clear_bit(num, 18);
-        num = clear_bit(num, 19);
-        num = clear_bit(num, 44);
-        num = clear_bit(num, 45);
-        indicator = true;
+    update_tubes((hours / 10), (hours % 10), (minutes / 10), (minutes % 10), (seconds / 10), (seconds % 10));
+}
+
+void slot_machine_effect(void) {
+
+    for (int i = 0; i < 200; i++) {
+
+        uint32_t HH = esp_random() % 10;
+        uint32_t H = esp_random() % 10;
+        uint32_t MM = esp_random() % 10;
+        uint32_t M = esp_random() % 10;
+        uint32_t SS = esp_random() % 10;
+        uint32_t S = esp_random() % 10;
+        update_tubes(HH, H, MM, M, SS, S);
+        // Delay for 0.2 seconds
+        vTaskDelay(pdMS_TO_TICKS(50));
     }
-
-    // Print binary
-    // print_binary(num);
-    // Shift out all the data
-    shift_out_data(num);
-
-    // Latch data to outputs
-    gpio_set_level(LATCH_PIN, 1);
-    esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
-    gpio_set_level(LATCH_PIN, 0);
 }
 
 // Task function to update clock time
 static void update_clock_task(void *pvParameters) {
     while (1) {
-        // Update shift registers based on current time
-        update_shift_registers();
-
-        // Delay for 1 second
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        if (xSemaphoreTake(xMutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+            // Update shift registers based on current time
+            update_shift_registers();
+            xSemaphoreGive(xMutex);
+            // Delay for 1 second
+            vTaskDelay(pdMS_TO_TICKS(1000));
+        }
     }
 }
 
