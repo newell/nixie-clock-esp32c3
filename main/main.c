@@ -3,6 +3,7 @@
 #include <esp_log.h>
 #include <esp_netif.h>
 #include <esp_random.h>
+#include <driver/gpio.h>
 
 #include "wifi_prov.h"
 #include "vfs.h"
@@ -14,8 +15,10 @@
 #include "audio.h"
 #include "motion.h"
 
-static const char *TAG = "main";
 
+#define HVEN GPIO_NUM_7
+
+static const char *TAG = "main";
 
 TaskHandle_t toggle_led_task_handle;
 TaskHandle_t play_audio_task_handle;
@@ -94,6 +97,19 @@ void hourly_task(void *pvParameters) {
     }
 }
 
+void enable_hv(void) {
+    gpio_config_t io_conf;
+    io_conf.intr_type = GPIO_INTR_DISABLE;  // Disable interrupts for the GPIO
+    io_conf.mode = GPIO_MODE_OUTPUT;        // Set GPIO mode as output
+    io_conf.pin_bit_mask = (1ULL << HVEN);  // Replace XX with your GPIO number
+    io_conf.pull_down_en = 0;               // Disable pull-down
+    io_conf.pull_up_en = 0;                 // Disable pull-up
+    gpio_config(&io_conf);                  // Configure the GPIO
+
+    // Turn on the HV
+    gpio_set_level(HVEN, 1);
+}
+
 void app_main(void) {
 
     // Clock Mutex
@@ -137,6 +153,9 @@ void app_main(void) {
 
     /* Intialize Clock */
     clock_init();
+
+    /* Enable High Voltage */
+    enable_hv();
 
     /* Start the server for the first time */
     ESP_ERROR_CHECK(start_webserver());
