@@ -1,6 +1,11 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
+#include <assert.h>
+#include "esp_err.h"
+#include "driver/gpio.h"
+#include "driver/i2s_std.h"
+
 #define ERROR_CHECK_RETURN_ERR(x)    ESP_ERROR_CHECK(x)
 #define ERROR_CHECK_RETURN_NULL(x)   ESP_ERROR_CHECK(x)
 #define ERROR_CHECK(x, ret)          ESP_ERROR_CHECK(x)
@@ -18,14 +23,16 @@
  * Can be used for i2s_std_gpio_config_t and/or i2s_std_config_t initialization
  */
 #define I2S_GPIO_CFG            \
-    {                          \
-        .bclk = I2S_BCLK,  \
-        .ws = I2S_LRCLK,   \
-        .dout = I2S_DOUT,  \
-        .invert_flags = {      \
+    {                           \
+        .mclk = I2S_GPIO_UNUSED,\
+        .bclk = I2S_BCLK,       \
+        .ws   = I2S_LRCLK,      \
+        .dout = I2S_DOUT,       \
+        .din  = I2S_GPIO_UNUSED,\
+        .invert_flags = {       \
             .bclk_inv = false,  \
-            .ws_inv = false,    \
-        },                     \
+            .ws_inv   = false,  \
+        },                      \
     }
 
 /**
@@ -34,10 +41,10 @@
  * This configuration is used by default in audio_init()
  */
 #define I2S_DUPLEX_STEREO_CFG(_sample_rate)                                                         \
-    {                                                                                                 \
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(_sample_rate),                                          \
+    {                                                                                               \
+        .clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(_sample_rate),                                       \
         .slot_cfg = I2S_STD_PHILIP_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO), \
-        .gpio_cfg = I2S_GPIO_CFG,                                                                 \
+        .gpio_cfg = I2S_GPIO_CFG,                                                                   \
     }
 
 typedef enum {
@@ -46,9 +53,6 @@ typedef enum {
 } PDM_SOUND_TYPE;
 
 esp_err_t audio_handle_info(PDM_SOUND_TYPE voice);
-
-esp_err_t audio_play_start();
+esp_err_t audio_play_start(void);
 
 #endif /* AUDIO_H */
-
-

@@ -10,39 +10,38 @@
 #include <esp_timer.h>
 #include <esp_spiffs.h>
 #include <esp_vfs.h>
-#include <driver/i2s_pdm.h>
+
+#include <driver/i2s_std.h>
 #include <audio_player.h>
-#include <esp_codec_dev.h>
-#include <esp_codec_dev_defaults.h>
 
 #include "audio.h"
 
 static const char *TAG = "audio";
 
-static const audio_codec_data_if_t *i2s_data_if = NULL;  /* Codec data interface */
-static i2s_chan_handle_t i2s_tx_chan;
+static i2s_chan_handle_t i2s_tx_chan = NULL;
 
-static esp_codec_dev_handle_t play_dev_handle;
-
+/* forward declarations */
 static esp_err_t audio_reconfig_clk(uint32_t rate, uint32_t bits_cfg, i2s_slot_mode_t ch);
 static esp_err_t audio_write(void *audio_buffer, size_t len, size_t *bytes_written, uint32_t timeout_ms);
 
+/* -------------------------------------------------------------------------- */
+/*                        I2S / hardware initialisation                       */
+/* -------------------------------------------------------------------------- */
 
 static esp_err_t audio_init(const i2s_std_config_t *i2s_config, i2s_chan_handle_t *tx_channel)
 {
-        if (i2s_tx_chan && i2s_data_if) {
+    /* If already initialised, just return the existing handle */
+    if (i2s_tx_chan != NULL) {
         if (tx_channel) {
             *tx_channel = i2s_tx_chan;
         }
-
-        /* Audio was initialized before */
         return ESP_OK;
     }
 
     /* Setup I2S peripheral */
-    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
     chan_cfg.auto_clear = true; // Auto clear the legacy data in the DMA buffer
-    ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, tx_channel, NULL));
+    ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, &i2s_tx_chan, NULL));
 
     /* Setup I2S channels */
     const i2s_std_config_t std_cfg_default = I2S_DUPLEX_STEREO_CFG(44100);
@@ -51,54 +50,38 @@ static esp_err_t audio_init(const i2s_std_config_t *i2s_config, i2s_chan_handle_
         p_i2s_cfg = i2s_config;
     }
 
-    if (tx_channel != NULL) {
-        ESP_ERROR_CHECK(i2s_channel_init_std_mode(*tx_channel, p_i2s_cfg));
-        ESP_ERROR_CHECK(i2s_channel_enable(*tx_channel));
-    }
+    ESP_ERROR_CHECK(i2s_channel_init_std_mode(i2s_tx_chan, p_i2s_cfg));
+    ESP_ERROR_CHECK(i2s_channel_enable(i2s_tx_chan));
 
-    audio_codec_i2s_cfg_t i2s_cfg = {
-        .port = I2S_NUM_0,
-        .rx_handle = NULL,
-        .tx_handle = i2s_tx_chan,
-    };
-    i2s_data_if = audio_codec_new_i2s_data(&i2s_cfg);
-    NULL_CHECK(i2s_data_if, NULL);
+    if (tx_channel) {
+        *tx_channel = i2s_tx_chan;
+    }
 
     return ESP_OK;
 }
 
-esp_codec_dev_handle_t audio_codec_speaker_init(void)
+/* -------------------------------------------------------------------------- */
+/*                     Public helper to init "speaker" side                   */
+/* -------------------------------------------------------------------------- */
+
+static esp_err_t codec_init(void)
 {
-
-    if (i2s_tx_chan == NULL || i2s_data_if == NULL) {
-        /* Configure I2S peripheral and Power Amplifier */
-        ERROR_CHECK_RETURN_ERR(audio_init(NULL, &i2s_tx_chan));
-    }
-    assert(i2s_data_if);
-
-    esp_codec_dev_cfg_t codec_dev_cfg = {
-        .dev_type = ESP_CODEC_DEV_TYPE_OUT,
-        .codec_if = NULL,
-        .data_if = i2s_data_if,
-    };
-    return esp_codec_dev_new(&codec_dev_cfg);
+    /* Only config I2S once */
+    return audio_init(NULL, &i2s_tx_chan);
 }
+
+/* -------------------------------------------------------------------------- */
+/*                          Audio player front-end API                        */
+/* -------------------------------------------------------------------------- */
 
 esp_err_t app_audio_write(void *audio_buffer, size_t len, size_t *bytes_written, uint32_t timeout_ms)
 {
-    esp_err_t ret = ESP_OK;
-
-    if (audio_write(audio_buffer, len, bytes_written, 1000) != ESP_OK) {
-        ESP_LOGE(TAG, "Write Task: i2s write failed");
-        ret = ESP_FAIL;
-    }
-
-    return ret;
+    return audio_write(audio_buffer, len, bytes_written, timeout_ms);
 }
 
 esp_err_t audio_handle_info(PDM_SOUND_TYPE voice)
 {
-    char filepath[30];
+    char filepath[64];
     esp_err_t ret = ESP_OK;
 
     switch (voice) {
@@ -108,6 +91,9 @@ esp_err_t audio_handle_info(PDM_SOUND_TYPE voice)
     case SOUND_TYPE_GOOD_FOOT:
         sprintf(filepath, "%s/%s", CONFIG_SPIFFS_MOUNT_POINT, "GetOnGoodFoot.mp3");
         break;
+    default:
+        ESP_LOGE(TAG, "Unknown sound type: %d", voice);
+        return ESP_FAIL;
     }
 
     FILE *fp = fopen(filepath, "r");
@@ -115,19 +101,26 @@ esp_err_t audio_handle_info(PDM_SOUND_TYPE voice)
 
     ESP_LOGI(TAG, "play: %s", filepath);
     ret = audio_player_play(fp);
+
 err:
     return ret;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              Player callbacks                              */
+/* -------------------------------------------------------------------------- */
+
 static esp_err_t app_mute_function(AUDIO_PLAYER_MUTE_SETTING setting)
 {
+    /* No external codec to mute; MAX98357A has no mute pin in this design */
+    (void)setting;
     return ESP_OK;
 }
 
 static void audio_callback(audio_player_cb_ctx_t *ctx)
 {
     switch (ctx->audio_event) {
-    case AUDIO_PLAYER_CALLBACK_EVENT_IDLE: /**< Player is idle, not playing audio */
+    case AUDIO_PLAYER_CALLBACK_EVENT_IDLE:
         ESP_LOGI(TAG, "IDLE");
         break;
     case AUDIO_PLAYER_CALLBACK_EVENT_COMPLETED_PLAYING_NEXT:
@@ -151,52 +144,67 @@ static void audio_callback(audio_player_cb_ctx_t *ctx)
     }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                     Clock reconfig + audio write hooks                     */
+/*        These are called by chmorgan/esp-audio-player during playback       */
+/* -------------------------------------------------------------------------- */
+
 static esp_err_t audio_reconfig_clk(uint32_t rate, uint32_t bits_cfg, i2s_slot_mode_t ch)
 {
-    esp_err_t ret = ESP_OK;
-
     ESP_LOGI(TAG, "rate: %u", (unsigned int)rate);
     ESP_LOGI(TAG, "bits per sample: %u", (unsigned int)bits_cfg);
     ESP_LOGI(TAG, "channel: %d", ch);
 
-    esp_codec_dev_sample_info_t fs = {
-        .sample_rate = rate,
-        .channel = ch,
-        .bits_per_sample = bits_cfg,
-    };
+    if (i2s_tx_chan == NULL) {
+        ESP_LOGE(TAG, "I2S TX channel not initialized");
+        return ESP_FAIL;
+    }
 
-    ret = esp_codec_dev_close(play_dev_handle);
-    ret = esp_codec_dev_open(play_dev_handle, &fs);
-    return ret;
+    /* Build new clock config */
+    i2s_std_clk_config_t clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(rate);
+
+    /* Disable → Reconfig → Enable */
+    ESP_ERROR_CHECK(i2s_channel_disable(i2s_tx_chan));
+    ESP_ERROR_CHECK(i2s_channel_reconfig_std_clock(i2s_tx_chan, &clk_cfg));
+    ESP_ERROR_CHECK(i2s_channel_enable(i2s_tx_chan));
+
+    return ESP_OK;
 }
 
 static esp_err_t audio_write(void *audio_buffer, size_t len, size_t *bytes_written, uint32_t timeout_ms)
 {
-    esp_err_t ret = ESP_OK;
-    ret = esp_codec_dev_write(play_dev_handle, audio_buffer, len);
-    *bytes_written = len;
+    if (i2s_tx_chan == NULL) {
+        ESP_LOGE(TAG, "audio_write: I2S TX channel not initialized");
+        return ESP_FAIL;
+    }
+
+    esp_err_t ret = i2s_channel_write(i2s_tx_chan, audio_buffer, len, bytes_written, timeout_ms);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "audio_write: i2s_channel_write failed: %s", esp_err_to_name(ret));
+    }
     return ret;
 }
 
-static void codec_init()
-{
-    play_dev_handle = audio_codec_speaker_init();
-    assert((play_dev_handle) && "play_dev_handle not initialized");
-}
+/* -------------------------------------------------------------------------- */
+/*                          Public initialisation API                         */
+/* -------------------------------------------------------------------------- */
 
-esp_err_t audio_play_start()
+esp_err_t audio_play_start(void)
 {
     esp_err_t ret = ESP_OK;
 
-    codec_init();
+    /* Initialise I2S once */
+    ESP_ERROR_CHECK(codec_init());
 
     audio_player_config_t config = {
-        .mute_fn = app_mute_function,
-        .write_fn = app_audio_write,
+        .mute_fn   = app_mute_function,
         .clk_set_fn = audio_reconfig_clk,
-        .priority = 5
+        .write_fn  = app_audio_write,
+        .priority  = 5,
     };
+
     ESP_ERROR_CHECK(audio_player_new(config));
     audio_player_callback_register(audio_callback, NULL);
+
     return ret;
 }
