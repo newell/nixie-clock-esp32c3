@@ -15,7 +15,7 @@
   - 12-hour or 24-hour format
   - NTP server
   - Colon Indicators (Blinking, Always On, Off)
-  - Color of LEDs
+  - Color of LEDs (Spectrum Cycle or Static Mode)
   - Timezone
 
 ![DSC03044](https://github.com/user-attachments/assets/07f993d6-80e4-4be8-91cf-ca07ee2fea44)
@@ -35,8 +35,9 @@ https://github.com/user-attachments/assets/77bc2790-672e-41c1-a4d4-c8e7e0b7ab1b
 https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
 
  ### TODO
+- [x] Hourly Slot Machine Effect
+- [x] LED Spectrum Cycle
 - [ ] Motion Sleep Mode
-- [x] Hourly Slot Machine and LED cycling
 
 ## CAD Model of Clock Case
 
