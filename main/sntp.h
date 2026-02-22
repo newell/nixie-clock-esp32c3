@@ -4,5 +4,3 @@
 void sync_sntp(void);
 
 #endif /* SNTP_H */
-
-

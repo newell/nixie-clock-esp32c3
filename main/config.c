@@ -1,25 +1,23 @@
+#include "config.h"
+
+#include <cJSON.h>
+#include <esp_log.h>
+#include <esp_wifi.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 #include <sys/stat.h>
-#include <esp_wifi.h>
-#include <esp_log.h>
-#include <cJSON.h>
 
 #include "wifi_prov.h"
-#include "config.h"
 
-/*
-In this file's comments, we use the term `configuration` to refer to the actual JSON configuration
-file found at `CONFIG_FILENAME` and we use the term `config` to refer to the current WIFI
-configuration that is in flash.  Function names regardless, use `config` for brevity.
-*/
+/* In this file's comments, we use the term `configuration` to refer to the
+actual JSON configuration file found at `CONFIG_FILENAME` and we use the term
+`config` to refer to the current WIFI configuration that is in flash.  Function
+names regardless, use `config` for brevity. */
 
-static const char *TAG = "config";
+static const char* TAG = "config";
 
-/* Write default configuration */
-// void write_default_config(const char *ssid, const char *password) {
 void write_default_config(void) {
     FILE* f = fopen(CONFIG_FILENAME, "w");
     if (f == NULL) {
@@ -37,6 +35,7 @@ void write_default_config(void) {
     fprintf(f, "        \"timezone\": \"PST8PDT,M3.2.0,M11.1.0\",\n");
     fprintf(f, "        \"time_fmt\": \"1\"\n");
     fprintf(f, "    },\n");
+    fprintf(f, "    \"led_mode\": \"static\",\n");
     fprintf(f, "    \"color\": {\n");
     fprintf(f, "        \"r\": \"0\",\n");
     fprintf(f, "        \"g\": \"0\",\n");
@@ -45,10 +44,10 @@ void write_default_config(void) {
     fprintf(f, "}\n");
 
     fclose(f);
-    ESP_LOGI(TAG, "Default configuration has been written to %s", CONFIG_FILENAME);
+    ESP_LOGI(TAG, "Default configuration has been written to %s",
+             CONFIG_FILENAME);
 }
 
-/* Read out the configuration data */
 char* read_json_data() {
     FILE* f = fopen(CONFIG_FILENAME, "r");
     if (f == NULL) {
@@ -81,14 +80,14 @@ char* read_json_data() {
     return data;
 }
 
-/* Search for value in JSON object */
-bool find_value_in_json(cJSON *obj, const char *key, char *value, size_t value_size) {
+bool find_value_in_json(cJSON* obj, const char* key, char* value,
+                        size_t value_size) {
     if (obj == NULL || key == NULL || value == NULL || value_size == 0) {
         return false;
     }
 
     if (cJSON_IsObject(obj)) {
-        cJSON *child = obj->child;
+        cJSON* child = obj->child;
         while (child != NULL) {
             if (strcmp(child->string, key) == 0 && cJSON_IsString(child)) {
                 strncpy(value, child->valuestring, value_size);
@@ -106,9 +105,8 @@ bool find_value_in_json(cJSON *obj, const char *key, char *value, size_t value_s
     return false;
 }
 
-/* Read value from configuration file */
-void read_config_value(const char *key, char *value, size_t value_size) {
-    FILE *file = fopen(CONFIG_FILENAME, "r");
+void read_config_value(const char* key, char* value, size_t value_size) {
+    FILE* file = fopen(CONFIG_FILENAME, "r");
     if (file == NULL) {
         ESP_LOGI(TAG, "Failed to open config file");
         return;
@@ -123,7 +121,7 @@ void read_config_value(const char *key, char *value, size_t value_size) {
     }
 
     fseek(file, 0, SEEK_SET);
-    char *buffer = (char *)malloc(file_size + 1);
+    char* buffer = (char*)malloc(file_size + 1);
     if (buffer == NULL) {
         ESP_LOGI(TAG, "Failed to allocate memory for buffer");
         fclose(file);
@@ -139,7 +137,7 @@ void read_config_value(const char *key, char *value, size_t value_size) {
     }
 
     buffer[file_size] = '\0';
-    cJSON *root = cJSON_Parse(buffer);
+    cJSON* root = cJSON_Parse(buffer);
     free(buffer);
     if (root == NULL) {
         ESP_LOGI(TAG, "Failed to parse JSON");
@@ -153,10 +151,9 @@ void read_config_value(const char *key, char *value, size_t value_size) {
     cJSON_Delete(root);
 }
 
-/* Write value from configuration file */
-void write_config_value(const char *key, const char *value) {
-    FILE *file = fopen(CONFIG_FILENAME, "r");
-    cJSON *root = NULL;
+void write_config_value(const char* key, const char* value) {
+    FILE* file = fopen(CONFIG_FILENAME, "r");
+    cJSON* root = NULL;
 
     if (file) {
         fseek(file, 0, SEEK_END);
@@ -168,7 +165,7 @@ void write_config_value(const char *key, const char *value) {
         }
 
         fseek(file, 0, SEEK_SET);
-        char *data = (char *)malloc(length + 1);
+        char* data = (char*)malloc(length + 1);
         if (data == NULL) {
             ESP_LOGI(TAG, "Failed to allocate memory for data");
             fclose(file);
@@ -194,7 +191,7 @@ void write_config_value(const char *key, const char *value) {
         root = cJSON_CreateObject();
     }
 
-    cJSON *value_json = cJSON_CreateString(value);
+    cJSON* value_json = cJSON_CreateString(value);
     if (value_json == NULL) {
         cJSON_Delete(root);
         ESP_LOGI(TAG, "Failed to create JSON string");
@@ -203,7 +200,7 @@ void write_config_value(const char *key, const char *value) {
 
     cJSON_ReplaceItemInObject(root, key, value_json);
 
-    char *json_str = cJSON_Print(root);
+    char* json_str = cJSON_Print(root);
     cJSON_Delete(root);
     if (json_str == NULL) {
         ESP_LOGI(TAG, "Failed to generate JSON string");
@@ -224,8 +221,7 @@ void write_config_value(const char *key, const char *value) {
 }
 
 void config_init(void) {
-
-    // /* Get current WiFi config */
+    // // Get current WiFi config
     // wifi_config_t current_config;
     // esp_wifi_get_config(ESP_IF_WIFI_STA, &current_config);
 
