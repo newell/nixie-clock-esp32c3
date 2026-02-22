@@ -1,353 +1,206 @@
-#include <time.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <string.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-#include <esp_log.h>
-#include <esp_random.h>
-#include <driver/gpio.h>
-
-#include "audio.h"
-#include "config.h"
 #include "clock.h"
 
-static const char *TAG = "clock";
+#include <driver/gpio.h>
+#include <esp_log.h>
+#include <esp_random.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/queue.h>
+#include <freertos/task.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
 
-SemaphoreHandle_t xMutex;
-bool indicator = false;
+#include "config.h"
+#include "leds.h"
+
+extern TaskHandle_t play_audio_task_handle;
+static const char* TAG = "clock";
+static int ram_time_fmt = 1;  // Default to 24h
+
+// Display Queue System (Single Hardware Owner Model)
+typedef enum { DISP_CMD_SHOW_TIME, DISP_CMD_SLOT_MACHINE } disp_cmd_type_t;
+
+typedef struct {
+    disp_cmd_type_t type;
+} disp_msg_t;
+
+static QueueHandle_t disp_queue = NULL;
+
+// Shift Register Logic
 uint32_t hours = 0;
 uint32_t minutes = 0;
 uint32_t seconds = 0;
 
-// Declare a 64-bit unsigned integer and initialize it to 0
-uint64_t num = 0;
-
-/* Uncomment below to see binary representation of the
-data sent to the shift registers. */
-// // Function to print binary representation of a 64-bit integer
-// void print_binary(uint64_t num) {
-//     // Iterate from the MSB to the LSB
-//     for (int i = 63; i >= 0; i--) {
-//         // Extract the bit at position i
-//         int bit = (num >> i) & 1;
-//         // Print the bit
-//         printf("%d", bit);
-//         // Print a space every 8 bits for readability
-//         if (i % 8 == 0) {
-//             printf(" ");
-//         }
-//     }
-//     printf("\n");
-// }
+void clock_set_ram_format(int fmt) {
+    ram_time_fmt = fmt;
+    ESP_LOGI(TAG, "Format updated: %s", (fmt == 0) ? "12h" : "24h");
+}
 
 void shift_out_data(uint64_t data) {
-    for (int i = 63; i >= 0; i--) {  // LSB first
-        gpio_set_level(DATA_PIN, (data >> i) & 0x01);  // Set DATA_PIN to current bit
+    for (int i = 63; i >= 0; i--) {
+        gpio_set_level(DATA_PIN, (data >> i) & 0x01);
         gpio_set_level(CLOCK_PIN, 1);
-        esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
+        esp_rom_delay_us(2);
         gpio_set_level(CLOCK_PIN, 0);
+        esp_rom_delay_us(2);
     }
 }
 
-// Function to set a bit
 uint64_t set_bit(uint64_t num, int pos) {
     return num | ((uint64_t)1 << pos);
 }
 
-// Function to clear a bit
-uint64_t clear_bit(uint64_t num, int pos) {
-    return num & ~((uint64_t)1 << pos);
-}
-
-// Function to toggle a bit
-uint64_t toggle_bit(uint64_t num, int pos) {
-    return num ^ ((uint64_t)1 << pos);
-}
-
 uint64_t set_HH(uint64_t num, uint32_t HH) {
-    if (HH == 7) {
-        return set_bit(num, 63 - 0);
-    } else if (HH == 6) {
-        return set_bit(num, 63 - 1);
-    } else if (HH == 5) {
-        return set_bit(num, 63 - 2);
-    } else if (HH == 4) {
-        return set_bit(num, 63 - 3);
-    } else if (HH == 3) {
-        return set_bit(num, 63 - 4);
-    } else if (HH == 2) {
-        return set_bit(num, 63 - 5);
-    } else if (HH == 1) {
-        return set_bit(num, 63 - 6);
-    } else if (HH == 0) {
-        return set_bit(num, 63 - 7);
-    } else if (HH == 9) {
-        return set_bit(num, 63 - 14);
-    } else if (HH == 8) {
-        return set_bit(num, 63 - 15);
-    } else {
-        return num;
-    }
+    static const int map[] = {7, 6, 5, 4, 3, 2, 1, 0, 15, 14};
+    return (HH < 10) ? set_bit(num, 63 - map[HH]) : num;
 }
-
 uint64_t set_H(uint64_t num, uint32_t H) {
-    if (H == 5) {
-        return set_bit(num, 63 - 8);
-    } else if (H == 4) {
-        return set_bit(num, 63 - 9);
-    } else if (H == 3) {
-        return set_bit(num, 63 - 10);
-    } else if (H == 2) {
-        return set_bit(num, 63 - 11);
-    } else if (H == 1) {
-        return set_bit(num, 63 - 12);
-    } else if (H == 0) {
-        return set_bit(num, 63 - 13);
-    } else if (H == 9) {
-        return set_bit(num, 63 - 20);
-    } else if (H == 8) {
-        return set_bit(num, 63 - 21);
-    } else if (H == 7) {
-        return set_bit(num, 63 - 22);
-    } else if (H == 6) {
-        return set_bit(num, 63 - 23);
-    } else {
-        return num;
-    }
+    static const int map[] = {13, 12, 11, 10, 9, 8, 23, 22, 21, 20};
+    return (H < 10) ? set_bit(num, 63 - map[H]) : num;
 }
-
-
 uint64_t set_MM(uint64_t num, uint32_t MM) {
-    if (MM == 1) {
-        return set_bit(num, 63 - 16);
-    } else if (MM == 0) {
-        return set_bit(num, 63 - 17);
-    } else if (MM == 9) {
-        return set_bit(num, 63 - 24);
-    } else if (MM == 8) {
-        return set_bit(num, 63 - 25);
-    } else if (MM == 7) {
-        return set_bit(num, 63 - 26);
-    } else if (MM == 6) {
-        return set_bit(num, 63 - 27);
-    } else if (MM == 5) {
-        return set_bit(num, 63 - 28);
-    } else if (MM == 4) {
-        return set_bit(num, 63 - 29);
-    } else if (MM == 3) {
-        return set_bit(num, 63 - 30);
-    } else if (MM == 2) {
-        return set_bit(num, 63 - 31);
-    } else {
-        return num;
-    }
+    static const int map[] = {17, 16, 31, 30, 29, 28, 27, 26, 25, 24};
+    return (MM < 10) ? set_bit(num, 63 - map[MM]) : num;
 }
-
 uint64_t set_M(uint64_t num, uint32_t M) {
-    if (M == 7) {
-        return set_bit(num, 63 - 32);
-    } else if (M == 6) {
-        return set_bit(num, 63 - 33);
-    } else if (M == 5) {
-        return set_bit(num, 63 - 34);
-    } else if (M == 4) {
-        return set_bit(num, 63 - 35);
-    } else if (M == 3) {
-        return set_bit(num, 63 - 36);
-    } else if (M == 2) {
-        return set_bit(num, 63 - 37);
-    } else if (M == 1) {
-        return set_bit(num, 63 - 38);
-    } else if (M == 0) {
-        return set_bit(num, 63 - 39);
-    } else if (M == 9) {
-        return set_bit(num, 63 - 46);
-    } else if (M == 8) {
-        return set_bit(num, 63 - 47);
-    } else {
-        return num;
-    }
+    static const int map[] = {39, 38, 37, 36, 35, 34, 33, 32, 47, 46};
+    return (M < 10) ? set_bit(num, 63 - map[M]) : num;
 }
-
 uint64_t set_SS(uint64_t num, uint32_t SS) {
-    if (SS == 3) {
-        return set_bit(num, 63 - 40);
-    } else if (SS == 2) {
-        return set_bit(num, 63 - 41);
-    } else if (SS == 1) {
-        return set_bit(num, 63 - 42);
-    } else if (SS == 0) {
-        return set_bit(num, 63 - 43);
-    } else if (SS == 9) {
-        return set_bit(num, 63 - 50);
-    } else if (SS == 8) {
-        return set_bit(num, 63 - 51);
-    } else if (SS == 7) {
-        return set_bit(num, 63 - 52);
-    } else if (SS == 6) {
-        return set_bit(num, 63 - 53);
-    } else if (SS == 5) {
-        return set_bit(num, 63 - 54);
-    } else if (SS == 4) {
-        return set_bit(num, 63 - 55);
-    } else {
-        return num;
-    }
+    static const int map[] = {43, 42, 41, 40, 55, 54, 53, 52, 51, 50};
+    return (SS < 10) ? set_bit(num, 63 - map[SS]) : num;
 }
-
 uint64_t set_S(uint64_t num, uint32_t S) {
-    if (S == 1) {
-        return set_bit(num, 63 - 48);
-    } else if (S == 0) {
-        return set_bit(num, 63 - 49);
-    } else if (S == 9) {
-        return set_bit(num, 63 - 56);
-    } else if (S == 8) {
-        return set_bit(num, 63 - 57);
-    } else if (S == 7) {
-        return set_bit(num, 63 - 58);
-    } else if (S == 6) {
-        return set_bit(num, 63 - 59);
-    } else if (S == 5) {
-        return set_bit(num, 63 - 60);
-    } else if (S == 4) {
-        return set_bit(num, 63 - 61);
-    } else if (S == 3) {
-        return set_bit(num, 63 - 62);
-    } else if (S == 2) {
-        return set_bit(num, 63 - 63);
-    } else {
-        return num;
-    }
+    static const int map[] = {49, 48, 63, 62, 61, 60, 59, 58, 57, 56};
+    return (S < 10) ? set_bit(num, 63 - map[S]) : num;
 }
 
-void update_tubes(uint32_t HH, uint32_t H, uint32_t MM, uint32_t M, uint32_t SS, uint32_t S) {
-
+void update_tubes(uint32_t HH, uint32_t H, uint32_t MM, uint32_t M, uint32_t SS,
+                  uint32_t S, bool show_dots) {
     uint64_t num = 0;
 
-    // Set tubes
     num = set_HH(num, HH);
     num = set_H(num, H);
     num = set_MM(num, MM);
     num = set_M(num, M);
     num = set_SS(num, SS);
     num = set_S(num, S);
-    // Set indicators
-    if (indicator) {
-        num = toggle_bit(num, 18);
-        num = toggle_bit(num, 19);
-        num = toggle_bit(num, 44);
-        num = toggle_bit(num, 45);
-        indicator = false;
-    } else {
-        num = clear_bit(num, 18);
-        num = clear_bit(num, 19);
-        num = clear_bit(num, 44);
-        num = clear_bit(num, 45);
-        indicator = true;
+
+    if (show_dots) {
+        num = set_bit(num, 18);
+        num = set_bit(num, 19);
+        num = set_bit(num, 44);
+        num = set_bit(num, 45);
     }
 
-    // Print binary -- used for debugging
-    // print_binary(num);
-    // Shift out all the data
     shift_out_data(num);
-
-    // Latch data to outputs
     gpio_set_level(LATCH_PIN, 1);
-    esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
+    esp_rom_delay_us(5);
     gpio_set_level(LATCH_PIN, 0);
 }
 
-// Function to update shift registers based on current time
-void update_shift_registers(void) {
+static void update_shift_registers(void) {
     time_t now;
     struct tm timeinfo;
 
-    // Get current time
     time(&now);
     localtime_r(&now, &timeinfo);
 
-    // Update clock variables
     hours = timeinfo.tm_hour;
     minutes = timeinfo.tm_min;
     seconds = timeinfo.tm_sec;
 
-    // Get time_fmt
-    char time_fmt_value[2];
-    read_config_value("time_fmt", time_fmt_value, sizeof(time_fmt_value));
-    if (strcmp(time_fmt_value, "0") == 0) {
-        hours = hours % 12;
-        if (hours == 0) {
-            hours = 12;
-        }
+    if (ram_time_fmt == 0) {
+        hours %= 12;
+        if (hours == 0) hours = 12;
     }
 
-    // Uncomment below to print out the time
-    // ESP_LOGI(TAG, "Time: %02u:%02u:%02u", (unsigned int) hours, (unsigned int) minutes, (unsigned int) seconds);
+    bool dots = (seconds % 2 == 0);
 
-    update_tubes((hours / 10), (hours % 10), (minutes / 10), (minutes % 10), (seconds / 10), (seconds % 10));
+    update_tubes((hours / 10), (hours % 10), (minutes / 10), (minutes % 10),
+                 (seconds / 10), (seconds % 10), dots);
 }
 
-void slot_machine_effect(void) {
-
-    for (int i = 0; i < 200; i++) {
-
-        uint32_t HH = esp_random() % 10;
-        uint32_t H = esp_random() % 10;
-        uint32_t MM = esp_random() % 10;
-        uint32_t M = esp_random() % 10;
-        uint32_t SS = esp_random() % 10;
-        uint32_t S = esp_random() % 10;
-        update_tubes(HH, H, MM, M, SS, S);
-        // Delay for 0.2 seconds
+static void slot_machine_effect(void) {
+    for (int i = 0; i < 120; i++) {
+        update_tubes(esp_random() % 10, esp_random() % 10, esp_random() % 10,
+                     esp_random() % 10, esp_random() % 10, esp_random() % 10,
+                     false);
         vTaskDelay(pdMS_TO_TICKS(50));
     }
 }
 
-// Task function to update clock time
-static void update_clock_task(void *pvParameters) {
+static void update_clock_task(void* pvParameters) {
+    ESP_LOGI(TAG, "Clock task started");
+
+    disp_msg_t msg;
+
     while (1) {
-        if (xSemaphoreTake(xMutex, pdMS_TO_TICKS(100)) == pdTRUE) {
-            // Update shift registers based on current time
+        // Wait up to 1 second for command
+        if (xQueueReceive(disp_queue, &msg, pdMS_TO_TICKS(1000)) == pdTRUE) {
+            switch (msg.type) {
+                case DISP_CMD_SLOT_MACHINE:
+                    slot_machine_effect();
+                    break;
+
+                case DISP_CMD_SHOW_TIME:
+                default:
+                    update_shift_registers();
+                    break;
+            }
+
+        } else {
+            // Timeout every second → normal time update
             update_shift_registers();
-            xSemaphoreGive(xMutex);
-            // Delay for 1 second
-            vTaskDelay(pdMS_TO_TICKS(1000));
         }
     }
 }
 
-void clock_init(void) {
+// Wrapper: Slot Machine + LEDs + Audio
+void clock_send_slot_machine_with_leds(void) {
+    ESP_LOGI(TAG, "Starting slot machine effect with LEDs and audio");
 
-    //zero-initialize the config structure.
-    gpio_config_t io_conf = {};
-    //disable interrupt
-    io_conf.intr_type = GPIO_INTR_DISABLE;
-    //set as output mode
-    io_conf.mode = GPIO_MODE_OUTPUT;
-    //bit mask of the pins that you want to set,e.g.GPIO18/19
-    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
-    //disable pull-down mode
-    io_conf.pull_down_en = 0;
-    //disable pull-up mode
-    io_conf.pull_up_en = 0;
-    //configure GPIO with the given settings
+    led_send_msg(LED_CMD_SLOT_MODE, 0, 0, 0);
+    if (play_audio_task_handle) {
+        xTaskNotifyGive(play_audio_task_handle);
+    } else {
+        ESP_LOGW(TAG, "Audio task handle not initialized");
+    }
+
+    // Run the slot machine tubes animation
+    slot_machine_effect();
+
+    ESP_LOGI(TAG, "Slot machine effect with LEDs and audio complete");
+}
+
+void clock_init(void) {
+    gpio_config_t io_conf = {.intr_type = GPIO_INTR_DISABLE,
+                             .mode = GPIO_MODE_OUTPUT,
+                             .pin_bit_mask = GPIO_OUTPUT_PIN_SEL,
+                             .pull_down_en = 0,
+                             .pull_up_en = 0};
+
     gpio_config(&io_conf);
 
     gpio_set_level(OE_PIN, 0);
     gpio_set_level(CLOCK_PIN, 0);
     gpio_set_level(LATCH_PIN, 0);
 
-    // Shift out all the data
-    shift_out_data(num);
+    // Load time format from config
+    char time_fmt_value[2] = {0};
+    read_config_value("time_fmt", time_fmt_value, sizeof(time_fmt_value));
+    if (time_fmt_value[0] != '\0') {
+        ram_time_fmt = atoi(time_fmt_value);
+    }
 
-    // Latch data to outputs
-    gpio_set_level(LATCH_PIN, 1);
-    esp_rom_delay_us(10);  // Small delay to ensure the pulse is registered
-    gpio_set_level(LATCH_PIN, 0);
+    // Create display queue
+    disp_queue = xQueueCreate(5, sizeof(disp_msg_t));
 
-    // Create task to update clock time
-    xTaskCreate(update_clock_task, "update_clock_task", 4096, NULL, 5, NULL);
+    // Blank display at startup
+    update_tubes(10, 10, 10, 10, 10, 10, false);
+
+    // Create display task (ONLY hardware owner)
+    xTaskCreate(update_clock_task, "clk_task", 4096, NULL, 5, NULL);
 }
-
