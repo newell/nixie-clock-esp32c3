@@ -29,7 +29,7 @@ void write_default_config(void) {
     fprintf(f, "    \"ssid\": \"\",\n");
     fprintf(f, "    \"pass\": \"\",\n");
     fprintf(f, "    \"ntp\": \"pool.ntp.org\",\n");
-    fprintf(f, "    \"colon\": \"1\",\n");
+    fprintf(f, "    \"colon\": \"2\",\n");  // 2: Blinking, 1: On, 0: Off
     fprintf(f, "    \"time\": {\n");
     fprintf(f, "        \"city\": \"Los Angeles\",\n");
     fprintf(f, "        \"timezone\": \"PST8PDT,M3.2.0,M11.1.0\",\n");
