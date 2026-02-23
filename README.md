@@ -38,6 +38,7 @@ https://github.com/user-attachments/assets/c225c358-999a-4b4a-92b9-9c901be83272
 - [x] Hourly Slot Machine Effect
 - [x] LED Spectrum Cycle
 - [ ] Motion Sleep Mode
+- [ ] Colon Indicator (currently only blinking supported)
 
 ## CAD Model of Clock Case
 
