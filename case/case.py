@@ -3,6 +3,8 @@ from operator import itemgetter
 from build123d import *
 from ocp_vscode import *
 
+PATH = "/home/newell/code/electronics/nixie-clock-esp32c3/case/"
+
 # %%
 # Clock Enclosure
 # Width between M3 screws is 182.88 mm, total width 189.992 mm, with antenna 195.326 mm
@@ -16,9 +18,6 @@ length = 3.5 * IN
 # Window dimensions
 window_width = 190
 window_height = 50
-
-# ledge height
-# ledge = 1 / 2 * IN
 
 # Enclosure wall thickness
 wall_thickness = 3 / 16 * IN  # 1/4 inch in mm
@@ -88,7 +87,7 @@ enclosure -= extrude(face, amount=11, dir=(0, -1, 0))
 
 # %%
 # Clock model
-clock = import_step("clock.step")
+clock = import_step(PATH + "clock.step")
 
 # IN-12 Nixie tubes
 tube_pts = [
@@ -99,7 +98,7 @@ tube_pts = [
     (-44.1, 0, 9.5),
     (-44.1 - 20.1, 0, 9.5),
 ]
-tube = import_step("IN-12-NixieTube.STEP")
+tube = import_step(PATH + "IN-12-NixieTube.STEP")
 tubes = [Pos(pos) * tube for pos in tube_pts]
 
 # Nixie tube socket pins
@@ -185,28 +184,28 @@ socket_pts = [
     (-10.07 - 34, -9, -6.6),
     (-10.07 - 34 - 20.1, -9, -6.6),
 ]
-socket = importer.read("SocketPin.stl")[0]
+socket = importer.read(PATH + "SocketPin.stl")[0]
 sockets = [Pos(pos) * socket for pos in socket_pts]
 
 # INS-1 indicator tubes
 indicator_pts = [
-    (27.05, 6, 13),
-    (27.05, -6, 13),
-    (-27.05, 6, 13),
-    (-27.05, -6, 13),
+    (27.05, -13, 6),
+    (27.05, -13, -6),
+    (-27.05, -13, 6),
+    (-27.05, -13, -6),
 ]
-indicator = import_step("INS1.STEP").rotate(Axis.X, 90).rotate(Axis.Z, 90)
-indicators = [Pos(pos) * indicator for pos in indicator_pts]
+indicator = import_step(PATH + "INS1.STEP")
 
 # Assemble the board
-clock = clock.rotate(Axis.X, 90)
-tubes = [tube.rotate(Axis.X, 90) for tube in tubes]
-sockets = [socket.rotate(Axis.X, 90) for socket in sockets]
-indicators = [indicator.rotate(Axis.X, 90) for indicator in indicators]
+clock = Rot(90, 0, 0) * clock
+tubes = [Rot(90, 0, 0) * tube for tube in tubes]
+sockets = [Rot(90, 0, 0) * socket for socket in sockets]
+indicators = [Pos(pos) * Rot(180, 90, 0) * indicator for pos in indicator_pts]
 board = Pos(0, -15, 0) * Compound(children=[*sockets, clock, *tubes, *indicators])
 
+# %%
 # High Voltage FLyback Converter model
-converter = Pos(-60, 14.5, -25) * import_step("converter.step").rotate(Axis.Z, 90)
+converter = Pos(-60, 14.5, -25) * import_step(PATH + "converter.step")
 
 ## Risers
 clock_riser_pts = [
@@ -229,6 +228,7 @@ clock_risers = [
 ]
 # Need M3 holes below for converter risers -- see below
 
+# %%
 # Front panel
 front_panel = Rectangle(inner_width + -1 / 16 * IN, inner_height - 1 / 16 * IN)
 front_panel = fillet(front_panel.vertices(), radius=inner_radius)
@@ -275,14 +275,10 @@ front_panel -= [
         (m3_clock_width / 2, -m3_clock_height / 2),
     ]
 ]
-# Export DXF file for front panel -- uncomment below to export DXF
-# exporter = ExportDXF(unit=Unit.MM, line_weight=0.5)
-# exporter.add_layer("Layer 1")
-# exporter.add_shape(front_panel, layer="Layer 1")
-# exporter.write("front_panel.dxf")
 front_panel = Pos(0, -length / 2 + 5, 0) * front_panel.rotate(Axis.X, 90)
 front_panel = extrude(front_panel, 3, dir=(0, 1, 0))
 
+# %%
 # Rear panel
 rear_panel = Rectangle(inner_width + -1 / 32 * IN, inner_height - 1 / 32 * IN)
 rear_panel = fillet(rear_panel.vertices(), radius=inner_radius)
@@ -299,6 +295,7 @@ rear_panel -= Pos(0, -inner_height / 2 + 10) * Rectangle(14, 6)
 rear_panel = Pos(0, length / 2 - 6, 0) * rear_panel.rotate(Axis.X, 90)
 rear_panel = extrude(rear_panel, 3, dir=(0, 1, 0))
 
+# %%
 # M3 heat set inserts
 m3_insert_circle = Circle(2)
 riser -= extrude((Pos(0, 0, (5 / 16 * IN) / 2) * m3_insert_circle), 6, dir=(0, 0, -1))
@@ -327,8 +324,8 @@ enclosure -= [
     extrude(Pos(pos) * m3_insert_circle, 3, dir=(0, -1, 0))
     for pos in front_panel_insert_pts
 ]
-m3_short = import_step("M3_Short.step").rotate(Axis.X, -90)  # 3 mm
-m3_standard = import_step("M3_Standard.step")  # 5 mm
+m3_short = import_step(PATH + "M3_Short.step").rotate(Axis.X, -90)  # 3 mm
+m3_standard = import_step(PATH + "M3_Standard.step")  # 5 mm
 short_inserts = [
     (Pos(pos) * m3_short).translate((0, -3, 0)) for pos in front_panel_insert_pts
 ]
@@ -340,14 +337,16 @@ standard_inserts += [
     (Pos(pos) * m3_standard).translate((0, -5.5, 0)) for pos in rear_panel_insert_pts
 ]
 
-# Power switch cuttout
+# %%
+# Power switch model
 kcd11_switch = Pos(
     inner_width / 2 + wall_thickness + 1.5, inner_length / 2 - 10, -12.5
-) * import_step("KCD11.step").rotate(Axis.Z, 90).rotate(Axis.Y, 90)
+) * import_step(PATH + "KCD11.step").rotate(Axis.Z, 90).rotate(Axis.Y, 90)
 enclosure -= Pos(
     inner_width / 2 + wall_thickness / 2, inner_length / 2 - 10, -12.5
 ) * Box(wall_thickness, 8.5, 14)
 
+# %%
 # Motion Sensor cuttouts
 motion_pts = [
     (-inner_width / 2 - wall_thickness / 2, 0, 0),
@@ -357,9 +356,10 @@ motion_sensor = Cylinder(radius=5, height=wall_thickness).rotate(Axis.Y, 90)
 motion_sensor = [Pos(pos) * motion_sensor for pos in motion_pts]
 enclosure -= motion_sensor
 
+# %%
 # Speaker model
 speaker = Pos(14, 31 / 2 + 5.5, inner_height / 2 - 1.5) * import_step(
-    "Speaker.STEP"
+    PATH + "Speaker.STEP"
 ).rotate(Axis.X, 90).rotate(Axis.Z, 180)
 # Speaker cuttouts
 enclosure -= Pos(0, 5.5, inner_height / 2 + wall_thickness / 2) * Box(
@@ -376,14 +376,18 @@ enclosure -= Pos(0, 31 / 2 + 5.5, inner_height / 2 + wall_thickness / 2) * Cylin
     radius=3, height=wall_thickness
 )
 
+# %%
 # Add risers to enclosure
 enclosure = enclosure + clock_risers + converter_risers
 
+# %%
 # Export STL for 3D prints
-enclosure.export_stl("enclosure.stl")
-front_panel.export_stl("front_panel.stl")
-rear_panel.export_stl("rear_panel.stl")
+enclosure.export_stl(PATH + "enclosure.stl")
+front_panel.export_stl(PATH + "front_panel.stl")
+rear_panel.export_stl(PATH + "rear_panel.stl")
 
+# %%
+# Render the design
 show(
     enclosure,
     short_inserts,
